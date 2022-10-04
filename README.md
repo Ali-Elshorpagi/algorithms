@@ -1,2 +1,3 @@
-# algorithms
-Some Important Algorithms
+# Algorithms
+
+* Binary Search
