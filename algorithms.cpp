@@ -26,7 +26,7 @@ ll Binary_Search(vll arr, ll value)
     ll low(0), high(sz(arr) - 1);
     while (low <= high)
     {
-        ll mid((low + high) / 2);
+        ll mid((low + high) >> 1);
         if (arr[mid] == value)
             return mid;
         else if (arr[mid] < value)
