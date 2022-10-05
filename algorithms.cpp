@@ -21,7 +21,7 @@ typedef vector<pii> vpii;
 #define fl(i, x, n) for (ll i(x); i >= n; --i)
 #define fc(it, v) for (auto &(it) : (v))
 
-ll Binary_Search(vll arr, ll value)
+ll Binary_Search(vll &arr, ll value)
 {
     ll low(0), high(sz(arr) - 1);
     while (low <= high)
