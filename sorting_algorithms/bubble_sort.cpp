@@ -67,7 +67,7 @@ void Bubble_Sort(vll &arr)
     }
 }
 
-void Bubble_Sort_Rec(vll &arr, ll size)
+void Bubble_Sort_Recursive(vll &arr, ll size)
 {
     if (size == 1)
         return;
@@ -76,7 +76,7 @@ void Bubble_Sort_Rec(vll &arr, ll size)
         if (arr[i] > arr[i + 1])
             swap(arr[i], arr[i + 1]);
     }
-    Bubble_Sort_Rec(arr, size - 1);
+    Bubble_Sort_Recursive(arr, size - 1);
 }
 
 int main()

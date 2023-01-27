@@ -51,6 +51,18 @@ void Insertion_Sort(vll &arr)
         arr[j + 1] = key;
     }
 }
+
+void Insertion_Sort_Recursive(vll &arr, ll size)
+{
+    if (size <= 1)
+        return;
+    Insertion_Sort_Recursive(arr, size - 1);
+    ll last = arr[size - 1], j = size - 2;
+    while (j >= 0 && arr[j] > last)
+        arr[j + 1] = arr[j], --j;
+    arr[j + 1] = last;
+}
+
 int main()
 {
     Mesh_Ali;
