@@ -55,6 +55,20 @@ ll Binary_Search(vll &arr, ll value)
     return -1;
 }
 
+ll Binary_Search_Recursive(vll &arr, ll low, ll high, ll value)
+{
+    if (high >= low)
+    {
+        ll mid((low + high) >> 1);
+        if (arr[mid] == value)
+            return mid;
+        if (arr[mid] > value)
+            return Binary_Search_Recursive(arr, low, mid - 1, value);
+        return Binary_Search_Recursive(arr, mid + 1, high, value);
+    }
+    return -1;
+}
+
 int main()
 {
     Mesh_Ali;
