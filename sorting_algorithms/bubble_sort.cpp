@@ -67,6 +67,18 @@ void Bubble_Sort(vll &arr)
     }
 }
 
+void Bubble_Sort_Rec(vll &arr, ll size)
+{
+    if (size == 1)
+        return;
+    for (ll i(0); i < size - 1; ++i)
+    {
+        if (arr[i] > arr[i + 1])
+            swap(arr[i], arr[i + 1]);
+    }
+    Bubble_Sort_Rec(arr, size - 1);
+}
+
 int main()
 {
     Mesh_Ali;
