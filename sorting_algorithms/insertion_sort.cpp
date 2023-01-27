@@ -41,8 +41,7 @@ typedef vector<ll> vll;
 
 void Insertion_Sort(vll &arr)
 {
-    ll i, key, j;
-    ll len(sz(arr));
+    ll key, j, len(sz(arr));
     for (ll i(1); i < len; ++i)
     {
         key = arr[i];
