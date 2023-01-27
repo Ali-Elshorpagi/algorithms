@@ -5,6 +5,22 @@
         "xlocale": "cpp",
         "xutility": "cpp",
         "random": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "deque": "cpp",
+        "exception": "cpp",
+        "fstream": "cpp",
+        "functional": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "memory": "cpp",
+        "queue": "cpp",
+        "set": "cpp",
+        "sstream": "cpp",
+        "stack": "cpp",
+        "tuple": "cpp",
+        "unordered_map": "cpp",
+        "valarray": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp"
     }
 }
