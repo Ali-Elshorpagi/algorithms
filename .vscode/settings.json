@@ -4,6 +4,7 @@
         "xiosbase": "cpp",
         "xlocale": "cpp",
         "xutility": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "utility": "cpp"
     }
 }

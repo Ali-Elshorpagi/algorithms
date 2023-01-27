@@ -32,8 +32,6 @@ typedef vector<ll> vll;
  *
  * # Complexities
  *
- * N is the number of element in the array
- *
  * Worst-Case complexity   O(N²)
  * Best-Case complexity    O(N)
  * Space complexity        O(1)
