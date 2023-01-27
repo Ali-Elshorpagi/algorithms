@@ -30,12 +30,13 @@ typedef vector<ll> vll;
  * continues in the upper half of the array. By doing this, the algorithm
  * eliminates the half in which the target value cannot lie in each iteration.
  *
- * ### Complexities
+ * # Complexities
  *
  * N is the number of element in the array.
  *
  * Worst-Case complexity	    O(log N)
  * Best-Case complexity      	O(1)
+ * Space complexity             O(1)
  */
 
 ll Binary_Search(vll &arr, ll value)

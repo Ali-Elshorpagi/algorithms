@@ -17,12 +17,13 @@ typedef vector<ll> vll;
  * otherwise the search continues till the end of the data set.
  * It is the easiest searching algorithm
 
- * ### Complexities
+ * # Complexities
  *
  * N is the number of element in the array.
  *
  * Worst-case time complexity	O(N)
  * Worst-case space complexity  O(N)
+ * Space complexity             O(1)
 */
 
 ll Linear_Search(vll &arr, ll value)

@@ -41,12 +41,13 @@ typedef vector<char> vc;
  * That's why we created a variable z to create the first value of the value of x,
  * and finally, we have assigned to y
  *
- * ### Complexities
+ * # Complexities
  *
  * N is the number of element in the array
  *
  * Worst-Case complexity   O(N²)
  * Best-Case complexity    O(N)
+ * Space complexity        O(1)
  */
 
 void Bubble_Sort(vll &arr)
