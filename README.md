@@ -1,10 +1,10 @@
 # Algorithms
 
-* Searching Algorithms
-#### Binary Search
-#### Linear Search
+> Searching Algorithms
+##### Binary Search
+##### Linear Search
 
-* Sorting Algorithms
-#### Insertion Sort
-#### Merge Sort
-#### Bubble Sort
+> Sorting Algorithms
+##### Insertion Sort
+##### Merge Sort
+##### Bubble Sort
