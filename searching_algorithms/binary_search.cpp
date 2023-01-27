@@ -34,10 +34,8 @@ typedef vector<ll> vll;
  *
  * N is the number of element in the array.
  *
- * Worst-case time complexity	O(log N)
- * Best-case time complexity	O(1)
- * Average time complexity	    O(log N)
- * Worst-case space complexity  0(1)
+ * Worst-Case complexity	    O(log N)
+ * Best-Case complexity      	O(1)
  */
 
 ll Binary_Search(vll &arr, ll value)
