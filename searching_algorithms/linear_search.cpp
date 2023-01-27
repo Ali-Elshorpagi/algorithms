@@ -37,6 +37,16 @@ ll Linear_Search(vll &arr, ll value)
     return -1;
 }
 
+ll Linear_Search_Recursive(vll &arr, ll size, ll value)
+{
+    --size;
+    if (size < 0)
+        return -1;
+    if (arr[size] == value)
+        return size;
+    return Linear_Search_Recursive(arr, size, value);
+}
+
 int main()
 {
     Mesh_Ali;
