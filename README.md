@@ -7,9 +7,9 @@
   - Linear Search ( ITERATIVE / RECURSIVE )
 
 > **Sorting Algorithms**
-  - Insertion Sort
+  - Insertion Sort ( ITERATIVE / RECURSIVE )
   - Heap Sort
   - Merge Sort
-  - Bubble Sort
+  - Bubble Sort ( ITERATIVE / RECURSIVE )
   - Quick Sort
-  - Selection Sort
+  - Selection Sort ( ITERATIVE / RECURSIVE )
