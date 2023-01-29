@@ -1,4 +1,4 @@
-# Algorithms In C++
+# Algorithms in C++
 
 > **Searching Algorithms**
   - Binary Search
