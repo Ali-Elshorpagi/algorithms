@@ -3,8 +3,8 @@
 * You can also see the [Math Algoriithms](https://github.com/Ali-Elshorpagi/math_algorithms)
 
 > **Searching Algorithms**
-  - Binary Search
-  - Linear Search
+  - Binary Search ( ITERATIVE / RECURSIVE )
+  - Linear Search ( ITERATIVE / RECURSIVE )
 
 > **Sorting Algorithms**
   - Insertion Sort
