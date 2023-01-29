@@ -21,7 +21,7 @@ typedef vector<ll> vll;
  * * # Complexities
  *
  * Worst-Case complexity   O(N * log(N))
- * Space complexity        O(N)
+ * Best-Case complexity    O(N * log(N))
  */
 
 void Merge(vll &arr, ll l, ll m, ll r)

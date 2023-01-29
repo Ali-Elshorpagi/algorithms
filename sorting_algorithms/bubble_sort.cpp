@@ -45,7 +45,6 @@ typedef vector<char> vc;
  *
  * Worst-Case complexity   O(N²)
  * Best-Case complexity    O(N)
- * Space complexity        O(1)
  */
 
 void Bubble_Sort(vll &arr)

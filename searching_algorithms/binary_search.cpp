@@ -34,7 +34,6 @@ typedef vector<ll> vll;
  *
  * Worst-Case complexity	    O(log N)
  * Best-Case complexity      	O(1)
- * Space complexity             O(1)
  */
 
 ll Binary_Search(vll &arr, ll value)

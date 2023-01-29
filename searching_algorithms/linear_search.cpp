@@ -20,8 +20,7 @@ typedef vector<ll> vll;
  * # Complexities
  *
  * Worst-case time complexity	O(N)
- * Worst-case space complexity  O(N)
- * Space complexity             O(1)
+ * Best-case space complexity   O(1)
 */
 
 ll Linear_Search(vll &arr, ll value)

@@ -34,7 +34,6 @@ typedef vector<ll> vll;
  *
  * Worst-Case complexity   O(N²)
  * Best-Case complexity    O(N)
- * Space complexity        O(1)
  */
 
 void Insertion_Sort(vll &arr)
