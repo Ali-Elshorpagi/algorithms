@@ -1,6 +1,6 @@
 # Algorithms in C++
 
-* You can also see the [Math Algoriithms](https://github.com/Ali-Elshorpagi/math_algorithms)
+* You can also see the [Math Algorithms](https://github.com/Ali-Elshorpagi/math_algorithms)
 
 > **Searching Algorithms**
   - Binary Search ( ITERATIVE / RECURSIVE )
