@@ -57,7 +57,6 @@ ll Binary_Search_Recursive(vll &arr, ll low, ll high, ll value)
 {
     if (high >= low)
     {
-
         ll mid(low + ((high - low) >> 1));
         if (arr[mid] == value)
             return mid;
