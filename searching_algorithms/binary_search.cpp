@@ -41,7 +41,8 @@ ll Binary_Search(vll &arr, ll value)
     ll low(0), high(sz(arr) - 1);
     while (low <= high)
     {
-        ll mid((low + high) >> 1);
+        // we can use ==> mid = low + (high - low + 1) / 2; it's depends on problem
+        ll mid(low + ((high - low) >> 1));
         if (arr[mid] == value)
             return mid;
         else if (arr[mid] < value)
@@ -56,7 +57,8 @@ ll Binary_Search_Recursive(vll &arr, ll low, ll high, ll value)
 {
     if (high >= low)
     {
-        ll mid((low + high) >> 1);
+
+        ll mid(low + ((high - low) >> 1));
         if (arr[mid] == value)
             return mid;
         if (arr[mid] > value)
