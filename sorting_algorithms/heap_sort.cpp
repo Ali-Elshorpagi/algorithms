@@ -12,24 +12,16 @@ typedef vector<ll> vll;
 #define edl '\n'
 
 /*
- * heapsort is a comparison-based sorting algorithm.
- * Heapsort can be thought of as an improved selection sort:
- * like selection sort, heapsort divides its input into a sorted and an unsorted region,
- * and it iteratively shrinks the unsorted region by extracting the largest element from it
- * and inserting it into the sorted region. Unlike selection sort,
- * heapsort does not waste time with a linear-time scan of the unsorted region;
- * rather, heap sort maintains the unsorted region in a heap data structure to more quickly
- * find the largest element in each step
- *
  * # Complexities
  *
- * Worst-Case complexity    O(N * log(N))
- * Best-Case complexity     O(N * log(N))
+ * Best-Case Time     O(N * log(N))
+ * Worst-Case Time    O(N * log(N))
+ * Worst-Case Space   O(1)
  */
 
 void Heapify(vll &arr, ll n, ll i)
 {
-    ll largest(i), left(2 * i + 1), right(2 * i + 2);
+    ll largest(i), left((i << 1) + 1), right((i << 1) + 2);
     if (left < n && arr[left] > arr[largest])
         largest = left;
     if (right < n && arr[right] > arr[largest])
@@ -44,7 +36,7 @@ void Heapify(vll &arr, ll n, ll i)
 void Heap_Sort(vll &arr)
 {
     ll len(sz(arr));
-    for (ll i(len / 2 - 1); i >= 0; --i)
+    for (ll i((len >> 1) - 1); i >= 0; --i)
         Heapify(arr, len, i);
 
     for (ll j(len - 1); j >= 0; --j)
@@ -58,7 +50,8 @@ int main()
 {
     Mesh_Ali;
     // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
+    freopen("output.txt", "w", stdout);
 
-    return 0;
+    cout << edl << "DONE" << edl;
+    return (0);
 }

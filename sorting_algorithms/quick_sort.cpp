@@ -12,27 +12,11 @@ typedef vector<ll> vll;
 #define edl '\n'
 
 /*
- * Quicksort is an efficient, general-purpose sorting algorithm.
- * it is still a commonly used algorithm for sorting.
- * Overall,it is slightly faster than merge sort and heapsort for randomized data,
- * particularly on larger distributions.
- * Quicksort is a divide-and-conquer algorithm.
- * It works by selecting a 'pivot' element from the array and
- * partitioning the other elements into two sub-arrays,
- * according to whether they are less than or greater than the pivot.
- * For this reason, it is sometimes called partition-exchange sort.
- * The sub-arrays are then sorted recursively. This can be done in-place,
- * requiring small additional amounts of memory to perform the sorting.
- * Quicksort is a comparison sort,
- * meaning that it can sort items of any type for which a "less-than" relation
- * (formally, a total order) is defined.
- * Most implementations of quicksort are not stable,
- * meaning that the relative order of equal sort items is not preserved.
- *
  * # Complexities
  *
- * Worst-Case complexity   O(N²)
- * Best-Case complexity    O(N * log(N))
+ * Best-Case Time     O(N * log(N))
+ * Worst-Case Time    O(N²)
+ * Worst-Case Space   O(N)
  */
 
 ll Partition(vll &arr, ll iBegin, ll jEnd)
@@ -64,7 +48,6 @@ ll Partition(vll &arr, ll iBegin, ll jEnd)
 
 void Quick_Sort(vll &arr, ll low, ll high)
 {
-
     if (low < high)
     {
         ll piv(Partition(arr, low, high));
@@ -77,7 +60,8 @@ int main()
 {
     Mesh_Ali;
     // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
+    freopen("output.txt", "w", stdout);
 
-    return 0;
+    cout << edl << "DONE" << edl;
+    return (0);
 }

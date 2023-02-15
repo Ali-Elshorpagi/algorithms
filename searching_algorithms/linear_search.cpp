@@ -12,16 +12,12 @@ typedef vector<ll> vll;
 #define edl '\n'
 
 /*
- * Linear Search is defined as a sequential search algorithm that starts at one end and goes
- * through each element of a list until the desired element is found,
- * otherwise the search continues till the end of the data set.
- * It is the easiest searching algorithm
-
  * # Complexities
  *
- * Worst-case time complexity	O(N)
- * Best-case space complexity   O(1)
-*/
+ * Best-case Time     O(1)
+ * Worst-case Time    O(N)
+ * Worst-case Space   O(1)
+ */
 
 ll Linear_Search(vll &arr, ll value)
 {
@@ -48,7 +44,8 @@ int main()
 {
     Mesh_Ali;
     // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
+    freopen("output.txt", "w", stdout);
 
-    return 0;
+    cout << edl << "DONE" << edl;
+    return (0);
 }

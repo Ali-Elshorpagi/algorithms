@@ -21,30 +21,11 @@ typedef vector<char> vc;
 #define edl '\n'
 
 /*
- * Bubble sort algorithm is the bubble sorting algorithm. The most important reason
- * for calling the bubble is that the largest number is thrown at the end of this
- * algorithm. This is all about the logic. In each iteration, the largest number is
- * expired and when iterations are completed, the sorting takes place.
- *
- * What is Swap?
- *
- * Swap in the software means that two variables are displaced.
- * An additional variable is required for this operation. x = 5, y = 10.
- * We want x = 10, y = 5. Here we create the most variable to do it.
- * int z;
- * z = x;
- * x = y;
- * y = z;
- *
- * The above process is a typical displacement process.
- * When x assigns the value to x, the old value of x is lost.
- * That's why we created a variable z to create the first value of the value of x,
- * and finally, we have assigned to y
- *
  * # Complexities
  *
- * Worst-Case complexity   O(N²)
- * Best-Case complexity    O(N)
+ * Best-Case Time     O(N)
+ * Worst-Case Time    O(N²)
+ * Worst-Case Space   O(1)
  */
 
 void Bubble_Sort(vll &arr)
@@ -80,7 +61,8 @@ int main()
 {
     Mesh_Ali;
     // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
+    freopen("output.txt", "w", stdout);
 
-    return 0;
+    cout << edl << "DONE" << edl;
+    return (0);
 }
