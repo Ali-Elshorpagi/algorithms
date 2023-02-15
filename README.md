@@ -3,13 +3,13 @@
 * You can also see the [Math Algorithms](https://github.com/Ali-Elshorpagi/math_algorithms)
 
 > **Searching Algorithms**
-  - Binary Search ( ITERATIVE / RECURSIVE )
-  - Linear Search ( ITERATIVE / RECURSIVE )
+  - Binary Search ( Iterative / Recursive )
+  - Linear Search ( Iterative / Recursive )
 
 > **Sorting Algorithms**
-  - Bubble Sort ( ITERATIVE / RECURSIVE )
+  - Bubble Sort ( Iterative / Recursive )
   - Heap Sort
-  - Insertion Sort ( ITERATIVE / RECURSIVE )
+  - Insertion Sort ( Iterative / Recursive )
   - Merge Sort
   - Quick Sort
-  - Selection Sort ( ITERATIVE / RECURSIVE )
+  - Selection Sort ( Iterative / Recursive )
