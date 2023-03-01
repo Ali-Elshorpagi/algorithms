@@ -26,6 +26,8 @@ typedef vector<char> vc;
 
 void Solve()
 {
+    // test functions here;
+    cout << edl << "DONE" << edl;
 }
 
 int main()
@@ -37,5 +39,5 @@ int main()
     // scanf("%d", &tc);
     while (tc--)
         Solve();
-    return 0;
+    return (0);
 }
