@@ -100,14 +100,14 @@ int left_max_1(int arr[], int len)
 void Solve()
 {
     // test functions here;
-    // I'm using macros for test;
+    cout << edl << "DONE" << edl;
 }
 
 int main()
 {
     Mesh_Ali;
-    // freopen("test/input.txt", "r", stdin);
-    freopen("test/output.txt", "w", stdout);
+    // freopen("../test/input.txt", "r", stdin);
+    freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // scanf("%d", &tc);
     while (tc--)
