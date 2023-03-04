@@ -69,6 +69,16 @@ int arrayPairSum(vi &nums) // O(N * log(N))
     return ans;
 }
 
+void wiggleSort(vi &arr) // O(N * log(N))
+{
+    // link : https://leetcode.com/problems/wiggle-sort/
+    // code : leetcode 280
+    sort(all(arr));
+    int len(sz(arr));
+    for (int i(1); i < len - 1; i += 2)
+        swap(arr[i], arr[i + 1]);
+}
+
 void Solve()
 {
     // test functions here;

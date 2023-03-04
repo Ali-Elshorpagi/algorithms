@@ -26,10 +26,6 @@ typedef vector<char> vc;
 
 void Solve()
 {
-    // vi arr{1, 4, 3, 2};
-    vi arr{6, 2, 6, 5, 1, 2};
-    // int res(arrayPairSum(arr));
-    // cout << res << edl;
     // test functions here;
     cout << edl << "DONE" << edl;
 }
