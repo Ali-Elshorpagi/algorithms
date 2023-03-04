@@ -159,6 +159,38 @@ void count_sort_with_string_1(vector<string> &arr)
     }
 }
 
+vi count_sort_v2(const vi &arr)
+{ // this is another version of count sort the above (count_sort_0) is better but isn't stable
+    int len(sz(arr)), max_val(*max_element(all(arr)));
+
+    vi freq(max_val + 1);
+    for (auto &it : arr)
+        ++freq[it];
+
+    for (int i(1); i <= max_val; ++i)
+        freq[i] += freq[i - 1];
+
+    vi result(len);
+    for (int i(len - 1); i >= 0; --i)
+    {
+        result[freq[arr[i]] - 1] = arr[i];
+        --freq[arr[i]];
+    }
+    return result;
+
+    //  1) More memory writes
+    // 	    freq[i] += freq[i - 1];  and freq[arr[i]] -= 1;
+
+    //  2) Bad Locality of reference
+    // 	    Optional reading: https://en.wikipedia.org/wiki/Locality_of_reference
+
+    //  3) More memory vector<int> result(size);
+    // 	    However, this is used to create a stable order algorithm!
+
+    // 	    But a must to process backward
+    // 		    for (int i = len - 1; i >= 0; --i)
+}
+
 void Solve()
 {
     // test functions here;
