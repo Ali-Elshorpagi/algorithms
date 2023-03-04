@@ -18,11 +18,11 @@ typedef vector<char> vc;
 #define cl(v) ((v).clear())
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
-#define fl(i, x, n) for (int i(x); i >= n; --i)
+#define fl(i, x, n) for (int i(x); i > n; --i)
 #define fc(it, v) for (auto &(it) : (v))
 #define sq(x) (x) * (x)
-#define yes cout << "YES\n"
-#define no cout << "NO\n"
+#define yes printf("YES\n")
+#define no printf("NO\n")
 
 void Solve()
 {

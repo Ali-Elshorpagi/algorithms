@@ -18,11 +18,11 @@ typedef vector<char> vc;
 #define cl(v) ((v).clear())
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
-#define fl(i, x, n) for (int i(x); i >= n; --i)
+#define fl(i, x, n) for (int i(x); i > n; --i)
 #define fc(it, v) for (auto &(it) : (v))
 #define sq(x) (x) * (x)
-#define yes cout << "YES\n"
-#define no cout << "NO\n"
+#define yes printf("YES\n")
+#define no printf("NO\n")
 
 int length_3n_plus_1(int n)
 {
@@ -40,7 +40,7 @@ int my_pow(int val, int p = 2)
     return val * my_pow(val, p - 1);
 }
 
-int arr_max(int arr[], int len)
+int arr_max(vi &arr, int len)
 {
     if (len == 1)
         return arr[0];
@@ -48,7 +48,7 @@ int arr_max(int arr[], int len)
     return max(sub_ans, arr[len - 1]);
 }
 
-int arr_sum(int arr[], int len)
+int arr_sum(vi &arr, int len)
 {
     if (len == 1)
         return arr[0];
@@ -56,7 +56,7 @@ int arr_sum(int arr[], int len)
     return sub_ans + arr[len - 1];
 }
 
-double arr_average(double arr[], int len)
+double arr_average(vector<double> &arr, int len)
 {
     if (len == 1)
         return arr[0];
@@ -66,7 +66,7 @@ double arr_average(double arr[], int len)
     return (sub_ans + arr[len - 1]) / len;
 }
 
-void array_increment(int arr[], int len)
+void array_increment(vi &arr, int len)
 {
     if (!len)
         return;
@@ -74,7 +74,7 @@ void array_increment(int arr[], int len)
     arr[len - 1] += len - 1;
 }
 
-void accumulate_arr(int arr[], int len)
+void accumulate_arr(vi &arr, int len)
 {
     if (len == 1)
         return;
@@ -82,7 +82,7 @@ void accumulate_arr(int arr[], int len)
     arr[len - 1] += arr[len - 2];
 }
 
-void left_max_0(int arr[], int len)
+void left_max_0(vi &arr, int len)
 {
     if (len == 1)
         return;
@@ -90,7 +90,7 @@ void left_max_0(int arr[], int len)
     arr[len - 1] = max(arr[len - 1], arr[len - 2]);
 }
 
-int left_max_1(int arr[], int len)
+int left_max_1(vi &arr, int len)
 {
     if (!len)
         return arr[0];

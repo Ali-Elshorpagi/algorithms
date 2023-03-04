@@ -18,7 +18,7 @@ typedef vector<char> vc;
 #define cl(v) ((v).clear())
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
-#define fl(i, x, n) for (int i(x); i >= n; --i)
+#define fl(i, x, n) for (int i(x); i > n; --i)
 #define fc(it, v) for (auto &(it) : (v))
 #define sq(x) (x) * (x)
 #define yes printf("YES\n")
@@ -57,9 +57,6 @@ void Insertion_Sort_Recursive(vi &arr, int size)
 
 void Solve()
 {
-    vi arr{11, 4, 11, 11, 9, 10, 2, 3, 1};
-    Insertion_Sort(arr);
-    fc(it, arr) cout << it << ' ';
     // test functions here;
     cout << edl << "DONE" << edl;
 }
