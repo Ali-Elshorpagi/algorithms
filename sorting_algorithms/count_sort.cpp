@@ -54,14 +54,14 @@ void count_sort_0(vi &arr)
 
 void count_sort_1(vi &arr) // work with negative numbers, but with min trick
 {
-    int mn(*min_element(all(arr)));
+    int mn(*min_element(all(arr))), shift(50000);
 
-    vi freq(50001 - mn); // -50000 <= arr[i] <= 50000
+    vi freq(shift + 1 - mn); // -50000 <= arr[i] <= 50000
     for (auto &it : arr)
         ++freq[it - mn];
 
     int idx(0);
-    for (int i(0); i < (50001 - mn); ++i)
+    for (int i(0); i < (shift + 1 - mn); ++i)
     {
         if (freq[i])
         {
@@ -73,19 +73,19 @@ void count_sort_1(vi &arr) // work with negative numbers, but with min trick
 
 void count_sort_2(vi &arr) // work with negative numbers, but with max trick
 {
-    int mx(*max_element(all(arr)));
+    int mx(*max_element(all(arr))), shift(50000);
 
-    vi freq(50001 + mx); // -50000 <= arr[i] <= 50000;
+    vi freq(shift + mx); // -50000 <= arr[i] <= 50000;
     for (auto &it : arr)
-        ++freq[it + 50000];
+        ++freq[it + shift];
 
     int idx(0);
-    for (int i(0); i < (50001 + mx); ++i)
+    for (int i(0); i < (shift + mx + 1); ++i)
     {
         if (freq[i])
         {
             for (int j(0); j < freq[i]; ++j)
-                arr[idx++] = i - 50000;
+                arr[idx++] = i - shift;
         }
     }
 }
@@ -112,19 +112,48 @@ void count_sort_3(vi &arr) // work with negative numbers
     }
 }
 
-void count_sort_with_string(vector<string> &arr)
+void count_sort_with_string_0(vector<string> &arr)
 { // the sorting depends on first letter in the string and it's stable algorithm
-    vector<vector<string>> letter_to_string(26);
-    int len(sz(arr));
+    int len(sz(arr)), letter_sz(26);
+    vector<vector<string>> letter_to_string(letter_sz);
     for (int i(0); i < len; ++i)
         letter_to_string[arr[i][0] - 'a'].emplace_back(arr[i]);
 
     int idx(0);
-    for (int i(0); i < 26; ++i)
+    for (int i(0); i < letter_sz; ++i)
     {
         if (sz(letter_to_string[i]))
         {
-            for (int j(0); j < sz(letter_to_string[i]); ++j)
+            int size(sz(letter_to_string[i]));
+            for (int j(0); j < size; ++j)
+                arr[idx++] = letter_to_string[i][j];
+        }
+    }
+}
+
+int idx_convertor(const string &str, int letter_sz)
+{
+    assert(str.size() >= 2);
+    int first_letter(str[0] - 'a');
+    int second_letter(str[1] - 'a');
+    return first_letter * letter_sz + second_letter;
+    // like convert from 2D to 1D we use this equation(i * col + j), the same idea here;
+}
+
+void count_sort_with_string_1(vector<string> &arr)
+{ // the sorting depends on first two letters in the string and it's stable algorithm
+    int range(26 * 26), len(sz(arr));
+    vector<vector<string>> letter_to_string(range);
+    for (int i(0); i < len; ++i)
+        letter_to_string[idx_convertor(arr[i], 26)].emplace_back(arr[i]);
+
+    int idx(0);
+    for (int i(0); i < range; ++i)
+    {
+        if (sz(letter_to_string[i]))
+        {
+            int size(sz(letter_to_string[i]));
+            for (int j(0); j < size; ++j)
                 arr[idx++] = letter_to_string[i][j];
         }
     }
