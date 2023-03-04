@@ -46,7 +46,7 @@ void count_sort_0(vi &arr)
             fr(j, 0, freq[i]) arr[idx++] = i;
 }
 
-void count_sort_1(vi &arr) // work with negative numbers
+void count_sort_1(vi &arr) // work with negative numbers, but with min trick
 {
     int mn(*min_element(all(arr))), idx(0);
     vi freq(50001 - mn); // -50000 <= arr[i] <= 50000
@@ -58,7 +58,7 @@ void count_sort_1(vi &arr) // work with negative numbers
     }
 }
 
-vi count_sort_2(vi &nums) // work with negative numbers
+vi count_sort_2(vi &nums) // work with negative numbers, but with max trick
 {
     int mx(*max_element(all(nums))), idx(0);
     vi freq(50001 + mx); // -50000 <= arr[i] <= 50000;
