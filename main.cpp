@@ -24,22 +24,10 @@ typedef vector<char> vc;
 #define yes printf("YES\n")
 #define no printf("NO\n")
 
-void count_sort(vi &arr)
-{
-    int len(sz(arr)), idx(0);
-    vi freq(101);
-    fc(it, arr)++ freq[it];
-    fr(i, 0, 101)
-    {
-        if (freq[i])
-            fr(j, 0, freq[i]) arr[idx++] = i;
-    }
-}
-
 void Solve()
 {
     vi arr{12, 4, 12, 54, 4, 54, 5, 2, 1, 34, 2, 5, 0};
-    count_sort(arr);
+    // insertion_sort(arr);
     fc(it, arr) cout << it << ' ';
     // test functions here;
     cout << edl << "DONE" << edl;

@@ -32,7 +32,7 @@ typedef vector<char> vc;
  * Worst-Case Space    O(1)
  */
 
-void Insertion_Sort(vi &arr)
+void Insertion_Sort_0(vi &arr)
 {
     int key, j, len(sz(arr));
     for (int i(1); i < len; ++i)
@@ -42,6 +42,14 @@ void Insertion_Sort(vi &arr)
             arr[j + 1] = arr[j], --j;
         arr[j + 1] = key;
     }
+}
+
+void Insertion_Sort_1(vi &arr)
+{
+    int len(sz(arr));
+    for (int i(1); i < len; i++)
+        for (int j(i); j - 1 > -1 && arr[j] < arr[j - 1]; --j)
+            swap(arr[j], arr[j - 1]);
 }
 
 void Insertion_Sort_Recursive(vi &arr, int size)
