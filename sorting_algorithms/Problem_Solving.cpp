@@ -58,6 +58,17 @@ int largestPerimeter(vi &nums) // O(N * log(N))
     return 0;
 }
 
+int arrayPairSum(vi &nums) // O(N * log(N))
+{
+    // link : https://leetcode.com/problems/array-partition/
+    // code : leetcode 561
+    sort(all(nums));
+    int ans(0), len(sz(nums));
+    for (int i(0); i < len; i += 2)
+        ans += nums[i];
+    return ans;
+}
+
 void Solve()
 {
     // test functions here;
