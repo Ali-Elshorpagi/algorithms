@@ -58,24 +58,36 @@ void count_sort_1(vi &arr) // work with negative numbers, but with min trick
     }
 }
 
-vi count_sort_2(vi &nums) // work with negative numbers, but with max trick
+void count_sort_2(vi &arr) // work with negative numbers, but with max trick
 {
-    int mx(*max_element(all(nums))), idx(0);
+    int mx(*max_element(all(arr))), idx(0);
     vi freq(50001 + mx); // -50000 <= arr[i] <= 50000;
-    fc(it, nums)++ freq[it + 50000];
+    fc(it, arr)++ freq[it + 50000];
     fr(i, 0, 50001 + mx)
     {
         if (freq[i])
-            fr(j, 0, freq[i]) nums[idx++] = i - 50000;
+            fr(j, 0, freq[i]) arr[idx++] = i - 50000;
     }
-    return nums;
+}
+
+void count_sort_3(vi &arr) // work with negative numbers
+{
+    // -10 ^ 9 <= arr[i] <= 10 ^ 9;
+    // However : max value - min value <= 500;
+    int mn(*min_element(all(arr))), mx(*max_element(all(arr))), idx(0);
+    int sze(mx - mn);
+    vi freq(sze + 1);
+    fc(it, arr)++ freq[it - mn];
+
+    fr(i, 0, sze + 1)
+    {
+        if (freq[i])
+            fr(j, 0, freq[i]) arr[idx++] = i + mn;
+    }
 }
 
 void Solve()
 {
-    vi arr{5, -2, -3, 1};
-    count_sort_1(arr);
-    fc(it, arr) cout << it << ' ';
     // test functions here;
     cout << edl << "DONE" << edl;
 }
