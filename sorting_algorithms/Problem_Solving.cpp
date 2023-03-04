@@ -44,6 +44,20 @@ vvi minimumAbsDifference(vi &arr) // O(N * log(N))
     return ans;
 }
 
+int largestPerimeter(vi &nums) // O(N * log(N))
+{
+    // link : https://leetcode.com/problems/largest-perimeter-triangle/
+    // code : leetcode 976
+    int len(sz(nums));
+    sort(all(nums));
+    fl(i, len - 3, -1)
+    {
+        if (nums[i + 1] + nums[i] > nums[i + 2])
+            return (nums[i + 2] + nums[i] + nums[i + 1]);
+    }
+    return 0;
+}
+
 void Solve()
 {
     // test functions here;

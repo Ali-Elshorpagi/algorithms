@@ -24,23 +24,8 @@ typedef vector<char> vc;
 #define yes printf("YES\n")
 #define no printf("NO\n")
 
-int largestPerimeter(vi &nums) // O(N * log(N))
-{
-    int perimeter(0), len(sz(nums));
-    sort(all(nums));
-    fr(i, 0, len)
-    {
-        if (arr[i + 1] > arr[i])
-    }
-    return perimeter;
-}
-
 void Solve()
 {
-    // vi arr{1, 2, 1, 10}; // 0
-    vi arr{2, 1, 2}; // 5
-    int res(largestPerimeter(arr));
-    cout << res;
     // test functions here;
     cout << edl << "DONE" << edl;
 }
