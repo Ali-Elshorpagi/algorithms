@@ -24,23 +24,30 @@ typedef vector<char> vc;
 #define yes printf("YES\n")
 #define no printf("NO\n")
 
+/*
+ * # Complexities
+ *
+ * Best-Case Time      O(N)
+ * Worst-Case Time     O(N + K), where K is the size of frequency array
+ * Worst-Case Space    O(K)
+ */
+
 void count_sort(vi &arr)
 {
     int len(sz(arr)), idx(0);
-    vi freq(101);
-    fc(it, arr)++ freq[it];
-    fr(i, 0, 101)
-    {
+    int max_val(*max_element(all(arr))); // O(N)
+
+    vi freq(max_val + 1);
+    for (auto &it : arr)
+        ++freq[it];
+
+    for (int i(0); i <= max_val; ++i)
         if (freq[i])
             fr(j, 0, freq[i]) arr[idx++] = i;
-    }
 }
 
 void Solve()
 {
-    vi arr{12, 4, 12, 54, 4, 54, 5, 2, 1, 34, 2, 5, 0};
-    count_sort(arr);
-    fc(it, arr) cout << it << ' ';
     // test functions here;
     cout << edl << "DONE" << edl;
 }
@@ -48,8 +55,8 @@ void Solve()
 int main()
 {
     Mesh_Ali;
-    // freopen("test/input.txt", "r", stdin);
-    freopen("test/output.txt", "w", stdout);
+    // freopen("../test/input.txt", "r", stdin);
+    freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // scanf("%d", &tc);
     while (tc--)
