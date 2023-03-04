@@ -34,39 +34,59 @@ typedef vector<char> vc;
 
 void count_sort_0(vi &arr)
 {
-    int len(sz(arr)), idx(0);
+    int len(sz(arr));
     int max_val(*max_element(all(arr))); // O(N)
 
     vi freq(max_val + 1);
     for (auto &it : arr)
         ++freq[it];
 
+    int idx(0);
     for (int i(0); i <= max_val; ++i)
+    {
         if (freq[i])
-            fr(j, 0, freq[i]) arr[idx++] = i;
+        {
+            for (int j(0); j < freq[i]; ++j)
+                arr[idx++] = i;
+        }
+    }
 }
 
 void count_sort_1(vi &arr) // work with negative numbers, but with min trick
 {
-    int mn(*min_element(all(arr))), idx(0);
+    int mn(*min_element(all(arr)));
+
     vi freq(50001 - mn); // -50000 <= arr[i] <= 50000
-    fc(it, arr)++ freq[it - mn];
-    fr(i, 0, 50001 - mn)
+    for (auto &it : arr)
+        ++freq[it - mn];
+
+    int idx(0);
+    for (int i(0); i < (50001 - mn); ++i)
     {
         if (freq[i])
-            fr(j, 0, freq[i]) arr[idx++] = i + mn;
+        {
+            for (int j(0); j < freq[i]; ++j)
+                arr[idx++] = i + mn;
+        }
     }
 }
 
 void count_sort_2(vi &arr) // work with negative numbers, but with max trick
 {
-    int mx(*max_element(all(arr))), idx(0);
+    int mx(*max_element(all(arr)));
+
     vi freq(50001 + mx); // -50000 <= arr[i] <= 50000;
-    fc(it, arr)++ freq[it + 50000];
-    fr(i, 0, 50001 + mx)
+    for (auto &it : arr)
+        ++freq[it + 50000];
+
+    int idx(0);
+    for (int i(0); i < (50001 + mx); ++i)
     {
         if (freq[i])
-            fr(j, 0, freq[i]) arr[idx++] = i - 50000;
+        {
+            for (int j(0); j < freq[i]; ++j)
+                arr[idx++] = i - 50000;
+        }
     }
 }
 
@@ -74,15 +94,39 @@ void count_sort_3(vi &arr) // work with negative numbers
 {
     // -10 ^ 9 <= arr[i] <= 10 ^ 9;
     // However : max value - min value <= 500;
-    int mn(*min_element(all(arr))), mx(*max_element(all(arr))), idx(0);
+    int mn(*min_element(all(arr))), mx(*max_element(all(arr)));
     int sze(mx - mn);
-    vi freq(sze + 1);
-    fc(it, arr)++ freq[it - mn];
 
-    fr(i, 0, sze + 1)
+    vi freq(sze + 1);
+    for (auto &it : arr)
+        ++freq[it - mn];
+
+    int idx(0);
+    for (int i(0); i <= sze; ++i)
     {
         if (freq[i])
-            fr(j, 0, freq[i]) arr[idx++] = i + mn;
+        {
+            for (int j(0); j < freq[i]; ++j)
+                arr[idx++] = i + mn;
+        }
+    }
+}
+
+void count_sort_with_string(vector<string> &arr)
+{ // the sorting depends on first letter in the string and it's stable algorithm
+    vector<vector<string>> letter_to_string(26);
+    int len(sz(arr));
+    for (int i(0); i < len; ++i)
+        letter_to_string[arr[i][0] - 'a'].emplace_back(arr[i]);
+
+    int idx(0);
+    for (int i(0); i < 26; ++i)
+    {
+        if (sz(letter_to_string[i]))
+        {
+            for (int j(0); j < sz(letter_to_string[i]); ++j)
+                arr[idx++] = letter_to_string[i][j];
+        }
     }
 }
 
