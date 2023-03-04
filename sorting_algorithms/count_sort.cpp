@@ -32,7 +32,7 @@ typedef vector<char> vc;
  * Worst-Case Space    O(K)
  */
 
-void count_sort(vi &arr)
+void count_sort_0(vi &arr)
 {
     int len(sz(arr)), idx(0);
     int max_val(*max_element(all(arr))); // O(N)
@@ -46,8 +46,36 @@ void count_sort(vi &arr)
             fr(j, 0, freq[i]) arr[idx++] = i;
 }
 
+void count_sort_1(vi &arr) // work with negative numbers
+{
+    int mn(*min_element(all(arr))), idx(0);
+    vi freq(50001 - mn); // -50000 <= arr[i] <= 50000
+    fc(it, arr)++ freq[it - mn];
+    fr(i, 0, 50001 - mn)
+    {
+        if (freq[i])
+            fr(j, 0, freq[i]) arr[idx++] = i + mn;
+    }
+}
+
+vi count_sort_2(vi &nums) // work with negative numbers
+{
+    int mx(*max_element(all(nums))), idx(0);
+    vi freq(50001 + mx); // -50000 <= arr[i] <= 50000;
+    fc(it, nums)++ freq[it + 50000];
+    fr(i, 0, 50001 + mx)
+    {
+        if (freq[i])
+            fr(j, 0, freq[i]) nums[idx++] = i - 50000;
+    }
+    return nums;
+}
+
 void Solve()
 {
+    vi arr{5, -2, -3, 1};
+    count_sort_1(arr);
+    fc(it, arr) cout << it << ' ';
     // test functions here;
     cout << edl << "DONE" << edl;
 }

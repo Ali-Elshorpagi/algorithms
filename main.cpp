@@ -26,8 +26,8 @@ typedef vector<char> vc;
 
 void Solve()
 {
-    vi arr{12, 4, 12, 54, 4, 54, 5, 2, 1, 34, 2, 5, 0};
-    // insertion_sort(arr);
+    vi arr{5, 2, 3, 1};
+    // vi ans = sortArray_9(arr);
     fc(it, arr) cout << it << ' ';
     // test functions here;
     cout << edl << "DONE" << edl;
