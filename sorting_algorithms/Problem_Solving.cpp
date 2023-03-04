@@ -24,23 +24,28 @@ typedef vector<char> vc;
 #define yes printf("YES\n")
 #define no printf("NO\n")
 
-int largestPerimeter(vi &nums) // O(N * log(N))
+vvi minimumAbsDifference(vi &arr) // O(N * log(N))
 {
-    int perimeter(0), len(sz(nums));
-    sort(all(nums));
-    fr(i, 0, len)
+    // link : https://leetcode.com/problems/minimum-absolute-difference/
+    // code : leetcode 1200
+    sort(all(arr));
+    int abs_diff(arr[1] - arr[0]), len(sz(arr));
+    fr(i, 1, len)
     {
-        if (arr[i + 1] > arr[i])
+        if (arr[i] - arr[i - 1] < abs_diff)
+            abs_diff = arr[i] - arr[i - 1];
     }
-    return perimeter;
+    vvi ans;
+    fr(i, 0, len - 1)
+    {
+        if (arr[i + 1] - arr[i] == abs_diff)
+            ans.push_back({arr[i], arr[i + 1]});
+    }
+    return ans;
 }
 
 void Solve()
 {
-    // vi arr{1, 2, 1, 10}; // 0
-    vi arr{2, 1, 2}; // 5
-    int res(largestPerimeter(arr));
-    cout << res;
     // test functions here;
     cout << edl << "DONE" << edl;
 }
@@ -48,11 +53,11 @@ void Solve()
 int main()
 {
     Mesh_Ali;
-    // freopen("test/input.txt", "r", stdin);
-    freopen("test/output.txt", "w", stdout);
+    // freopen("../test/input.txt", "r", stdin);
+    freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // scanf("%d", &tc);
     while (tc--)
         Solve();
-    return (0);
+    return 0;
 }
