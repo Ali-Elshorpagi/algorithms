@@ -91,8 +91,29 @@ void wiggleSort_1(vi &arr) // O(N) time, O(1) space
     }
 }
 
+int eliminateMaximum(vi &dist, vi &speed) // O(N * log(N)) time, O(N) space
+{
+    // link : https://leetcode.com/problems/eliminate-maximum-number-of-monsters/
+    // code : leetcode 1921
+    int len(sz(dist));
+    vector<double> arr(len);
+    fr(i, 0, len)
+        arr[i] = ceil((double)dist[i] / speed[i]);
+    sort(all(arr));
+    int cnt(0);
+    fr(i, 0, len)
+    {
+        if (i >= arr[i]) // i here equal time
+            break;
+        ++cnt;
+    }
+    return cnt;
+}
+
 int largestSumAfterKNegations_0(vi &nums, int k) // O(N * log(N)) time, O(1) space
 {
+    // link : https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/
+    // code : leetcode 1005
     sort(all(nums));
     int len(sz(nums)), sum{}, i{};
     while (i < len)
@@ -113,6 +134,8 @@ int largestSumAfterKNegations_0(vi &nums, int k) // O(N * log(N)) time, O(1) spa
 
 int largestSumAfterKNegations_1(vi &nums, int k) // O(N * log(N)) time, O(1) space, but the above is better
 {
+    // link : https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/
+    // code : leetcode 1005
     sort(all(nums));
     int len(sz(nums)), sum{}, mn{INT_MAX};
     fr(i, 0, len)

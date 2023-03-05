@@ -24,35 +24,8 @@ typedef vector<char> vc;
 #define yes printf("YES\n")
 #define no printf("NO\n")
 
-int largestSumAfterKNegations(vector<int> &nums, int k)
-{
-    sort(nums.begin(), nums.end());
-    int mn = INT_MAX, sum = 0;
-
-    for (int i = 0; i < (int)nums.size(); i++)
-    {
-        if (k && nums[i] < 0)
-            k -= 1, nums[i] *= -1;
-        sum += nums[i]; // sum updated array
-        mn = min(mn, nums[i]);
-    }
-    if (k % 2) // Odd K: flip another number: the min
-        sum -= 2 * mn;
-    return sum;
-}
-
 void Solve()
 {
-    // vi arr{4, 2, 3};
-    // int k(1); // 5
-    // vi arr{3, -1, 0, 2};
-    // int k(3); // 6
-    vi arr{2, -3, -1, 5, -4};
-    int k(2); // 13
-    // vi arr{-2, 9, 9, 8, 4};
-    // int k(5); // 32
-    int sum(largestSumAfterKNegations(arr, k));
-    cout << sum << edl;
     // test functions here;
     cout << edl << "DONE" << edl;
 }
