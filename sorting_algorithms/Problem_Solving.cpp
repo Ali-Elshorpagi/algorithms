@@ -24,7 +24,7 @@ typedef vector<char> vc;
 #define yes printf("YES\n")
 #define no printf("NO\n")
 
-vvi minimumAbsDifference(vi &arr) // O(N * log(N))
+vvi minimumAbsDifference(vi &arr) // O(N * log(N)) time, O(1) space
 {
     // link : https://leetcode.com/problems/minimum-absolute-difference/
     // code : leetcode 1200
@@ -44,7 +44,7 @@ vvi minimumAbsDifference(vi &arr) // O(N * log(N))
     return ans;
 }
 
-int largestPerimeter(vi &nums) // O(N * log(N))
+int largestPerimeter(vi &nums) // O(N * log(N)) time, O(1) space
 {
     // link : https://leetcode.com/problems/largest-perimeter-triangle/
     // code : leetcode 976
@@ -58,7 +58,7 @@ int largestPerimeter(vi &nums) // O(N * log(N))
     return 0;
 }
 
-int arrayPairSum(vi &nums) // O(N * log(N))
+int arrayPairSum(vi &nums) // O(N * log(N)) time, O(1) space
 {
     // link : https://leetcode.com/problems/array-partition/
     // code : leetcode 561
@@ -69,7 +69,7 @@ int arrayPairSum(vi &nums) // O(N * log(N))
     return ans;
 }
 
-void wiggleSort(vi &arr) // O(N * log(N))
+void wiggleSort_0(vi &arr) // O(N * log(N)) time, O(1) space
 {
     // link : https://leetcode.com/problems/wiggle-sort/
     // code : leetcode 280
@@ -77,6 +77,54 @@ void wiggleSort(vi &arr) // O(N * log(N))
     int len(sz(arr));
     for (int i(1); i < len - 1; i += 2)
         swap(arr[i], arr[i + 1]);
+}
+
+void wiggleSort_1(vi &arr) // O(N) time, O(1) space
+{
+    // link : https://leetcode.com/problems/wiggle-sort/
+    // code : leetcode 280
+    int len(sz(arr));
+    fr(i, 0, len - 1)
+    {
+        if ((i % 2 == 0 && arr[i] > arr[i + 1]) || (i % 2 != 0 && arr[i] < arr[i + 1]))
+            swap(arr[i], arr[i + 1]);
+    }
+}
+
+int largestSumAfterKNegations_0(vi &nums, int k) // O(N * log(N)) time, O(1) space
+{
+    sort(all(nums));
+    int len(sz(nums)), sum{}, i{};
+    while (i < len)
+    {
+        if (nums[i] >= 0 || !k)
+            break;
+        nums[i] = -nums[i];
+        ++i, --k;
+    }
+    if (k & 1)
+    {
+        sort(all(nums));
+        nums[0] = -nums[0];
+    }
+    fc(it, nums) sum += it;
+    return sum;
+}
+
+int largestSumAfterKNegations_1(vi &nums, int k) // O(N * log(N)) time, O(1) space, but the above is better
+{
+    sort(all(nums));
+    int len(sz(nums)), sum{}, mn{INT_MAX};
+    fr(i, 0, len)
+    {
+        if (k && nums[i] < 0)
+            --k, nums[i] = -nums[i];
+        sum += nums[i];
+        mn = min(mn, nums[i]);
+    }
+    if (k & 1) // Odd K: flip another number: the min
+        sum -= 2 * mn;
+    return sum;
 }
 
 void Solve()
