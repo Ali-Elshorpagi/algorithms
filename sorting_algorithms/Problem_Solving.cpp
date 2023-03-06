@@ -150,6 +150,59 @@ int largestSumAfterKNegations_1(vi &nums, int k) // O(N * log(N)) time, O(1) spa
     return sum;
 }
 
+int findUnsortedSubarray_0(vi &nums) // O(N * log(N)) time, O(N) space
+{
+    // link : https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
+    // code : leetcode 581
+    int x(0), y(0), len(sz(nums));
+    vi arr = nums;
+    sort(all(arr));
+    if (arr == nums)
+        return 0;
+    fr(i, 0, len)
+    {
+        if (nums[i] != arr[i])
+        {
+            x = i;
+            break;
+        }
+    }
+    fl(j, len - 1, -1)
+    {
+        if (nums[j] != arr[j])
+        {
+            y = j;
+            break;
+        }
+    }
+    return (y - x) + 1;
+}
+
+int findUnsortedSubarray_1(vi &nums) // O(n) time, O(1) space
+{
+    // link : https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
+    // code : leetcode 581
+    int len(sz(nums)), left(-1), right(-1), mx(INT_MIN), mn(INT_MAX);
+
+    // find the leftmost index of the unsorted subarray
+    fr(i, 0, len)
+    {
+        if (nums[i] < mx)
+            right = i;
+        else
+            mx = nums[i];
+    }
+    // find the rightmost index of the unsorted subarray
+    fl(j, len - 1, -1)
+    {
+        if (nums[j] > mn)
+            left = j;
+        else
+            mn = nums[j];
+    }
+    return (left == -1 && right == -1) ? 0 : (right - left) + 1;
+}
+
 void Solve()
 {
     // test functions here;

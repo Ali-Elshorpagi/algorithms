@@ -50,35 +50,35 @@ int findUnsortedSubarray_0(vi &nums) // O(N * log(N)) time, O(N) space
     return (y - x) + 1;
 }
 
-//(int nums[])
-int findUnsortedSubarray_1(vi &nums) // O(N) time, O(1) space
+int findUnsortedSubarray_1(vi &nums) // O(n) time, O(1) space
 {
-    // nums{1, 2, 3, 4};
-    int flag1(0), flag2(0), left(0), right(sz(nums) - 1), len(sz(nums));
-    // int flag1(0), flag2(0), left(0), right(4), len(5);
-    while (left != right && (!flag1 || !flag2))
-    {
-        if (nums[left] <= nums[left + 1] && !flag1)
-            ++left;
-        else
-            flag1 = 1;
+    int len(sz(nums)), left(-1), right(-1);
+    int mx(INT_MIN), mn(INT_MAX);
 
-        if (nums[right] > nums[right - 1] && !flag2)
-            --right;
+    // find the leftmost index of the unsorted subarray
+    fr(i, 0, len)
+    {
+        if (nums[i] < mx)
+            right = i;
         else
-            flag2 = 1;
-        if (left >= right)
-            break;
+            mx = nums[i];
     }
-    return (flag1 && flag2 ? (right - left) + 1 : 0);
+
+    // find the rightmost index of the unsorted subarray
+    fl(j, len - 1, -1)
+    {
+        if (nums[j] > mn)
+            left = j;
+        else
+            mn = nums[j];
+    }
+
+    return (left == -1 && right == -1) ? 0 : (right - left) + 1;
 }
 
 void Solve()
 {
-    // vi arr{2, 6, 4, 8, 10, 9, 15}; // 5
-    // vi arr{1, 2, 3, 4}; // 0
-    vi arr{1, 3, 2, 4, 5}; // 2
-    // vi arr{1, 3, 2, 2, 2}; // 4
+    vi arr{10, 20, 30, 17, 40, 5, 50, 60};
     int ans(findUnsortedSubarray_1(arr));
     cout << ans << edl;
     // test functions here;
