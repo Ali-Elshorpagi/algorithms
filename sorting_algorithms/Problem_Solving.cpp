@@ -203,6 +203,34 @@ int findUnsortedSubarray_1(vi &nums) // O(n) time, O(1) space
     return (left == -1 && right == -1) ? 0 : (right - left) + 1;
 }
 
+int reductionOperations(vi &nums) // O(N * log(N)), O(1) space
+{
+    // link : https://leetcode.com/problems/reduction-operations-to-make-the-array-elements-equal/
+    // code : leetcode 1887
+    sort(all(nums));
+    int len(sz(nums)), cnt(0);
+    fr(i, 1, len)
+    {
+        if (nums[i] != nums[i - 1])
+            cnt += len - i; // by simulation
+    }
+    return cnt;
+    // idxs -> 0 1 2 3 4 , len = 5
+    // nums =  1 2 3 4 5
+    // operations :
+    //         1 2 3 4 4
+    //         1 2 3 3 4
+    //         1 2 3 3 3
+    //         1 2 2 3 3
+    //         1 2 2 2 3
+    //         1 2 2 2 2
+    //         1 1 2 2 2
+    //         1 1 1 2 2
+    //         1 1 1 1 2
+    //         1 1 1 1 1
+    // think about how much time numbers still the max;
+}
+
 void Solve()
 {
     // test functions here;
