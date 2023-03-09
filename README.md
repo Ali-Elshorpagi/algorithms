@@ -21,8 +21,6 @@
    - Count Sort
    - Heap Sort
    - Insertion Sort ( Iterative / Recursive )
-   - Merge Sort
-   - Quick Sort
    - Selection Sort ( Iterative / Recursive )
   
 

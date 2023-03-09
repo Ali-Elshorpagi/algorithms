@@ -24,11 +24,6 @@ typedef vector<char> vc;
 #define yes printf("YES\n")
 #define no printf("NO\n")
 
-vi searchRange(vi &nums, int target)
-{
-    return vi{-1, -1};
-}
-
 void Solve()
 {
     // test functions here;
@@ -38,11 +33,11 @@ void Solve()
 int main()
 {
     Mesh_Ali;
-    // freopen("test/input.txt", "r", stdin);
-    freopen("test/output.txt", "w", stdout);
+    // freopen("../test/input.txt", "r", stdin);
+    freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // scanf("%d", &tc);
     while (tc--)
         Solve();
-    return (0);
+    return 0;
 }
