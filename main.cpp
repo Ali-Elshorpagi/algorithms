@@ -24,30 +24,8 @@ typedef vector<char> vc;
 #define yes printf("YES\n")
 #define no printf("NO\n")
 
-vi searchRange(vi &nums, int target) // O(log(n))
-{
-    int left(0), right(sz(nums) - 1), flag(0);
-    vi ans;
-    while (left <= right)
-    {
-        int mid(left + ((right - left) >> 1));
-        if (nums[mid] == target)
-            ans.emplace_back(mid), flag = 1;
-        else if (nums[mid] > target)
-            right = mid - 1;
-        else
-            left = mid + 1;
-    }
-    return (flag ? vi{*min_element(all(ans)), *max_element(all(ans))} : vi{-1, -1});
-    // return vi{-1, -1};
-}
-
 void Solve()
 {
-    vi arr{5, 7, 7, 8, 8, 10};
-    int val(8);
-    vi res = searchRange(arr, val);
-    fc(it, res) cout << it << ' ';
     // test functions here;
     cout << edl << "DONE" << edl;
 }
