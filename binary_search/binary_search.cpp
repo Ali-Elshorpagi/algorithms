@@ -24,18 +24,41 @@ typedef vector<char> vc;
 #define yes printf("YES\n")
 #define no printf("NO\n")
 
-int search(vi &nums, int target)
+/*
+ * # Complexities
+ *
+ * Best-Case Time     O(1)
+ * Worst-Case Time    O(log N)
+ * Worst-Case Space   O(1), but in recursive implementation will be O(log N)
+ */
+
+ll Binary_Search(vi &arr, int value)
 {
-    int left(0), right(sz(nums) - 1);
+    int left(0), right(sz(arr) - 1);
     while (left <= right)
     {
+        // we can use ==> mid = left + (right - left + 1) / 2; it's depends on problem
         int mid(left + ((right - left) >> 1));
-        if (nums[mid] == target)
+        if (arr[mid] == value)
             return mid;
-        else if (nums[mid] > target)
-            right = mid - 1;
-        else
+        else if (arr[mid] < value)
             left = mid + 1;
+        else
+            right = mid - 1;
+    }
+    return -1;
+}
+
+int Binary_Search_Recursive(vi &arr, int left, int right, int value)
+{
+    if (right >= left)
+    {
+        int mid(left + ((right - left) >> 1));
+        if (arr[mid] == value)
+            return mid;
+        if (arr[mid] > value)
+            return Binary_Search_Recursive(arr, left, mid - 1, value);
+        return Binary_Search_Recursive(arr, mid + 1, right, value);
     }
     return -1;
 }
@@ -49,8 +72,8 @@ void Solve()
 int main()
 {
     Mesh_Ali;
-    // freopen("test/input.txt", "r", stdin);
-    freopen("test/output.txt", "w", stdout);
+    // freopen("../test/input.txt", "r", stdin);
+    freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // scanf("%d", &tc);
     while (tc--)
