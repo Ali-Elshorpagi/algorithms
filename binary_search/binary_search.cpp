@@ -32,7 +32,7 @@ typedef vector<char> vc;
  * Worst-Case Space   O(1), but in recursive implementation will be O(log N)
  */
 
-ll Binary_Search(vi &arr, int value)
+int Binary_Search(vi &arr, int value)
 {
     int left(0), right(sz(arr) - 1);
     while (left <= right)
