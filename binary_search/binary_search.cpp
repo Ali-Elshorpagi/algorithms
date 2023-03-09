@@ -41,10 +41,10 @@ int Binary_Search(vi &arr, int value)
         int mid(left + ((right - left) >> 1));
         if (arr[mid] == value)
             return mid;
-        else if (arr[mid] < value)
-            left = mid + 1;
-        else
+        else if (arr[mid] > value)
             right = mid - 1;
+        else
+            left = mid + 1;
     }
     return -1;
 }

@@ -24,6 +24,28 @@ typedef vector<char> vc;
 #define yes printf("YES\n")
 #define no printf("NO\n")
 
+vi searchRange_0(vi &nums, int target)
+{
+    // link : https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+    // code : leetcode 34
+    auto ans(equal_range(all(nums), target));
+    int left(ans.first - nums.begin()), right(ans.second - nums.begin());
+    return (binary_search(all(nums), target) ? vi{left, right - 1} : vi{-1, -1});
+}
+
+vi searchRange_1(vi &nums, int target)
+{
+    // link : https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+    // code : leetcode 34
+    auto ans(equal_range(all(nums), target));
+    if (ans.first == nums.end())
+        return {-1, -1};
+    int left(ans.first - nums.begin()), right(ans.second - nums.begin());
+    if (nums[left] != target)
+        return {-1, -1};
+    return {left, right - 1};
+}
+
 void Solve()
 {
     // test functions here;
