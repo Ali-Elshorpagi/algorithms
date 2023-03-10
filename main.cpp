@@ -24,8 +24,21 @@ typedef vector<char> vc;
 #define yes printf("YES\n")
 #define no printf("NO\n")
 
+int triangleNumber(vi &nums)
+{
+    int cnt(0);
+    sort(all(nums));
+
+    return cnt;
+}
+
 void Solve()
 {
+    vi arr{2, 2, 3, 4}; // 3
+    // vi arr{4, 2, 3, 4}; // 4
+
+    int ans(triangleNumber(arr));
+    cout << ans << edl;
     // test functions here;
     cout << edl << "DONE" << edl;
 }

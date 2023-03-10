@@ -246,5 +246,5 @@ int main()
     // scanf("%d", &tc);
     while (tc--)
         Solve();
-    return 0;
+    return (0);
 }
