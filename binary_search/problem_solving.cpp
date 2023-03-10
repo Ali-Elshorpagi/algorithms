@@ -78,6 +78,76 @@ vi searchRange_2(vi &nums, int target) // O(log(n)), O(1) space
     return {first_idx, last_idx};
 }
 
+vi findRightInterval_0(vvi &intervals) // O(N * log(N)) time, O(N) space
+{
+    // link : https://leetcode.com/problems/find-right-interval/
+    // code : leetcode 436
+    vpii startings;
+    int len(sz(intervals));
+    fr(i, 0, len)
+        startings.push_back({intervals[i][0], i}); // push the start and his idx;
+    sort(all(startings));                          // array of startings;
+    vi ans(len, -1);
+    fr(i, 0, len)
+    {
+        int left(0), right(sz(startings) - 1), position(-1), key(intervals[i][1]);
+        while (left <= right)
+        {
+            int mid(left + ((right - left) >> 1));
+            if (startings[mid].first < key)
+                left = mid + 1;
+            else if (startings[mid].first >= key) // cus we search for greater than or equal val;
+                position = mid, right = mid - 1;
+        }
+        if (position != -1)
+            ans[i] = startings[position].second;
+    }
+    return ans;
+}
+
+vi findRightInterval_1(vvi &intervals) // O(N * log(N)) time, O(N) space
+{
+    // link : https://leetcode.com/problems/find-right-interval/
+    // code : leetcode 436
+    int len(sz(intervals));
+    vpii startings;
+    fr(i, 0, len)
+        startings.push_back({intervals[i][0], i});
+    sort(all(startings));
+    vi ans(len, -1);
+    fr(i, 0, len)
+    {
+        pii val{intervals[i][1], 0};
+        auto it(lower_bound(all(startings), val));
+        if (it != startings.end())
+        {
+            int idx(it - startings.begin());
+            ans[i] = startings[idx].second;
+        }
+    }
+    return ans;
+}
+
+vi findRightInterval_2(vvi &intervals) // O(N * log(N)) time, O(N) space
+{
+    // this code is only for cus the input numbers are unique;
+    // link : https://leetcode.com/problems/find-right-interval/
+    // code : leetcode 436
+    map<int, int> start_to_idx;
+    int len(sz(intervals));
+    fr(i, 0, len)
+        start_to_idx[intervals[i][0]] = i;
+
+    vi ans(len, -1);
+    fr(i, 0, len)
+    {
+        auto it(start_to_idx.lower_bound(intervals[i][1]));
+        if (it != start_to_idx.end())
+            ans[i] = it->second;
+    }
+    return ans;
+}
+
 void Solve()
 {
     // test functions here;
