@@ -22,6 +22,8 @@
    - Heap Sort
    - Insertion Sort ( Iterative / Recursive )
    - Selection Sort ( Iterative / Recursive )
+   
+   > **Binary Search**
   
 
     
