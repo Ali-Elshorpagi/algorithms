@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -21,11 +23,36 @@ typedef vector<char> vc;
 #define fl(i, x, n) for (int i(x); i > n; --i)
 #define fc(it, v) for (auto &(it) : (v))
 #define sq(x) (x) * (x)
-#define yes printf("YES\n")
-#define no printf("NO\n")
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
+
+bool possible(int n, long long rows)
+{
+    long sum = (rows * (rows + 1)) / 2;
+    return n >= sum;
+}
+
+int arrangeCoins(int n) // O(log(N)) time, O(1) space
+{
+    // 1 + 2 + 3 + 4 + ... + X = N;
+    // (1 + X) * (X / 2) = N;
+    ll left(0), right(n), ans(0);
+    while (left <= right)
+    {
+        ll mid(left + ((right - left) >> 1));
+        ll sum((mid * (mid + 1)) >> 1); // the sum formula
+        if (n >= sum)
+            ans = mid, left = mid + 1;
+        else
+            right = mid - 1;
+    }
+    return ans;
+}
 
 void Solve()
 {
+    int ans(arrangeCoins(29));
+    cout << ans << edl;
     // test functions here;
     cout << edl << "DONE" << edl;
 }

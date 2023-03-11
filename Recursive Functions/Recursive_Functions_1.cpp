@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -21,8 +22,8 @@ typedef vector<char> vc;
 #define fl(i, x, n) for (int i(x); i > n; --i)
 #define fc(it, v) for (auto &(it) : (v))
 #define sq(x) (x) * (x)
-#define yes printf("YES\n")
-#define no printf("NO\n")
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
 
 void right_max_0(int arr[], int len, int str = 0)
 {

@@ -1,4 +1,8 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <map>
+#include <math.h>
 
 using namespace std;
 
@@ -21,8 +25,8 @@ typedef vector<char> vc;
 #define fl(i, x, n) for (int i(x); i > n; --i)
 #define fc(it, v) for (auto &(it) : (v))
 #define sq(x) (x) * (x)
-#define yes printf("YES\n")
-#define no printf("NO\n")
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
 
 vi searchRange_0(vi &nums, int target) // O(log(n)), O(1) space
 {
@@ -192,6 +196,39 @@ int triangleNumber_1(vi &nums) // O(N^2 * log(N)) time, O(1) space
         }
     }
     return cnt;
+}
+
+int arrangeCoins_0(int n) // O(log(N)) time, O(1) space
+{
+    // link : https://leetcode.com/problems/arranging-coins/
+    // code : leetcode 441
+    // 1 + 2 + 3 + 4 + ... + X = N;
+    // (1 + X) * (X / 2) = N;
+    // (1 + X) * X = 2 * N;
+    // X^2 + X = 2 * N;
+    // X^2 + X + 0.25 = 2 * N + 0.25;
+    // (X + 0.5)^2 = 2 * N + 0.25;
+    // X = sqrt(2 * N + 0.25) - 0.5;
+    return floor(sqrt((ll)2 * n + 0.25) - 0.5);
+}
+
+int arrangeCoins_1(int n) // O(log(N)) time, O(1) space
+{
+    // link : https://leetcode.com/problems/arranging-coins/
+    // code : leetcode 441
+    // 1 + 2 + 3 + 4 + ... + X = N;
+    // ((1 + X) * X) / 2 = N;
+    ll left(0), right(n), ans(0);
+    while (left <= right)
+    {
+        ll mid(left + ((right - left) >> 1));
+        ll sum((mid * (mid + 1)) >> 1); // the sum formula
+        if (n >= sum)
+            ans = mid, left = mid + 1;
+        else
+            right = mid - 1;
+    }
+    return ans;
 }
 
 void Solve()

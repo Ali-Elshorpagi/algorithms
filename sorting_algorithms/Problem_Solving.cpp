@@ -1,4 +1,7 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <math.h>
 
 using namespace std;
 
@@ -21,8 +24,8 @@ typedef vector<char> vc;
 #define fl(i, x, n) for (int i(x); i > n; --i)
 #define fc(it, v) for (auto &(it) : (v))
 #define sq(x) (x) * (x)
-#define yes printf("YES\n")
-#define no printf("NO\n")
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
 
 vvi minimumAbsDifference(vi &arr) // O(N * log(N)) time, O(1) space
 {
