@@ -96,7 +96,7 @@ vi findRightInterval_0(vvi &intervals) // O(N * log(N)) time, O(N) space
             int mid(left + ((right - left) >> 1));
             if (startings[mid].first < key)
                 left = mid + 1;
-            else if (startings[mid].first >= key) // cus we search for greater than or equal val;
+            else if (startings[mid].first >= key) // >= cus we search for greater than or equal val;
                 position = mid, right = mid - 1;
         }
         if (position != -1)
@@ -146,6 +146,52 @@ vi findRightInterval_2(vvi &intervals) // O(N * log(N)) time, O(N) space
             ans[i] = it->second;
     }
     return ans;
+}
+
+int triangleNumber_0(vi &nums) // O(N^2) time, O(1) space
+{
+    // link : https://leetcode.com/problems/valid-triangle-number/
+    // code : leetcode 611
+    int cnt(0), len(sz(nums));
+    sort(all(nums));
+    fr(i, 0, len - 2)
+    {
+        int k(i + 2);
+        for (int j(i + 1); j < len - 1 && nums[i] != 0; ++j)
+        {
+            while (k < len && nums[i] + nums[j] > nums[k])
+                ++k;
+            cnt += k - j - 1;
+        }
+    }
+    return cnt;
+}
+
+int triangleNumber_1(vi &nums) // O(N^2 * log(N)) time, O(1) space
+{
+    // link : https://leetcode.com/problems/valid-triangle-number/
+    // code : leetcode 611
+    int cnt(0), len(sz(nums));
+    sort(all(nums));
+    fr(i, 0, len - 2)
+    {
+        int k(i + 2);
+        for (int j(i + 1); j < len - 1 && nums[i] != 0; ++j)
+        {
+            int left(k), right(len - 1), val(nums[i] + nums[j]), idx(len);
+            while (left <= right)
+            {
+                int mid(left + ((right - left) >> 1));
+                if (nums[mid] >= val)
+                    idx = mid, right = mid - 1;
+                else
+                    left = mid + 1;
+            }
+            // All values starting from idx are invalid
+            cnt += idx - j - 1; // The values between j and (idx - 1) are the possible ones
+        }
+    }
+    return cnt;
 }
 
 void Solve()
