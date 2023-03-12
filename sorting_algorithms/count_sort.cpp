@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <cassert>
 
 using namespace std;
 
@@ -134,7 +136,7 @@ void count_sort_with_string_0(vector<string> &arr)
 
 int idx_convertor(const string &str, int letter_sz)
 {
-    assert(str.size() >= 2);
+    assert(str.size() > 1);
     int first_letter(str[0] - 'a');
     int second_letter(str[1] - 'a');
     return first_letter * letter_sz + second_letter;

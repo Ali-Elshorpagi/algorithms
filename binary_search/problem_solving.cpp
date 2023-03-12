@@ -212,21 +212,50 @@ int arrangeCoins_0(int n) // O(log(N)) time, O(1) space
     return floor(sqrt((ll)2 * n + 0.25) - 0.5);
 }
 
+bool possible_0(int n, ll rows)
+{
+    ll sum((rows * (rows + 1)) >> 1); // the sum formula
+    return n >= sum;
+}
+
 int arrangeCoins_1(int n) // O(log(N)) time, O(1) space
 {
     // link : https://leetcode.com/problems/arranging-coins/
     // code : leetcode 441
     // 1 + 2 + 3 + 4 + ... + X = N;
     // ((1 + X) * X) / 2 = N;
-    ll left(0), right(n), ans(0);
+    int left(0), right(n), ans(0);
     while (left <= right)
     {
-        ll mid(left + ((right - left) >> 1));
-        ll sum((mid * (mid + 1)) >> 1); // the sum formula
-        if (n >= sum)
+        int mid(left + ((right - left) >> 1));
+        if (possible_0(n, mid))
             ans = mid, left = mid + 1;
         else
             right = mid - 1;
+    }
+    return ans;
+}
+
+bool possible_1(vi &nums, int mid, int th)
+{
+    int len(sz(nums)), sum(0);
+    fr(i, 0, len)
+        sum += (nums[i] + mid - 1) / mid; // u can use the ceil func
+    return sum <= th;
+}
+
+int smallestDivisor(vi &nums, int threshold) // O(N * log(N))  time, O(1) space
+{
+    // link : https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
+    // code : leetcode 1283
+    int left(1), right(*max_element(all(nums))), ans(0);
+    while (left <= right)
+    {
+        int mid(left + ((right - left) >> 1));
+        if (possible_1(nums, mid, threshold))
+            ans = mid, right = mid - 1;
+        else
+            left = mid + 1;
     }
     return ans;
 }

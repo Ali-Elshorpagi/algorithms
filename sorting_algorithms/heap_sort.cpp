@@ -50,10 +50,10 @@ void Heapify(vi &arr, int n, int i)
 void Heap_Sort(vi &arr)
 {
     int len(sz(arr));
-    for (int i((len >> 1) - 1); i >= 0; --i)
+    for (int i((len >> 1) - 1); i > -1; --i)
         Heapify(arr, len, i);
 
-    for (int j(len - 1); j >= 0; --j)
+    for (int j(len - 1); j > -1; --j)
     {
         swap(arr[0], arr[j]);
         Heapify(arr, j, 0);
