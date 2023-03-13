@@ -4,14 +4,14 @@
 
 using namespace std;
 
-typedef long long ll;
-typedef pair<int, int> pii;
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-typedef vector<ll> vll;
-typedef vector<vll> vvll;
-typedef vector<pii> vpii;
-typedef vector<char> vc;
+using ll = long long;
+using pii = pair<int, int>;
+using vi = vector<int>;
+using vvi = vector<vi>;
+using vll = vector<ll>;
+using vvll = vector<vll>;
+using vpii = vector<pii>;
+using vc = vector<char>;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
@@ -30,16 +30,18 @@ class Solution
 {
 public:
     Solution() { Mesh_Ali; }
+    int findRadius(vi &houses, vi &heaters)
+    {
+    }
 };
 
 void Solve()
 {
-    Solution s;
-    int ans(0);
+    Solution sol;
+    vi arr{1, 2, 3, 4}; // 1
+    vi m{1, 4};
+    int ans(sol.findRadius(arr, m));
     cout << ans << edl;
-    // int arr[]{1, 2};
-    // arr[0] = ceil((double)arr[0] / 2);
-    // cout << arr[0] << edl;
     // test functions here;
     cout << edl << "DONE" << edl;
 }

@@ -6,14 +6,14 @@
 
 using namespace std;
 
-typedef long long ll;
-typedef pair<int, int> pii;
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-typedef vector<ll> vll;
-typedef vector<vll> vvll;
-typedef vector<pii> vpii;
-typedef vector<char> vc;
+using ll = long long;
+using pii = pair<int, int>;
+using vi = vector<int>;
+using vvi = vector<vi>;
+using vll = vector<ll>;
+using vvll = vector<vll>;
+using vpii = vector<pii>;
+using vc = vector<char>;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
@@ -236,11 +236,11 @@ int arrangeCoins_1(int n) // O(log(N)) time, O(1) space
     return ans;
 }
 
-bool possible_1(vi &nums, int mid, int th)
+bool possible_1(vi &arr, int mid, int th)
 {
-    int len(sz(nums)), sum(0);
+    int len(sz(arr)), sum(0);
     fr(i, 0, len)
-        sum += (nums[i] + mid - 1) / mid; // u can use the ceil func
+        sum += (arr[i] + mid - 1) / mid; // u can use the ceil func
     return sum <= th;
 }
 
@@ -253,6 +253,42 @@ int smallestDivisor(vi &nums, int threshold) // O(N * log(N))  time, O(1) space
     {
         int mid(left + ((right - left) >> 1));
         if (possible_1(nums, mid, threshold))
+            ans = mid, right = mid - 1;
+        else
+            left = mid + 1;
+    }
+    return ans;
+}
+
+bool possible_2(vi &arr, int mid, int m, int k)
+{
+    int len(sz(arr)), cnt(0), boq(0);
+    fr(i, 0, len)
+    {
+        if (arr[i] - mid < 1)
+        {
+            ++cnt;
+            if (cnt >= k)
+                cnt = 0, ++boq;
+            if (boq == m)
+                return true;
+        }
+        else
+            cnt = 0;
+    }
+
+    return false;
+}
+
+int minDays(vi &bloomDay, int m, int k) // O(N * log(N))  time, O(1) space
+{
+    // link : https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
+    // code : leetcode 1482
+    int ans(-1), left(*min_element(all(bloomDay))), right(*max_element(all(bloomDay)));
+    while (left <= right)
+    {
+        int mid(left + ((right - left) >> 1)); // the mid == days;
+        if (possible_2(bloomDay, mid, m, k))
             ans = mid, right = mid - 1;
         else
             left = mid + 1;
