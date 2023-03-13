@@ -33,9 +33,9 @@ vi searchRange_0(vi &nums, int target) // O(log(n)), O(1) space
     // link : https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
     // code : leetcode 34
     auto ans(equal_range(all(nums), target));
-    int left(ans.first - nums.begin()), right(ans.second - nums.begin());
+    int low(ans.first - nums.begin()), high(ans.second - nums.begin());
     if (binary_search(all(nums), target))
-        return {left, right - 1};
+        return {low, high - 1};
     return {-1, -1};
 }
 
@@ -46,45 +46,45 @@ vi searchRange_1(vi &nums, int target) // O(log(n)), O(1) space
     auto ans(equal_range(all(nums), target));
     if (ans.first == nums.end())
         return {-1, -1};
-    int left(ans.first - nums.begin()), right(ans.second - nums.begin());
-    if (nums[left] != target)
+    int low(ans.first - nums.begin()), high(ans.second - nums.begin());
+    if (nums[low] != target)
         return {-1, -1};
-    return {left, right - 1};
+    return {low, high - 1};
 }
 
 vi searchRange_2(vi &nums, int target) // O(log(n)), O(1) space
 {
     // link : https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
     // code : leetcode 34
-    int left(0), right(sz(nums) - 1);
+    int low(0), high(sz(nums) - 1);
     int first_idx(-1), last_idx(-1);
-    while (left <= right)
+    while (low <= high)
     {
-        int mid(left + ((right - left) >> 1));
+        int mid(low + ((high - low) >> 1));
         if (nums[mid] == target)
-            first_idx = mid, right = mid - 1;
+            first_idx = mid, high = mid - 1;
         else if (nums[mid] > target)
-            right = mid - 1;
+            high = mid - 1;
         else
-            left = mid + 1;
+            low = mid + 1;
     }
-    left = 0, right = sz(nums) - 1;
-    while (left <= right)
+    low = 0, high = sz(nums) - 1;
+    while (low <= high)
     {
-        int mid(left + ((right - left) >> 1));
+        int mid(low + ((high - low) >> 1));
         if (nums[mid] == target)
-            last_idx = mid, left = mid + 1;
+            last_idx = mid, low = mid + 1;
         else if (nums[mid] > target)
-            right = mid - 1;
+            high = mid - 1;
         else
-            left = mid + 1;
+            low = mid + 1;
     }
     return {first_idx, last_idx};
 }
 
-vi findRightInterval_0(vvi &intervals) // O(N * log(N)) time, O(N) space
+vi findhighInterval_0(vvi &intervals) // O(N * log(N)) time, O(N) space
 {
-    // link : https://leetcode.com/problems/find-right-interval/
+    // link : https://leetcode.com/problems/find-high-interval/
     // code : leetcode 436
     vpii startings;
     int len(sz(intervals));
@@ -94,14 +94,14 @@ vi findRightInterval_0(vvi &intervals) // O(N * log(N)) time, O(N) space
     vi ans(len, -1);
     fr(i, 0, len)
     {
-        int left(0), right(sz(startings) - 1), position(-1), key(intervals[i][1]);
-        while (left <= right)
+        int low(0), high(sz(startings) - 1), position(-1), key(intervals[i][1]);
+        while (low <= high)
         {
-            int mid(left + ((right - left) >> 1));
+            int mid(low + ((high - low) >> 1));
             if (startings[mid].first < key)
-                left = mid + 1;
+                low = mid + 1;
             else if (startings[mid].first >= key) // >= cus we search for greater than or equal val;
-                position = mid, right = mid - 1;
+                position = mid, high = mid - 1;
         }
         if (position != -1)
             ans[i] = startings[position].second;
@@ -109,9 +109,9 @@ vi findRightInterval_0(vvi &intervals) // O(N * log(N)) time, O(N) space
     return ans;
 }
 
-vi findRightInterval_1(vvi &intervals) // O(N * log(N)) time, O(N) space
+vi findhighInterval_1(vvi &intervals) // O(N * log(N)) time, O(N) space
 {
-    // link : https://leetcode.com/problems/find-right-interval/
+    // link : https://leetcode.com/problems/find-high-interval/
     // code : leetcode 436
     int len(sz(intervals));
     vpii startings;
@@ -132,10 +132,10 @@ vi findRightInterval_1(vvi &intervals) // O(N * log(N)) time, O(N) space
     return ans;
 }
 
-vi findRightInterval_2(vvi &intervals) // O(N * log(N)) time, O(N) space
+vi findhighInterval_2(vvi &intervals) // O(N * log(N)) time, O(N) space
 {
-    // this code is only for cus the input numbers are unique;
-    // link : https://leetcode.com/problems/find-right-interval/
+    // this code only works cus the input numbers are unique;
+    // link : https://leetcode.com/problems/find-high-interval/
     // code : leetcode 436
     map<int, int> start_to_idx;
     int len(sz(intervals));
@@ -182,14 +182,14 @@ int triangleNumber_1(vi &nums) // O(N^2 * log(N)) time, O(1) space
         int k(i + 2);
         for (int j(i + 1); j < len - 1 && nums[i] != 0; ++j)
         {
-            int left(k), right(len - 1), val(nums[i] + nums[j]), idx(len);
-            while (left <= right) // u can use lower_bound func instead of binary search
+            int low(k), high(len - 1), val(nums[i] + nums[j]), idx(len);
+            while (low <= high) // u can use lower_bound func instead of binary search
             {
-                int mid(left + ((right - left) >> 1));
+                int mid(low + ((high - low) >> 1));
                 if (nums[mid] >= val)
-                    idx = mid, right = mid - 1;
+                    idx = mid, high = mid - 1;
                 else
-                    left = mid + 1;
+                    low = mid + 1;
             }
             // All values starting from idx are invalid
             cnt += idx - j - 1; // The values between j and (idx - 1) are the possible ones
@@ -224,14 +224,14 @@ int arrangeCoins_1(int n) // O(log(N)) time, O(1) space
     // code : leetcode 441
     // 1 + 2 + 3 + 4 + ... + X = N;
     // ((1 + X) * X) / 2 = N;
-    int left(0), right(n), ans(0);
-    while (left <= right)
+    int low(0), high(n), ans(0);
+    while (low <= high)
     {
-        int mid(left + ((right - left) >> 1));
+        int mid(low + ((high - low) >> 1));
         if (possible_0(n, mid))
-            ans = mid, left = mid + 1;
+            ans = mid, low = mid + 1;
         else
-            right = mid - 1;
+            high = mid - 1;
     }
     return ans;
 }
@@ -248,14 +248,14 @@ int smallestDivisor(vi &nums, int threshold) // O(N * log(N))  time, O(1) space
 {
     // link : https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
     // code : leetcode 1283
-    int left(1), right(*max_element(all(nums))), ans(0);
-    while (left <= right)
+    int low(1), high(*max_element(all(nums))), ans(0);
+    while (low <= high)
     {
-        int mid(left + ((right - left) >> 1));
+        int mid(low + ((high - low) >> 1));
         if (possible_1(nums, mid, threshold))
-            ans = mid, right = mid - 1;
+            ans = mid, high = mid - 1;
         else
-            left = mid + 1;
+            low = mid + 1;
     }
     return ans;
 }
@@ -284,16 +284,66 @@ int minDays(vi &bloomDay, int m, int k) // O(N * log(N))  time, O(1) space
 {
     // link : https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
     // code : leetcode 1482
-    int ans(-1), left(*min_element(all(bloomDay))), right(*max_element(all(bloomDay)));
-    while (left <= right)
+    int ans(-1), low(*min_element(all(bloomDay))), high(*max_element(all(bloomDay)));
+    while (low <= high)
     {
-        int mid(left + ((right - left) >> 1)); // the mid == days;
+        int mid(low + ((high - low) >> 1)); // the mid == days;
         if (possible_2(bloomDay, mid, m, k))
-            ans = mid, right = mid - 1;
+            ans = mid, high = mid - 1;
         else
-            left = mid + 1;
+            low = mid + 1;
     }
     return ans;
+}
+
+bool possible_3(vi &houses, vi &heaters, int mid)
+{
+    int j(0), len_s(sz(houses)), len_t(sz(heaters));
+    fr(i, 0, len_t)
+    {
+        int left(heaters[i] - mid), right(heaters[i] + mid);
+        while (j < len_s && houses[j] >= left && houses[j] <= right)
+            ++j;
+    }
+    return j == len_s;
+}
+
+int findRadius_0(vi &houses, vi &heaters) // O(N * log(N) + N * log(M)) (M = 1e9) time, O(1) space
+{
+    // link : https://leetcode.com/problems/heaters/
+    // code : leetcode 475
+    sort(all(houses)), sort(all(heaters));
+    // u can make the right = max(max(houses), max(heaters));
+    int low(0), high(1e9), ans(-1);
+    while (low <= high)
+    {
+        int mid(low + ((high - low) >> 1));
+        if (possible_3(houses, heaters, mid))
+            ans = mid, high = mid - 1;
+        else
+            low = mid + 1;
+    }
+    return ans;
+}
+
+int findRadius_1(vi &houses, vi &heaters) // O(N * log(N)) time, O(1) space
+{
+    sort(all(heaters));
+    int radius(INT_MIN), len_s(sz(houses)), len_t(sz(heaters));
+    fr(i, 0, len_s)
+    {
+        int idx(lower_bound(all(heaters), houses[i]) - heaters.begin());
+        if (idx == len_t) // after heaters
+            radius = max(radius, abs(heaters[idx - 1] - houses[i]));
+        else if (!idx) // before heaters
+            radius = max(radius, abs(heaters[idx] - houses[i]));
+        else
+        { // surrounded by heaters: comapr idx and idx-1
+            int besti_r(min(abs(heaters[idx] - houses[i]), abs(heaters[idx - 1] - houses[i])));
+            radius = max(radius, besti_r);
+        }
+    }
+    return radius;
 }
 
 void Solve()

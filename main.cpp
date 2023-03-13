@@ -30,18 +30,11 @@ class Solution
 {
 public:
     Solution() { Mesh_Ali; }
-    int findRadius(vi &houses, vi &heaters)
-    {
-    }
 };
 
 void Solve()
 {
     Solution sol;
-    vi arr{1, 2, 3, 4}; // 1
-    vi m{1, 4};
-    int ans(sol.findRadius(arr, m));
-    cout << ans << edl;
     // test functions here;
     cout << edl << "DONE" << edl;
 }
