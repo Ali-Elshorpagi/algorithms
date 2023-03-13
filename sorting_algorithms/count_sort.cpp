@@ -1,15 +1,18 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cassert>
 
 using namespace std;
 
-typedef long long ll;
-typedef pair<int, int> pii;
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-typedef vector<ll> vll;
-typedef vector<vll> vvll;
-typedef vector<pii> vpii;
-typedef vector<char> vc;
+using ll = long long;
+using pii = pair<int, int>;
+using vi = vector<int>;
+using vvi = vector<vi>;
+using vll = vector<ll>;
+using vvll = vector<vll>;
+using vpii = vector<pii>;
+using vc = vector<char>;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
@@ -21,8 +24,8 @@ typedef vector<char> vc;
 #define fl(i, x, n) for (int i(x); i > n; --i)
 #define fc(it, v) for (auto &(it) : (v))
 #define sq(x) (x) * (x)
-#define yes printf("YES\n")
-#define no printf("NO\n")
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
 
 /*
  * # Complexities
@@ -133,7 +136,7 @@ void count_sort_with_string_0(vector<string> &arr)
 
 int idx_convertor(const string &str, int letter_sz)
 {
-    assert(str.size() >= 2);
+    assert(str.size() > 1);
     int first_letter(str[0] - 'a');
     int second_letter(str[1] - 'a');
     return first_letter * letter_sz + second_letter;

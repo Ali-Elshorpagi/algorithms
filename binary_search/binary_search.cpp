@@ -1,15 +1,16 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
-typedef long long ll;
-typedef pair<int, int> pii;
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-typedef vector<ll> vll;
-typedef vector<vll> vvll;
-typedef vector<pii> vpii;
-typedef vector<char> vc;
+using ll = long long;
+using pii = pair<int, int>;
+using vi = vector<int>;
+using vvi = vector<vi>;
+using vll = vector<ll>;
+using vvll = vector<vll>;
+using vpii = vector<pii>;
+using vc = vector<char>;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
@@ -21,8 +22,8 @@ typedef vector<char> vc;
 #define fl(i, x, n) for (int i(x); i > n; --i)
 #define fc(it, v) for (auto &(it) : (v))
 #define sq(x) (x) * (x)
-#define yes printf("YES\n")
-#define no printf("NO\n")
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
 
 /*
  * # Complexities
@@ -34,31 +35,31 @@ typedef vector<char> vc;
 
 int Binary_Search(vi &arr, int value)
 {
-    int left(0), right(sz(arr) - 1);
-    while (left <= right)
+    int low(0), high(sz(arr) - 1);
+    while (low <= high)
     {
-        // we can use ==> mid = left + (right - left + 1) / 2; it's depends on problem
-        int mid(left + ((right - left) >> 1));
+        // we can use ==> mid = low + (high - low + 1) / 2; it's depends on problem
+        int mid(low + ((high - low) >> 1));
         if (arr[mid] == value)
             return mid;
         else if (arr[mid] > value)
-            right = mid - 1;
+            high = mid - 1;
         else
-            left = mid + 1;
+            low = mid + 1;
     }
     return -1;
 }
 
-int Binary_Search_Recursive(vi &arr, int left, int right, int value)
+int Binary_Search_Recursive(vi &arr, int low, int high, int value)
 {
-    if (right >= left)
+    if (high >= low)
     {
-        int mid(left + ((right - left) >> 1));
+        int mid(low + ((high - low) >> 1));
         if (arr[mid] == value)
             return mid;
         if (arr[mid] > value)
-            return Binary_Search_Recursive(arr, left, mid - 1, value);
-        return Binary_Search_Recursive(arr, mid + 1, right, value);
+            return Binary_Search_Recursive(arr, low, mid - 1, value);
+        return Binary_Search_Recursive(arr, mid + 1, high, value);
     }
     return -1;
 }
