@@ -179,7 +179,7 @@ int triangleNumber_1(vi &nums) // O(N^2 * log(N)) time, O(1) space
         for (int j(i + 1); j < len - 1 && nums[i] != 0; ++j)
         {
             int left(k), right(len - 1), val(nums[i] + nums[j]), idx(len);
-            while (left <= right)
+            while (left <= right) // u can use lower_bound func instead of binary search
             {
                 int mid(left + ((right - left) >> 1));
                 if (nums[mid] >= val)
