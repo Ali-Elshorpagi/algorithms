@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <stack>
 
 using namespace std;
 
@@ -31,6 +30,7 @@ class Solution
 {
 public:
     Solution() { Mesh_Ali; }
+   
 };
 
 void Solve()

@@ -328,6 +328,8 @@ int findRadius_0(vi &houses, vi &heaters) // O(N * log(N) + N * log(M)) (M = 1e9
 
 int findRadius_1(vi &houses, vi &heaters) // O(N * log(N)) time, O(1) space
 {
+    // link : https://leetcode.com/problems/heaters/
+    // code : leetcode 475
     sort(all(heaters));
     int radius(INT_MIN), len_s(sz(houses)), len_t(sz(heaters));
     fr(i, 0, len_s)
@@ -344,6 +346,43 @@ int findRadius_1(vi &houses, vi &heaters) // O(N * log(N)) time, O(1) space
         }
     }
     return radius;
+}
+
+int mySqrt_0(int x) // O(log(N)) time, O(1) space
+{
+    // link : https://leetcode.com/problems/sqrtx/
+    // code : leetcode 69
+    double left(0), right(x), EPS(1e-9);
+    while (right - left > EPS)
+    {
+        double mid(left + (right - left) / 2);
+        if (sq(mid) < x) // it;s equal to (sq(mid) - x < 0.0 )
+            left = mid;
+        else
+            right = mid;
+    }
+    return left + EPS; // we add EPS cus the result wil be 1.99999999 or something like that;
+}
+
+int mySqrt_1(int x) // O(log(N)) time, O(1) space
+{
+    // this solution is slower than the above;
+    // link : https://leetcode.com/problems/sqrtx/
+    // code : leetcode 69
+    if (!x || x == 1)
+        return x;
+    ll left(1), right(x >> 1), ans(-1);
+    while (left <= right)
+    {
+        ll mid(left + ((right - left) >> 1));
+        if (sq(mid) == x)
+            return mid;
+        else if (sq(mid) < x)
+            left = mid + 1, ans = mid;
+        else
+            right = mid - 1;
+    }
+    return ans;
 }
 
 void Solve()
