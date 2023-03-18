@@ -12,10 +12,6 @@
    - Accumulate Array
    - Left Max 
 
-> **Searching Algorithms**
-   - Binary Search ( Iterative / Recursive )
-   - Linear Search ( Iterative / Recursive )
-
 > **Sorting Algorithms**
    - Bubble Sort ( Iterative / Recursive )
    - Count Sort
@@ -23,7 +19,7 @@
    - Insertion Sort ( Iterative / Recursive )
    - Selection Sort ( Iterative / Recursive )
    
-   > **Binary Search**
-  
-
-    
+> **Binary Search**
+   - Iterative / Recursive
+   - Integer Numbers
+   - Real Numbers
