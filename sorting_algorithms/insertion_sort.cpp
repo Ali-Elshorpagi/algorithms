@@ -3,14 +3,14 @@
 
 using namespace std;
 
-using ll = long long;
-using pii = pair<int, int>;
-using vi = vector<int>;
-using vvi = vector<vi>;
-using vll = vector<ll>;
-using vvll = vector<vll>;
-using vpii = vector<pii>;
-using vc = vector<char>;
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef vector<ll> vll;
+typedef vector<vll> vvll;
+typedef vector<pii> vpii;
+typedef vector<char> vc;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
@@ -55,7 +55,7 @@ void Insertion_Sort_1(vi &arr)
 
 void Insertion_Sort_Recursive(vi &arr, int size)
 {
-    if (size <= 1)
+    if (size < 2)
         return;
     Insertion_Sort_Recursive(arr, size - 1);
     int last(arr[size - 1]), j(size - 2);
@@ -76,7 +76,7 @@ int main()
     // freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
-    // scanf("%d", &tc);
+    // cin >> tc;
     while (tc--)
         Solve();
     return (0);

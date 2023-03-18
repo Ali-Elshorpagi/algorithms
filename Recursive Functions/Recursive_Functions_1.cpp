@@ -3,14 +3,14 @@
 
 using namespace std;
 
-using ll = long long;
-using pii = pair<int, int>;
-using vi = vector<int>;
-using vvi = vector<vi>;
-using vll = vector<ll>;
-using vvll = vector<vll>;
-using vpii = vector<pii>;
-using vc = vector<char>;
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef vector<ll> vll;
+typedef vector<vll> vvll;
+typedef vector<pii> vpii;
+typedef vector<char> vc;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
@@ -73,7 +73,7 @@ bool is_palindrome_0(int arr[], int start, int end)
 
 bool is_palindrome_1(int arr[], int end)
 {
-    if (end <= 0)
+    if (end < 1)
         return true;
     if (arr[0] != arr[end])
         return false;
@@ -93,7 +93,7 @@ bool is_prime(int m, int cur_test_number = 3)
 {
     if (m == 2)
         return true;
-    if (m <= 1 || m % 2 == 0)
+    if (m < 2 || m % 2 == 0)
         return false;
     if (m == cur_test_number)
         return true;
@@ -134,7 +134,7 @@ int path_sum(int grid[100][100], int ROWS, int COLS, int row = 0, int col = 0)
 
 int fibonacci_0(int n)
 {
-    if (n <= 1)
+    if (n < 2)
         return 1;
     return fibonacci_0(n - 1) + fibonacci_0(n - 2);
 }
@@ -142,19 +142,11 @@ int fibonacci_0(int n)
 vi dp(1e2);
 int fibonacci_1(int n)
 {
-    if (n <= 1)
+    if (n < 2)
         return 1;
-    int first, second;
-    if (dp[n - 1])
-        first = dp[n - 1];
-    else
-        first = fibonacci_1(n - 1);
-
-    if (dp[n - 2])
-        second = dp[n - 2];
-    else
-        second = fibonacci_1(n - 2);
-    return dp[n] = first + second;
+    if (dp[n])
+        return dp[n];
+    return dp[n] = fibonacci_1(n - 1) + fibonacci_1(n - 2);
 }
 
 void Solve()
@@ -169,7 +161,7 @@ int main()
     // freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
-    // scanf("%d", &tc);
+    // cin >> tc;
     while (tc--)
         Solve();
     return (0);
