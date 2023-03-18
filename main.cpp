@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <stack>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -36,7 +33,7 @@ public:
 void Solve()
 {
     Solution sol;
-    // test functions here;
+   
     cout << edl << "DONE" << edl;
 }
 
