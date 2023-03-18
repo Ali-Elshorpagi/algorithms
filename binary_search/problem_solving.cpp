@@ -385,6 +385,34 @@ int mySqrt_1(int x) // O(log(N)) time, O(1) space
     return ans;
 }
 
+const double PI(3.14159265358979323846264338327950);
+
+int possible(vector<double> &area, double m)
+{
+    int cnt(0), len(sz(area));
+    fr(i, 0, len)
+        cnt += floor(area[i] / m);
+    return cnt;
+}
+
+double PIE_pie(vector<double> &pies, int f) // O(N) time, O(N) space
+{
+    // link : https://www.spoj.com/problems/PIE/
+    // name : PIE - Pie
+    double left(0), right(INT_MIN), len(sz(pies));
+    vector<double> area(len);
+    fr(i, 0, len) area[i] = PI * sq(pies[i]), right = max(right, area[i]);
+    fr(i, 0, 100)
+    {
+        double mid(left + (right - left) / 2);
+        if (possible(area, mid) >= f)
+            left = mid;
+        else
+            right = mid;
+    }
+    return left;
+}
+
 void Solve()
 {
     // test functions here;

@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -30,13 +28,12 @@ class Solution
 {
 public:
     Solution() { Mesh_Ali; }
-   
 };
 
 void Solve()
 {
     Solution sol;
-    // test functions here;
+   
     cout << edl << "DONE" << edl;
 }
 
