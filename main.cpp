@@ -33,7 +33,7 @@ public:
 void Solve()
 {
     Solution sol;
-   
+
     cout << edl << "DONE" << edl;
 }
 
