@@ -366,7 +366,6 @@ int mySqrt_0(int x) // O(log(N)) time, O(1) space
 
 int mySqrt_1(int x) // O(log(N)) time, O(1) space
 {
-    // this solution is slower than the above;
     // link : https://leetcode.com/problems/sqrtx/
     // code : leetcode 69
     if (!x || x == 1)
