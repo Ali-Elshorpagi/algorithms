@@ -1,7 +1,8 @@
-From 0 to 1 there ara 2 edges
-From 1 to 2 there ara 1 edges
-From 2 to 3 there ara 1 edges
-From 3 to 2 there ara 1 edges
-From 4 to 3 there ara 3 edges
+Node 0 has neighbors: (to 5 weight 45) 
+Node 1 has neighbors: (to 4 weight 60) 
+Node 2 has neighbors: (to 1 weight 10) (to 5 weight 20) (to 0 weight 77) (to 3 weight 33) 
+Node 3 has neighbors: 
+Node 4 has neighbors: 
+Node 5 has neighbors: (to 4 weight 10) 
 
 DONE
