@@ -1,0 +1,7 @@
+From 0 to 1 there ara 2 edges
+From 1 to 2 there ara 1 edges
+From 2 to 3 there ara 1 edges
+From 3 to 2 there ara 1 edges
+From 4 to 3 there ara 3 edges
+
+DONE
