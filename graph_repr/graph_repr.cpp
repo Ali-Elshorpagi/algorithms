@@ -25,6 +25,16 @@ typedef vector<char> vc;
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
 
+/*
+ * Space Complexity :  O(V^2), that's mean O(|V|^2)
+ * Time Complexity :
+ *  - Checking if there is an edge (u, v) :  O(1) from mat[u][v]
+ *  - Given node u: list all its neighbours :  O(V) iterate on row
+ *  - Traversing the whole graph :  O(V^2) iterate on matrix
+ *
+ * # This Representation is good for Dense Graph
+ */
+
 /*---------------------------Adjacency Matrix Representation----------------------------*/
 
 void add_directed_edge_using_adjaceny_matrix(vvi &graph, int from, int to)
@@ -71,6 +81,17 @@ void build_the_graph_using_adjaceny_matrix()
 }
 
 /*---------------------------Adjacency List Representation----------------------------*/
+
+/*
+ * Space Complexity :  O(E + V), that's mean O(|E| + |V|)
+ * Time Complexity :
+ *  - Checking if there is an edge (u, v) :  O(Degree), that's mean u must iterate on ur |neighbours|;
+ *  - Given node u: list all its neighbours :  O(Degree)
+ *  - Traversing the whole graph :  O(E + V)
+ *  - In directed graph: counting the in-degree of a node :  O(E + V), which is very expensive;
+ *
+ * # This Representation is good for Sparse Graph
+ */
 
 struct Edge
 {
