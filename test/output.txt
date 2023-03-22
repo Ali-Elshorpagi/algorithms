@@ -1,0 +1,9 @@
+Edge (2 1 10)
+Edge (5 4 10)
+Edge (2 5 20)
+Edge (2 3 33)
+Edge (0 5 45)
+Edge (1 4 60)
+Edge (2 0 77)
+
+DONE
