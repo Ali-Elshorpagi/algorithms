@@ -93,7 +93,7 @@ void build_the_graph_using_adjaceny_matrix()
  * # This Representation is good for Sparse Graph
  */
 
-struct Edge
+struct Edge // u can use stl::pair instead of struct
 {
     int to;
     int weight;
