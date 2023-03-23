@@ -10,10 +10,7 @@ typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
-typedef vector<ll> vll;
-typedef vector<vll> vvll;
 typedef vector<pii> vpii;
-typedef vector<char> vc;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
@@ -25,8 +22,6 @@ typedef vector<char> vc;
 #define fl(i, x, n) for (int i(x); i > n; --i)
 #define fc(it, v) for (auto &(it) : (v))
 #define sq(x) (x) * (x)
-#define yes cout << "YES\n"
-#define no cout << "NO\n"
 
 vi searchRange_0(vi &nums, int target) // O(log(n)), O(1) space
 {

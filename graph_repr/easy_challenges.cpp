@@ -16,11 +16,11 @@ typedef vector<vi> vvi;
 
 /*---------------------------Problem #1: Edge List Representation--------------------*/
 
-struct Edge_0
+struct Edge
 {
     int from, to, weight;
-    Edge_0(int from, int to, int weight) : from(from), to(to), weight(weight) {}
-    const bool operator<(const Edge_0 &e)
+    Edge(int from, int to, int weight) : from(from), to(to), weight(weight) {}
+    bool operator<(const Edge &e) const
     {
         return weight < e.weight;
     }
@@ -30,7 +30,7 @@ struct Edge_0
     }
 };
 
-typedef vector<Edge_0> GRAPH_0;
+typedef vector<Edge> GRAPH_0;
 
 void add_edge_list_reper(GRAPH_0 &graph, int from, int to, int weight)
 {
@@ -44,7 +44,7 @@ void print_adjaceny_edge_list(GRAPH_0 &graph)
         graph[e].print();
 }
 
-void build_edge_list_epresentation() // O(E) time, O(E) space
+void build_problem_1() // O(E) time, O(E) space
 {
     // this representation in general is slower representation
     // and it's has very limited usege, but it's very simple
@@ -90,7 +90,7 @@ void print_adjaceny_edge_hashset(GRAPH_1 &graph)
     }
 }
 
-void build_edge_hashset_representation()
+void build_problem_2()
 {
     /*
      Space Complexity is O(E)
@@ -145,7 +145,7 @@ void print_adjaceny_multiple_edges(GRAPH_2 &graph)
     }
 }
 
-void build_the_graph_using_adjaceny_matrix_with_multiple_edges()
+void build_problem_3()
 {
     /*
      * Space Complexity is :  O(V^2 + E)
@@ -168,16 +168,16 @@ void build_the_graph_using_adjaceny_matrix_with_multiple_edges()
 
 void Solve()
 {
-    // build_edge_list_epresentation();
-    // build_edge_hashset_representation();
-    build_the_graph_using_adjaceny_matrix_with_multiple_edges();
+    // build_problem_1();
+    // build_problem_2();
+    build_problem_3();
     cout << edl << "DONE" << edl;
 }
 
 int main()
 {
     Mesh_Ali;
-    freopen("../test/input.txt", "r", stdin);
+    // freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
