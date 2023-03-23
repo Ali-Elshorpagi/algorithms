@@ -82,8 +82,7 @@ void build_the_graph_using_adjaceny_matrix()
 
 struct Edge // u can use stl::pair instead of struct
 {
-    int to;
-    int weight;
+    int to, weight;
 };
 
 typedef vector<vector<Edge>> GRAPH;
