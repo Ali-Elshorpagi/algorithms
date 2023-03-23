@@ -11,7 +11,7 @@ using namespace std;
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
-/*-------------------------Problem #1: Adjacency-based repr for flights v1--------*/
+/*-------Problem #1: Adjacency-based repr for flights v1--------*/
 struct Edge
 {
     string to;
@@ -42,7 +42,7 @@ void print_adjaceny_matrix(GRAPH &graph)
     }
 }
 
-void build_problem_1()
+void Solve()
 {
     int nodes, edges;
     cin >> nodes >> edges;
@@ -57,26 +57,15 @@ void build_problem_1()
         add_directed_edge_using_adjaceny_matrix(graph, from, to, weight);
     }
     print_adjaceny_matrix(graph);
-}
 
-/*-------------------------Problem #2: Adjacency-based repr for flights v2--------*/
-
-void build_problem_2()
-{
-}
-
-void Solve()
-{
-    // build_problem_1();
-    build_problem_2();
     cout << edl << "DONE" << edl;
 }
 
 int main()
 {
     Mesh_Ali;
-    freopen("../test/input.txt", "r", stdin);
-    freopen("../test/output.txt", "w", stdout);
+    freopen("../../test/input.txt", "r", stdin);
+    freopen("../../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)

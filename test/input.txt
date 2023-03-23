@@ -1,0 +1,10 @@
+5 9
+California Texas 30
+California Texas 10
+Florida California 70
+California Florida 75
+NewYork California 35
+Pennsylvania Florida 18
+Pennsylvania Florida 28
+California Texas 35
+California Pennsylvania 37
