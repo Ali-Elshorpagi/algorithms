@@ -5,6 +5,9 @@
 
 using namespace std;
 
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
@@ -116,10 +119,58 @@ void build_edge_hashset_representation()
     print_adjaceny_edge_hashset(graph);
 }
 
+/*-------------------------Problem #3: Adjacency matrix with multiple Edges--------------------*/
+
+// Each cell in the matrix graph[from][to] is a list of the cost
+typedef vector<vector<vector<int>>> GRAPH_2;
+
+void add_directed_multiple_edges(GRAPH_2 &graph, int from, int to, int weight)
+{
+    graph[from][to].push_back(weight);
+}
+
+void print_adjaceny_multiple_edges(GRAPH_2 &graph)
+{
+    int len(sz(graph));
+    for (int from(0); from < len; ++from)
+    {
+        for (int to(0); to < len; ++to)
+        {
+            for (int &weight : graph[from][to])
+            {
+                cout << "From " << from << " to " << to
+                     << " the weight is " << weight << edl;
+            }
+        }
+    }
+}
+
+void build_the_graph_using_adjaceny_matrix_with_multiple_edges()
+{
+    /*
+     * Space Complexity is :  O(V^2 + E)
+     * Time complexity : O(1) to check edge (u, v)
+     */
+
+    int nodes, edges;
+    cin >> nodes >> edges;
+
+    GRAPH_2 graph(nodes, vvi(nodes));
+
+    for (int e(0); e < edges; ++e)
+    {
+        int from, to, weight;
+        cin >> from >> to >> weight;
+        add_directed_multiple_edges(graph, from, to, weight);
+    }
+    print_adjaceny_multiple_edges(graph);
+}
+
 void Solve()
 {
     // build_edge_list_epresentation();
-    build_edge_hashset_representation();
+    // build_edge_hashset_representation();
+    build_the_graph_using_adjaceny_matrix_with_multiple_edges();
     cout << edl << "DONE" << edl;
 }
 

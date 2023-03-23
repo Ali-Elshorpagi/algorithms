@@ -43,7 +43,7 @@ int main()
     // freopen("test/input.txt", "r", stdin);
     freopen("test/output.txt", "w", stdout);
     int tc(1);
-    // cin >> tc;
+    cin >> tc;
     while (tc--)
         Solve();
     return (0);

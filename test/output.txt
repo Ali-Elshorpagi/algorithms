@@ -1,8 +1,12 @@
-Node 0 has neighbors: 5 
-Node 1 has neighbors: 4 
-Node 2 has neighbors: 3 1 0 5 
-Node 3 has neighbors: 
-Node 4 has neighbors: 
-Node 5 has neighbors: 4 
+From 0 to 1 the cost is 10
+From 0 to 1 the cost is 7
+From 0 to 4 the cost is 52
+From 0 to 4 the cost is 30
+From 1 to 2 the cost is 7
+From 2 to 3 the cost is 9
+From 2 to 3 the cost is 15
+From 2 to 4 the cost is 36
+From 3 to 4 the cost is 50
+From 4 to 0 the cost is 150
 
 DONE
