@@ -16,11 +16,8 @@ void add_directed_edge(GRAPH &graph, int from, int to)
     graph[from].emplace_back(to);
 }
 
-void print_chain(GRAPH &graph, int from)
+void print_paths_len_2(GRAPH &graph)
 {
-    cout << from << ' ';
-    if (sz(graph[from]))
-        print_chain(graph, graph[from][0]);
 }
 
 void Solve()
@@ -34,14 +31,7 @@ void Solve()
         cin >> from >> to;
         add_directed_edge(graph, from, to);
     }
-    int q, node;
-    cin >> q;
-    while (q--)
-    {
-        cin >> node;
-        print_chain(graph, node);
-        cout << edl;
-    }
+    print_paths_len_2(graph);
     cout << edl << "DONE" << edl;
 }
 
