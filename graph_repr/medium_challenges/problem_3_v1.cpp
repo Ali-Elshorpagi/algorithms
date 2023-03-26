@@ -3,16 +3,15 @@
 
 using namespace std;
 
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
-void print_adjaceny_matrix_0(vvi &graph, int rows, int cols)
+typedef vector<vector<int>> GRAPH;
+
+void print_adjaceny_matrix_0(GRAPH &graph, int rows, int cols)
 {
     for (int r(0); r < rows; ++r)
     {
@@ -89,7 +88,7 @@ void Solve()
     // to convert from matrix to array use this equation : ((i * cols) + j);
     int rows, cols;
     cin >> rows >> cols;
-    vvi graph(rows, vi(cols));
+    GRAPH graph(rows, vector<int>(cols));
 
     for (int r(0); r < rows; ++r)
     {
