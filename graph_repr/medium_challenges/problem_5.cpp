@@ -18,6 +18,19 @@ void add_directed_edge(GRAPH &graph, int from, int to)
 
 void print_paths_len_2(GRAPH &graph)
 {
+    int nodes(sz(graph)), first, second;
+    for (int i(0); i < nodes; ++i) // iterate on nodes
+    {
+        for (int j(0); j < sz(graph[i]); ++j) // iterate on the node's neighbors
+        {
+            first = graph[i][j];
+            for (int k(0); k < sz(graph[first]); ++k) // iterate on the neighbors
+            {
+                second = graph[first][k];
+                cout << i << ' ' << first << ' ' << second << edl;
+            }
+        }
+    }
 }
 
 void Solve()
