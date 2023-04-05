@@ -122,7 +122,7 @@ void count_sort_with_string_0(vector<string> &arr)
 
 int idx_convertor(const string &str, int letter_sz)
 {
-    assert(str.size() > 1);
+    assert(sz(str) > 1);
     int first_letter(str[0] - 'a');
     int second_letter(str[1] - 'a');
     return first_letter * letter_sz + second_letter;
@@ -160,7 +160,7 @@ vi count_sort_v2(const vi &arr)
         freq[i] += freq[i - 1];
 
     vi result(len);
-    for (int i(len - 1); i >= 0; --i)
+    for (int i(len - 1); i > -1; --i)
     {
         result[freq[arr[i]] - 1] = arr[i];
         --freq[arr[i]];

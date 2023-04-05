@@ -7,7 +7,6 @@ typedef vector<int> vi;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
-#define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
@@ -35,8 +34,10 @@ void Insertion_Sort_1(vi &arr)
 {
     int len(sz(arr));
     for (int i(1); i < len; i++)
+    {
         for (int j(i); j - 1 > -1 && arr[j] < arr[j - 1]; --j)
             swap(arr[j], arr[j - 1]);
+    }
 }
 
 void Insertion_Sort_Recursive(vi &arr, int size)

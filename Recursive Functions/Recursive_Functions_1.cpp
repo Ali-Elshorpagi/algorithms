@@ -7,7 +7,6 @@ typedef vector<int> vi;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
-#define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
@@ -126,7 +125,7 @@ int fibonacci_0(int n)
     return fibonacci_0(n - 1) + fibonacci_0(n - 2);
 }
 
-vi dp(1e2);
+vi dp(1e2); // u can increase the array, it depends on the constraints;
 int fibonacci_1(int n)
 {
     if (n < 2)
