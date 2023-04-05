@@ -7,14 +7,13 @@ typedef vector<vector<int>> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
-#define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
 /*-----Problem #3: Adjacency matrix with multiple Edges--------------------*/
 
 // Each cell in the matrix graph[from][to] is a list of the cost
-typedef vector<vector<vector<int>>> GRAPH;
+typedef vector<vvi> GRAPH;
 
 void add_directed_multiple_edges(GRAPH &graph, int from, int to, int weight)
 {
