@@ -11,6 +11,7 @@ using namespace std;
 #define edl '\n'
 
 /*-------Problem #1: Adjacency-based repr for flights v1--------*/
+
 struct Edge
 {
     string to;
