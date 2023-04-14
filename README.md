@@ -23,3 +23,8 @@
    - Iterative / Recursive
    - Integer Numbers
    - Real Numbers
+
+> **Graph Representation**
+   - Edge List Representation
+   - Adjacency Hashset Representation
+   - Adjacency Matrix With Multiple Edges
