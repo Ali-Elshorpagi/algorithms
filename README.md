@@ -25,6 +25,6 @@
    - Real Numbers
 
 > **Graph Representation**
-   - Edge List Representation
-   - Adjacency Hashset Representation
+   - Edge List
+   - Adjacency Hashset
    - Adjacency Matrix With Multiple Edges
