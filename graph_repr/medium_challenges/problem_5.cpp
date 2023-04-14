@@ -23,7 +23,7 @@ void print_paths_len_2(GRAPH &graph)
         for (int j(0); j < sz(graph[i]); ++j) // iterate on the node's neighbors
         {
             first = graph[i][j];
-            for (int k(0); k < sz(graph[first]); ++k) // iterate on the neighbors
+            for (int k(0); k < sz(graph[first]); ++k) // iterate on the neighbor's neighbors
             {
                 second = graph[first][k];
                 cout << i << ' ' << first << ' ' << second << edl;
