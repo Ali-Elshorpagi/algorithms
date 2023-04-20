@@ -42,7 +42,6 @@ void print_adjaceny_list(GRAPH &graph)
 void dfs(GRAPH &graph, int node, vector<bool> &visited)
 {
     visited[node] = true;
-
     for (auto &neighbour : graph[node])
     {
         if (!visited[neighbour]) // avoid cycling
