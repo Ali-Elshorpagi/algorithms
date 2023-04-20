@@ -49,7 +49,7 @@ vi reachability(GRAPH &graph, int node)
 // link : https://leetcode.com/problems/kill-process/
 // code : leetcode 582
 
-class Solution
+class Solution // O(N) time, O(N) space
 {
 public:
     Solution() { Mesh_Ali; }
