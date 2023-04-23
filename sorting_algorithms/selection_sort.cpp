@@ -52,20 +52,26 @@ void Selection_Sort_Recursive(vi &arr, int n, int index = 0)
     Selection_Sort_Recursive(arr, n, index + 1);
 }
 
-void Solve()
+class Solution
 {
-    // test functions here;
-    cout << edl << "DONE" << edl;
-}
+public:
+    Solution() { Mesh_Ali; }
+
+    void TEST() {}
+};
 
 int main()
 {
-    Mesh_Ali;
+    Solution sol;
     // freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)
-        Solve();
+    {
+        cout << "Case #" << tc + 1 << edl;
+        sol.TEST();
+        cout << edl << "DONE" << edl;
+    }
     return (0);
 }

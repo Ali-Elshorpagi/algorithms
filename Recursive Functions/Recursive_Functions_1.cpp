@@ -1,15 +1,19 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
+typedef long long ll;
 typedef vector<int> vi;
+typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
+#define fc(it, v) for (auto &(it) : (v))
 
 void right_max_0(int arr[], int len, int str = 0)
 {
@@ -100,7 +104,7 @@ int count_primes(int start, int end)
 
 int di[]{1, 0, 1};
 int dj[]{0, 1, 1};
-int path_sum(int grid[100][100], int ROWS, int COLS, int row = 0, int col = 0)
+int path_sum(vvi &grid, int ROWS, int COLS, int row = 0, int col = 0)
 {
     int sum(grid[row][col]);
     if (row == ROWS - 1 && col == COLS - 1)
@@ -125,7 +129,7 @@ int fibonacci_0(int n)
     return fibonacci_0(n - 1) + fibonacci_0(n - 2);
 }
 
-vi dp(1e2); // u can increase the array, it depends on the constraints;
+vi dp(1e2); // u can increase the vector, it depends on the constraints;
 int fibonacci_1(int n)
 {
     if (n < 2)
@@ -135,20 +139,35 @@ int fibonacci_1(int n)
     return dp[n] = fibonacci_1(n - 1) + fibonacci_1(n - 2);
 }
 
-void Solve()
+ll fibonacci_2(ll n)
 {
-    // test functions here;
-    cout << edl << "DONE" << edl;
+    // u can use the Binet's Formula
+    // F(n)	= ((phi^n)-(-phi)^(-n))/(sqrt(5));
+    //  F(n) =  ((phi^n) - (1-phi)^n)/√5;
+    // phi = Golden Ratio = 0.5*(1 + sqrt(5)) // not sure;
+    return 0;
 }
+
+class Solution
+{
+public:
+    Solution() { Mesh_Ali; }
+
+    void TEST() {}
+};
 
 int main()
 {
-    Mesh_Ali;
+    Solution sol;
     // freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)
-        Solve();
+    {
+        cout << "Case #" << tc + 1 << edl;
+        sol.TEST();
+        cout << edl << "DONE" << edl;
+    }
     return (0);
 }

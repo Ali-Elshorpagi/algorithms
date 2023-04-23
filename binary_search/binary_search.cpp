@@ -91,20 +91,26 @@ double Binary_Search_Real_Numbers_1(double EPS = 1e-9)
     return (left + right) / 2.0;
 }
 
-void Solve()
+class Solution
 {
-    // test functions here;
-    cout << edl << "DONE" << edl;
-}
+public:
+    Solution() { Mesh_Ali; }
+
+    void TEST() {}
+};
 
 int main()
 {
-    Mesh_Ali;
+    Solution sol;
     // freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)
-        Solve();
+    {
+        cout << "Case #" << tc + 1 << edl;
+        sol.TEST();
+        cout << edl << "DONE" << edl;
+    }
     return (0);
 }
