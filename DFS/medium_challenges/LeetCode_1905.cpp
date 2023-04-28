@@ -34,7 +34,7 @@ public:
         if (!is_valid(i, j, g2) || !g2[i][j])
             return;
         is_sub &= (g2[i][j] == g1[i][j]);
-        g2[i][j] = 0;
+        g2[i][j] = 0; // mark as visited
         fr(d, 0, 4) dfs(g1, g2, i + dr[d], j + dc[d]);
     }
     int countSubIslands(vvi &g1, vvi &g2)
@@ -44,7 +44,7 @@ public:
         {
             fr(j, 0, sz(g2[0]))
             {
-                if (g2[i][j])
+                if (g2[i][j]) // the grid itself also marks the visited nodes
                 {
                     is_sub = true;
                     dfs(g1, g2, i, j);
