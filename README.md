@@ -28,3 +28,7 @@
    - Edge List
    - Adjacency Hashset
    - Adjacency Matrix With Multiple Edges
+
+> **Depth First Search**
+   - DFS Concept
+   - DFS on Matrix
