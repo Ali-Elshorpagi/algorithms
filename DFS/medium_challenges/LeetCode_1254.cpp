@@ -19,6 +19,7 @@ class Solution // O(N * M) time, O(N * M) space
 {
     vi dr{-1, 0, 1, 0}; // Delta for: up, right, down, left
     vi dc{0, 1, 0, -1};
+    bool is_touch;
 
 public:
     Solution() { Mesh_Ali; }
@@ -35,9 +36,8 @@ public:
         if (grid[i][j] || visited[i][j])
             return true;
         visited[i][j] = 1;
-        bool flag(true);
-        fr(d, 0, 4) flag &= dfs(visited, grid, i + dr[d], j + dc[d]);
-        return flag;
+        fr(d, 0, 4) is_touch &= dfs(visited, grid, i + dr[d], j + dc[d]);
+        return is_touch;
     }
     int closedIsland(vvi &grid)
     {
@@ -45,10 +45,10 @@ public:
         vvi visited(sz(grid), vi(sz(grid[0])));
         fr(i, 0, sz(grid))
         {
-            fr(j, 0, sz(grid[i]))
+            fr(j, 0, sz(grid[0]))
             {
                 if (!grid[i][j] && !visited[i][j])
-                    cnt += dfs(visited, grid, i, j);
+                    is_touch = true, cnt += dfs(grid, visited, i, j);
             }
         }
         return cnt;

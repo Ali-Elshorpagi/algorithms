@@ -30,19 +30,19 @@ public:
             return false;
         return true;
     }
-    void dfs(vvi &grid, vvi &visited, int r, int c, int val)
+    void dfs(vvi &grid, vvi &visited, int r, int c, int old_color)
     {
-        if (!is_valid(r, c, grid) || grid[r][c] != val || visited[r][c])
+        if (!is_valid(r, c, grid) || grid[r][c] != old_color || visited[r][c])
             return;
         visited[r][c] = 1;
         if (!r || !c || r >= sz(grid) - 1 || c >= sz(grid[0]) - 1)
             grid[r][c] = colur;
-        if ((r + 1 <= sz(grid) - 1 && grid[r + 1][c] != val && !visited[r + 1][c]) ||
-            (r - 1 >= 0 && grid[r - 1][c] != val && !visited[r - 1][c]) ||
-            (c + 1 <= sz(grid[0]) - 1 && grid[r][c + 1] != val && !visited[r][c + 1]) ||
-            (c - 1 >= 0 && grid[r][c - 1] != val && !visited[r][c - 1]))
+        if ((r + 1 <= sz(grid) - 1 && grid[r + 1][c] != old_color && !visited[r + 1][c]) ||
+            (r - 1 >= 0 && grid[r - 1][c] != old_color && !visited[r - 1][c]) ||
+            (c + 1 <= sz(grid[0]) - 1 && grid[r][c + 1] != old_color && !visited[r][c + 1]) ||
+            (c - 1 >= 0 && grid[r][c - 1] != old_color && !visited[r][c - 1]))
             grid[r][c] = colur;
-        fr(d, 0, 4) dfs(grid, visited, r + dr[d], c + dc[d], val);
+        fr(d, 0, 4) dfs(grid, visited, r + dr[d], c + dc[d], old_color);
     }
     vvi colorBorder(vvi &grid, int row, int col, int color)
     {
