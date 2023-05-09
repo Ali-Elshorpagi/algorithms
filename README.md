@@ -32,3 +32,4 @@
 > **Depth First Search**
    - DFS Concept
    - DFS on Matrix
+   - Reductions on Graphs
