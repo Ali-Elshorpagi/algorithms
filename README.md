@@ -1,5 +1,7 @@
 # Algorithms in C++
 
+### These algorithms are what I learned and I hope it helps you :)
+
 * You can also see the [Math Algorithms](https://github.com/Ali-Elshorpagi/math_algorithms)
 
 > **Recursive Functions**
