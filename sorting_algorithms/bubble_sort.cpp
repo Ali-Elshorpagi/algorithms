@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -21,15 +21,15 @@ typedef vector<int> vi;
 void Bubble_Sort(vi &arr)
 {
     int len(sz(arr));
+    bool swapped(false);
     for (int i(0); i < len - 1; ++i)
     {
-        bool swapped(false);
         for (int j(0); j < len - i - 1; ++j)
         {
             if (arr[j] > arr[j + 1])
                 swap(arr[j], arr[j + 1]), swapped = true;
         }
-        if (!swapped)
+        if (!swapped) // that's mean the array is sorted
             break;
     }
 }
@@ -50,7 +50,6 @@ class Solution
 {
 public:
     Solution() { Mesh_Ali; }
-
     void TEST() {}
 };
 
@@ -62,10 +61,7 @@ int main()
     int tc(1);
     // cin >> tc;
     while (tc--)
-    {
-        cout << "Case #" << tc + 1 << edl;
-        sol.TEST();
-        cout << edl << "DONE" << edl;
-    }
+        cout << "Case #" << tc + 1 << edl, sol.TEST();
+    cout << edl << "DONE" << edl;
     return (0);
 }
