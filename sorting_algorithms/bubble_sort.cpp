@@ -21,9 +21,10 @@ typedef vector<int> vi;
 void Bubble_Sort(vi &arr)
 {
     int len(sz(arr));
-    bool swapped(false);
+
     for (int i(0); i < len - 1; ++i)
     {
+        bool swapped(false);
         for (int j(0); j < len - i - 1; ++j)
         {
             if (arr[j] > arr[j + 1])
