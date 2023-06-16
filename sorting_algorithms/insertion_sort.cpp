@@ -24,7 +24,7 @@ void Insertion_Sort_0(vi &arr)
     for (int i(1); i < len; ++i)
     {
         key = arr[i], j = i - 1;
-        while (j > -1 && arr[j] > key) // shift right
+        while (j > -1 && arr[j] > key) // right shifting
             arr[j + 1] = arr[j], --j;
         arr[j + 1] = key;
     }
