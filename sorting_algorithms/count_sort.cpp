@@ -19,6 +19,7 @@ typedef vector<int> vi;
  * Best-Case Time      O(N)
  * Worst-Case Time     O(N + K), where K is the size of frequency array
  * Worst-Case Space    O(K)
+ *
  */
 
 void count_sort_0(vi &arr)
@@ -149,7 +150,7 @@ void count_sort_with_string_1(vector<string> &arr)
 }
 
 vi count_sort_v2(const vi &arr)
-{ // this is another version of count sort the above (count_sort_0) is better but isn't stable
+{
     int len(sz(arr)), max_val(*max_element(all(arr)));
 
     vi freq(max_val + 1);
@@ -184,7 +185,6 @@ class Solution
 {
 public:
     Solution() { Mesh_Ali; }
-
     void TEST() {}
 };
 
@@ -194,12 +194,9 @@ int main()
     // freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
-    // cin >> tc;
+    cin >> tc;
     while (tc--)
-    {
-        cout << "Case #" << tc + 1 << edl;
-        sol.TEST();
-        cout << edl << "DONE" << edl;
-    }
+        cout << "Case #" << tc + 1 << edl, sol.TEST();
+    cout << edl << "DONE" << edl;
     return (0);
 }

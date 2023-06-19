@@ -16,6 +16,15 @@ typedef vector<int> vi;
  * Best-Case Time      O(N)
  * Worst-Case Time     O(N²)
  * Worst-Case Space    O(1)
+ *
+ * Properties :
+ *              1- Stable
+ *              2- In-Place
+ *              3- Adaptive -> efficient for data sets that are already substantially sorted,
+ *                             it takes O(K*N) when each element in the input is no more than 'K' places away from its sorted position
+ *              4- Online -> can sort a list as it receives it
+ *              5- Comparison Based Algorithms
+ *
  */
 
 void Insertion_Sort_0(vi &arr)
@@ -55,7 +64,6 @@ class Solution
 {
 public:
     Solution() { Mesh_Ali; }
-
     void TEST() {}
 };
 
@@ -65,12 +73,9 @@ int main()
     // freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
-    // cin >> tc;
+    cin >> tc;
     while (tc--)
-    {
-        cout << "Case #" << tc + 1 << edl;
-        sol.TEST();
-        cout << edl << "DONE" << edl;
-    }
+        cout << "Case #" << tc + 1 << edl, sol.TEST();
+    cout << edl << "DONE" << edl;
     return (0);
 }
