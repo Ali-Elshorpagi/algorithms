@@ -16,6 +16,14 @@ typedef vector<int> vi;
  * Best-Case Time     O(N * log(N))
  * Worst-Case Time    O(N * log(N))
  * Worst-Case Space   O(1)
+ *
+ * Properties :
+ *              1- Not Stable
+ *              2- Not In-Place
+ *              3- Adaptive
+ *              4- Not Online
+ *              5- Comparison Based
+ *
  */
 
 void Heapify(vi &arr, int n, int i)
@@ -59,12 +67,9 @@ int main()
     // freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
-    // cin >> tc;
+    cin >> tc;
     while (tc--)
-    {
-        cout << "Case #" << tc + 1 << edl;
-        sol.TEST();
-        cout << edl << "DONE" << edl;
-    }
+        cout << "Case #" << tc + 1 << edl, sol.TEST();
+    cout << edl << "DONE" << edl;
     return (0);
 }

@@ -21,7 +21,7 @@ typedef vector<int> vi;
  *              1- Stable
  *              2- In-Place
  *              3- Adaptive
- *              4- Online // not sure
+ *              4- Online
  *              5- Comparison Based
  *
  */
