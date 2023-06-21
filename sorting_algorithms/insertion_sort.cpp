@@ -22,7 +22,7 @@ typedef vector<int> vi;
  *              2- In-Place
  *              3- Adaptive
  *              4- Online
- *              5- Comparison Based Algorithms
+ *              5- Comparison Based
  *
  */
 

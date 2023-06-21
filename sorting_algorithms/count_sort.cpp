@@ -20,6 +20,13 @@ typedef vector<int> vi;
  * Worst-Case Time     O(N + K), where K is the size of frequency array
  * Worst-Case Space    O(K)
  *
+ * Properties :
+ *              1- Not Stable, but V2 is Stable
+ *              2- Not In-Place
+ *              3- Not Adaptive
+ *              4- Not Online
+ *              5- Non Comparison Based
+ *
  */
 
 void count_sort_0(vi &arr)
