@@ -14,15 +14,14 @@ typedef vector<int> vi;
  * # Complexities
  *
  * Best-Case Time      O(N)
- * Worst-Case Time     O(N²)
+ * Worst-Case Time     O(N^2)
  * Worst-Case Space    O(1)
  *
  * Properties :
  *              1- Stable
  *              2- In-Place
- *              3- Adaptive -> efficient for data sets that are already substantially sorted,
- *                             it takes O(K*N) when each element in the input is no more than 'K' places away from its sorted position
- *              4- Online -> can sort a list as it receives it
+ *              3- Adaptive
+ *              4- Online
  *              5- Comparison Based Algorithms
  *
  */
