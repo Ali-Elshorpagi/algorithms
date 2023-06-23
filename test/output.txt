@@ -1,5 +1,16 @@
+Case #2
+Path from 0 to 1 : 0 1 
+Path from 0 to 2 : 0 1 2 
+Path from 0 to 3 : 0 1 2 3 
+Path from 0 to 4 : Not Exist
 Case #1
-YES
-NO
+Path from 0 to 1 : Not Exist
+Path from 0 to 2 : 0 2 
+Path from 0 to 3 : 0 2 4 3 
+Path from 0 to 4 : 0 2 4 
+Path from 0 to 5 : 0 2 4 3 5 
+Path from 0 to 6 : Not Exist
+Path from 0 to 7 : 0 2 4 3 7 
+Path from 0 to 8 : 0 2 8 
 
 DONE

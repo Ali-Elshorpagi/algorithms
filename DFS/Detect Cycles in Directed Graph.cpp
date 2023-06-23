@@ -19,25 +19,25 @@ class Solution
 {
 public:
     Solution() { Mesh_Ali; }
-    void add_directed_edge(vvi& graph, int from, int to)
+    void add_directed_edge(vvi &graph, int from, int to)
     {
         graph[from].emplace_back(to);
     }
-    void dfs(vvi& graph, vi& started, vi& finished, int node, int& time)
+    void dfs(vvi &graph, vi &started, vi &finished, int node, int &time)
     {
         started[node] = time++;
-        fc(it,graph[node])
+        fc(it, graph[node])
         {
-            if(started[it] == -1)
+            if (started[it] == -1)
             {
                 cout << "Tree Edge : " << node << ' ' << it << edl;
                 dfs(graph, started, finished, it, time);
             }
             else // 3 cases for a visited node
             {
-                if(started[node] < started[it])
+                if (started[node] < started[it])
                     cout << "Forward Edge : " << node << ' ' << it << edl;
-                else if(finished[it] == -1) // cycle: started before me, didn't finish yet, that's the node must be active in the stack calls;
+                else if (finished[it] == -1) // cycle: started before me, didn't finish yet, that's the node must be active in the stack calls;
                     cout << "Back Edge ( Cycle ) : " << node << ' ' << it << edl;
                 else
                     cout << "Cross Edge : " << node << ' ' << it << edl;
@@ -45,26 +45,26 @@ public:
         }
         finished[node] = time++;
     }
-    void classify_edges(vvi& graph)
+    void classify_edges(vvi &graph)
     {
-        int nodes(sz(graph)),time(1);
+        int nodes(sz(graph)), time(1);
         vi started(nodes, -1), finished(nodes, -1);
-        fr(i,0,nodes)
+        fr(i, 0, nodes)
         {
-            if(started[i] == -1) // not visited
+            if (started[i] == -1) // not visited
                 dfs(graph, started, finished, i, time);
         }
-        cout<<"*****************************"<<edl;
+        cout << "*****************************" << edl;
     }
     void TEST()
     {
-        int nodes,edges;
-        cin>>nodes>>edges;
+        int nodes, edges;
+        cin >> nodes >> edges;
         vvi graph(nodes);
-        fr(e,0,edges)
+        fr(e, 0, edges)
         {
-            int from,to;
-            cin>>from>>to;
+            int from, to;
+            cin >> from >> to;
             add_directed_edge(graph, from, to);
         }
         classify_edges(graph);
@@ -74,8 +74,8 @@ public:
 int main()
 {
     Solution sol;
-    freopen("test/input.txt", "r", stdin);
-    freopen("test/output.txt", "w", stdout);
+    freopen("../test/input.txt", "r", stdin);
+    freopen("../test/output.txt", "w", stdout);
     int tc(1);
     cin >> tc;
     while (tc--)

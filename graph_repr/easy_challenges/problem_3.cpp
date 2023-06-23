@@ -17,7 +17,7 @@ typedef vector<vvi> GRAPH;
 
 void add_directed_multiple_edges(GRAPH &graph, int from, int to, int weight)
 {
-    graph[from][to].push_back(weight);
+    graph[from][to].emplace_back(weight);
 }
 
 void print_adjaceny_multiple_edges(GRAPH &graph)
