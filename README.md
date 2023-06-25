@@ -19,6 +19,7 @@
    - Count Sort
    - Heap Sort
    - Insertion Sort ( Iterative / Recursive )
+   - Radix Sort
    - Selection Sort ( Iterative / Recursive )
    
 > **Binary Search**
@@ -31,8 +32,11 @@
    - Adjacency Hashset
    - Adjacency Matrix With Multiple Edges
 
-> **Depth First Search**
+> **Depth First Search (DFS)**
    - DFS Concept
    - DFS on Matrix
    - Reductions on Graphs
    - Detect Cycles in Directed Graph
+
+> **Breadth First Search (BFS)**
+   - DFS Concept
