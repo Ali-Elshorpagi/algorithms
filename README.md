@@ -16,6 +16,7 @@
 
 > **Sorting Algorithms**
    - Bubble Sort ( Iterative / Recursive )
+   - Bucket Sort
    - Count Sort
    - Heap Sort
    - Insertion Sort ( Iterative / Recursive )
