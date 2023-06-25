@@ -8,6 +8,7 @@ typedef vector<int> vi;
 typedef vector<vi> GRAPH;
 
 #define _CRT_SECURE_NO_DEPRECATE
+#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
@@ -18,6 +19,7 @@ const int oo = 1e7; // A big value expressing infinity
 class Solution
 {
 public:
+    Solution() { Mesh_Ali; }
     void add_directed_edge(GRAPH &graph, int from, int to)
     {
         graph[from].emplace_back(to);
