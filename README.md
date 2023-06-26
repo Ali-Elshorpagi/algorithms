@@ -41,3 +41,5 @@
 
 > **Breadth First Search (BFS)**
    - DFS Concept
+   - BFS on Matrix
+   - Detect Cycles in Undirected Graph
