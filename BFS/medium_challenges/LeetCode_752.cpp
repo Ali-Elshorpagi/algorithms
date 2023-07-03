@@ -2,6 +2,7 @@
 #include <vector>
 #include <queue>
 #include <unordered_set>
+#include <utility>
 
 using namespace std;
 
@@ -21,6 +22,16 @@ public:
     // we can code as equation too:
     //                - for next : (ch - '0' + 1) % 10 + '0'
     //                - for prev : (ch - '0' - 1 + 10) % 10 + '0'
+
+    pair<char, char> roll_it(char ch) // return prev - next, u can split them as u see in the next func
+    {
+        if (ch == '9')
+            return {'8', '0'};
+        if (ch == '0')
+            return {'9', '1'};
+        char tmp(ch);
+        return {--tmp, ++ch};
+    }
     char next(char ch)
     {
         if (ch == '9')
@@ -53,7 +64,7 @@ public:
                 nodes.pop();
                 fr(i, 0, 4) // traversing for each wheel
                 {
-                    cur[i] = next(cur[i]);
+                    cur[i] = roll_it(cur[i]).second; // next(cur[i])
                     if (cur == target)
                         return cnt + 1;
 
@@ -61,13 +72,13 @@ public:
                         nodes.push(cur);
 
                     // undo to the original cur, we can do it by copy it in another variable but this is faster
-                    cur[i] = prev(prev(cur[i]));
+                    cur[i] = roll_it(roll_it(cur[i]).first).first; // prev(prev(cur[i]))
                     if (cur == target)
                         return cnt + 1;
 
                     if (visited.insert(cur).second)
                         nodes.push(cur);
-                    cur[i] = next(cur[i]); // undo to the original cur
+                    cur[i] = roll_it(cur[i]).second; // next(cur[i]) // undo to the original cur
                 }
             }
         }
