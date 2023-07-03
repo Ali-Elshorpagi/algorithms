@@ -22,70 +22,72 @@ typedef vector<vector<int>> GRAPH;
  *                         if the Node body has O(M) memory, it becomes O(N * M)
  */
 
-void add_directed_edge_using_adjaceny_list(GRAPH &graph, int from, int to)
+class Algorithm
 {
-    graph[from].emplace_back(to);
-}
-
-void print_adjaceny_list(GRAPH &graph)
-{
-    int nodes sz(graph);
-    for (int from(0); from < nodes; ++from)
+public:
+    void add_directed_edge_using_adjaceny_list(GRAPH &graph, int from, int to)
     {
-        cout << "Node " << from << " has neighbors: ";
-        for (int to(0); to < sz(graph[from]); ++to)
-            cout << graph[from][to] << ' ';
-        cout << edl;
+        graph[from].emplace_back(to);
     }
-}
-
-void dfs(GRAPH &graph, int node, vector<bool> &visited)
-{
-    visited[node] = true;
-    for (auto &neighbour : graph[node])
+    void print_adjaceny_list(GRAPH &graph)
     {
-        if (!visited[neighbour]) // avoid cycling
+        int nodes sz(graph);
+        for (int from(0); from < nodes; ++from)
         {
-            cout << "\tWe can reach " << neighbour << edl;
-            dfs(graph, neighbour, visited);
+            cout << "Node " << from << " has neighbors: ";
+            for (int to(0); to < sz(graph[from]); ++to)
+                cout << graph[from][to] << ' ';
+            cout << edl;
         }
     }
-}
-void reachability(GRAPH &graph)
-{
-    int nodes sz(graph);
-    for (int i(0); i < nodes; ++i)
+    void dfs(GRAPH &graph, int node, vector<bool> &visited)
     {
-        vector<bool> visited(nodes); // reset
-        cout << "Reachable set of node " << i << edl;
-        dfs(graph, i, visited);
+        visited[node] = true;
+        for (auto &neighbour : graph[node])
+        {
+            if (!visited[neighbour]) // avoid cycling
+            {
+                cout << "\tWe can reach " << neighbour << edl;
+                dfs(graph, neighbour, visited);
+            }
+        }
     }
-}
-
-void Solve()
-{
-    int nodes, edges;
-    cin >> nodes >> edges;
-
-    GRAPH graph(nodes);
-
-    for (int e(0); e < edges; ++e)
+    void reachability(GRAPH &graph)
     {
-        int from, to;
-        cin >> from >> to;
-        add_directed_edge_using_adjaceny_list(graph, from, to);
+        int nodes sz(graph);
+        for (int i(0); i < nodes; ++i)
+        {
+            vector<bool> visited(nodes); // reset
+            cout << "Reachable set of node " << i << edl;
+            dfs(graph, i, visited);
+        }
     }
-    reachability(graph);
-}
+    void TEST()
+    {
+        int nodes, edges;
+        cin >> nodes >> edges;
+
+        GRAPH graph(nodes);
+
+        for (int e(0); e < edges; ++e)
+        {
+            int from, to;
+            cin >> from >> to;
+            add_directed_edge_using_adjaceny_list(graph, from, to);
+        }
+        reachability(graph);
+    }
+};
 
 int main()
 {
-    Mesh_Ali;
+    Algorithm algo;
     freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)
-        Solve();
+        cout << "Case #" << tc + 1 << edl, algo.TEST();
+    cout << edl << "DONE" << edl;
     return (0);
 }

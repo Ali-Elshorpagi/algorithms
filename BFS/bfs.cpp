@@ -26,7 +26,7 @@ typedef vector<vi> GRAPH;
 
 const int oo = 1e7; // A big value expressing infinity
 
-class Solution
+class Algorithm
 {
 public:
     void add_undirected_edge(GRAPH &graph, int from, int to)
@@ -59,12 +59,12 @@ public:
         return visited;
     }
 
-    vi BFS_V2(GRAPH &graph, int start)
+    vi BFS_V2(GRAPH &graph, int start) // more smarter
     {
         queue<int> nodes;
         vi visited(sz(graph), oo);
         nodes.push(start);
-        visited[start] = 0;
+        visited[start] = 0; // the value == the level
         for (int level(0), sze(1); !nodes.empty(); ++level, sze = sz(nodes))
         {
             while (sze--)
@@ -102,15 +102,16 @@ public:
             cout << it << ' ';
     }
 };
+
 int main()
 {
-    Solution sol;
+    Algorithm algo;
     freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)
-        cout << "Case #" << tc + 1 << edl, sol.TEST();
+        cout << "Case #" << tc + 1 << edl, algo.TEST();
     cout << edl << "DONE" << edl;
     return (0);
 }
