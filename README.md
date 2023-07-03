@@ -43,3 +43,4 @@
    - DFS Concept
    - BFS on Matrix
    - Detect Cycles in Undirected Graph
+   - Operation-Based Problems
