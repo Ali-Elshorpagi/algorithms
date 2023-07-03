@@ -4,23 +4,13 @@
 
 using namespace std;
 
-typedef long long ll;
-typedef pair<int, int> pii;
 typedef vector<int> vi;
-typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
-#define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
-#define cl(v) ((v).clear())
 #define edl '\n'
-#define fr(i, x, n) for (int i(x); i < n; ++i)
-#define fl(i, x, n) for (int i(x); i > n; --i)
 #define fc(it, v) for (auto &(it) : (v))
-#define sq(x) (x) * (x)
-#define yes cout << "YES\n"
-#define no cout << "NO\n"
 
 // link : https://leetcode.com/problems/minimum-operations-to-convert-number/
 // code : leetcode 2059
@@ -29,9 +19,38 @@ class Solution
 {
 public:
     Solution() { Mesh_Ali; }
-    int minimumOperations(vi &nums, int start, int goal)
+    int BFS(vi &arr, vi &visited, int start, int goal)
     {
-        return -2;
+        queue<int> nodes;
+        nodes.push(start);
+        // visited[start] = 1; // cus we need to push elements in the first loop
+        int cnt(0);
+        for (int sze(1); !nodes.empty(); sze = sz(nodes))
+        {
+            while (sze--) // 9
+            {
+                int cur(nodes.front());
+                nodes.pop();
+                if (cur == goal)
+                    return cnt;
+                if (cur < 0 || cur > 1000 || visited[cur])
+                    continue;
+                visited[cur] = 1;
+                fc(it, arr) // doing the operations on the whole array;
+                {
+                    nodes.push(cur + it);
+                    nodes.push(cur - it);
+                    nodes.push(cur ^ it);
+                }
+            }
+            ++cnt;
+        }
+        return -1;
+    }
+    int minimumOperations(vi &arr, int start, int goal)
+    {
+        vi visited(1005);
+        return BFS(arr, visited, start, goal);
     }
     void TEST()
     {
