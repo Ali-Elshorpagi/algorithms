@@ -65,7 +65,7 @@ public:
         vi visited(sz(graph), oo);
         nodes.push(start);
         visited[start] = 0; // the value == the level
-        for (int level(0), sze(1); !nodes.empty(); ++level, sze = sz(nodes))
+        for (int level(0), sze(sz(nodes)); !nodes.empty(); ++level, sze = sz(nodes))
         {
             while (sze--)
             {

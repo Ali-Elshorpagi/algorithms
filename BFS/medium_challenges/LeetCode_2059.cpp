@@ -25,9 +25,9 @@ public:
         nodes.push(start);
         // visited[start] = 1; // cus we need to push elements in the first loop
         int cnt(0);
-        for (int sze(1); !nodes.empty(); sze = sz(nodes))
+        for (int sze(sz(nodes)); !nodes.empty(); sze = sz(nodes))
         {
-            while (sze--) // 9
+            while (sze--)
             {
                 int cur(nodes.front());
                 nodes.pop();

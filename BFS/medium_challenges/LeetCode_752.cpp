@@ -56,7 +56,7 @@ public:
         queue<string> nodes;
         nodes.push("0000");
         visited.insert("0000");
-        for (int cnt(0), sze(1); !nodes.empty(); ++cnt, sze = sz(nodes))
+        for (int cnt(0), sze(sz(nodes)); !nodes.empty(); ++cnt, sze = sz(nodes))
         {
             while (sze--)
             {
