@@ -48,14 +48,12 @@ public:
                 fr(d, 0, 4)
                 {
                     int new_row(cur.first + dr[d]), new_col(cur.second + dc[d]);
-                    if (!is_valid(visited, rooms, new_row, new_col))
-                        continue;
-
-                    if (rooms[new_row][new_col] == INF)
+                    if (is_valid(visited, rooms, new_row, new_col) && rooms[new_row][new_col] == INF)
+                    {
                         rooms[new_row][new_col] = level + 1;
-
-                    visited[new_row][new_col] = 1;
-                    nodes.push({new_row, new_col});
+                        visited[new_row][new_col] = 1;
+                        nodes.push({new_row, new_col});
+                    }
                 }
             }
         }
