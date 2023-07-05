@@ -15,6 +15,9 @@ typedef vector<string> vs;
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 
+// link : https://leetcode.com/problems/open-the-lock/
+// code : leetcode 752
+
 class Solution
 {
 public:

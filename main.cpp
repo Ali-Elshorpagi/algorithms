@@ -51,7 +51,7 @@ public:
     Solution() { Mesh_Ali; }
     void TEST()
     {
-        cout << (4 ^ 2) << edl;
+        cout << (12 % 10) << edl;
     }
 };
 
