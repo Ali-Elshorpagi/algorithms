@@ -53,7 +53,7 @@ public:
         }
         return ans;
     }
-    // multi-source BFS O(N * log(N)) time,
+    // multi-source BFS, O(N * log(N)) time,
     void BFS(queue<ll> &nodes, set<int> &ans, ll low, ll high)
     {
         while (!nodes.empty())

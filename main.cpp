@@ -11,7 +11,6 @@ typedef vector<ll> vll;
 typedef vector<vll> vvll;
 typedef vector<pii> vpii;
 typedef vector<char> vc;
-typedef map<int, int> mpii;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
@@ -49,10 +48,7 @@ class Solution
 {
 public:
     Solution() { Mesh_Ali; }
-    void TEST()
-    {
-        cout << (12 % 10) << edl;
-    }
+    void TEST() {}
 };
 
 int main()
