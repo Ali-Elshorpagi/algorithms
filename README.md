@@ -2,7 +2,9 @@
 
 ### These algorithms are what I learned and I hope it helps you :)
 
-* You can also see the [Math Algorithms](https://github.com/Ali-Elshorpagi/math_algorithms)
+* You can also see :
+   - [Math Algorithms](https://github.com/Ali-Elshorpagi/math_algorithms)
+   - [Data Structures](https://github.com/Ali-Elshorpagi/Data_Structures)
 
 > **Recursive Functions**
    - Length 3n + 1
@@ -45,3 +47,4 @@
    - Detect Cycles in Undirected Graph
    - Operation-Based Problems
    - Multi-Source BFS (1 - M BFS)
+   - State Graph Problems

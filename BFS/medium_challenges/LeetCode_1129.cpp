@@ -18,7 +18,7 @@ typedef vector<vector<pair<int, int>>> GRAPH;
 // link : https://leetcode.com/problems/shortest-path-with-alternating-colors/
 // code : leetcode 1129
 
-class Solution
+class Solution // State Graph Problem
 {
 
 public:
