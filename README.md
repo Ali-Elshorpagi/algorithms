@@ -42,9 +42,13 @@
    - Detect Cycles in Directed Graph
 
 > **Breadth First Search (BFS)**
-   - DFS Concept
+   - BFS Concept
    - BFS on Matrix
    - Detect Cycles in Undirected Graph
    - Operation-Based Problems
    - Multi-Source BFS (1 - M BFS)
    - State Graph Problems
+
+> **Topological Ordering**
+   - Kahn's Algorithm 
+
