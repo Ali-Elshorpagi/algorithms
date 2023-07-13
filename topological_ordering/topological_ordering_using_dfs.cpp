@@ -71,7 +71,7 @@ public:
     vi findOrder(int numCourses, vvi &prerequisites)
     {
         vvi graph(numCourses);
-        fc(pair, prerequisites) { add_directed_edge(graph, pair[1], pair[0]); }
+        fc(edge, prerequisites) { add_directed_edge(graph, edge[1], edge[0]); }
         return topological_ordering(graph);
     }
     void TEST()
