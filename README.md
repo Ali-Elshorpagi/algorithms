@@ -50,5 +50,6 @@
    - State Graph Problems
 
 > **Topological Ordering**
-   - Kahn's Algorithm 
+   - Kahn's Algorithm
+   - DFS Algorithm 
 

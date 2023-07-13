@@ -21,7 +21,7 @@ typedef vector<vi> vvi;
  *
  */
 
-class Algorithm
+class Algorithm // Using Kahn's Algorithm
 {
 public:
     void add_directed_edge(vvi &graph, int from, int to)
