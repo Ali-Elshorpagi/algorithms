@@ -15,6 +15,9 @@ typedef vector<vi> vvi;
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 #define fc(it, v) for (auto &(it) : (v))
 
+// link : https://leetcode.com/problems/minimum-height-trees/
+// code : leetcode 310
+
 class Solution
 {
 public:
