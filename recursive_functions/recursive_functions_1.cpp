@@ -7,6 +7,7 @@ using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
+typedef vector<ll> vll;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define sz(v) ((int)((v).size()))
@@ -18,7 +19,7 @@ class Algorithm
 {
     vi di{1, 0, 1};
     vi dj{0, 1, 1};
-    vi dp; // u can increase the vector, it depends on the constraints;
+    vll dp; // u can increase the vector, it depends on the constraints;
 public:
     Algorithm() { dp.resize(1e2); }
     void right_max_0(int arr[], int len, int str = 0)
@@ -115,36 +116,13 @@ public:
         int new_row(row + di[max_idx]), new_col(col + dj[max_idx]);
         return sum + path_sum(grid, ROWS, COLS, new_row, new_col);
     }
-    int fibonacci_0(int n)
-    {
-        if (n < 2)
-            return 1;
-        return fibonacci_0(n - 1) + fibonacci_0(n - 2);
-    }
-    int fibonacci_1(int n)
-    {
-        if (n < 2)
-            return 1;
-        if (dp[n])
-            return dp[n];
-        return dp[n] = fibonacci_1(n - 1) + fibonacci_1(n - 2);
-    }
-    ll fibonacci_2(ll n)
-    {
-        // u can use the Binet's Formula
-        // F(n)	= ((phi^n)-(-phi)^(-n))/(sqrt(5));
-        //  F(n) =  ((phi^n) - (1-phi)^n)/√5;
-        // phi = Golden Ratio = 0.5*(1 + sqrt(5)) // not sure;
-        return 0;
-    }
-
     void TEST() {}
 };
 
 int main()
 {
     Algorithm algo;
-    freopen("../test/input.txt", "r", stdin);
+    // freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
