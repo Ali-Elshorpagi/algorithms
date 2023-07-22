@@ -52,7 +52,7 @@ public:
         // or Top-Down approach;
         if (n < 2)
             return 1;
-        if (arr[n])
+        if (arr[n] != -1)
             return arr[n];
         return arr[n] = fib_1(n - 1) + fib_1(n - 2);
     }
@@ -61,7 +61,7 @@ public:
         if (n < 2)
             return 1;
         ll &ref(arr[n]); // it's reference, so any change upon the variable(ref) will change the arr[n]
-        if (ref)
+        if (ref != -1)
             return ref;
         return ref = fib_2(n - 1) + fib_2(n - 2);
     }
@@ -108,14 +108,14 @@ public:
     void TEST()
     {
         ll n(80);
-        arr.resize(n + 1);
+        arr.resize(n + 1, -1);
         // cout << fib_0(n) << edl; // will crashed, cus TLE & MLE
         // cout << fib_1(n) << edl; // 37889062373143906
         // cout << fib_2(n) << edl; // 37889062373143906
         // cout << fib_3(n) << edl; // 37889062373143906
-        cout << fib_4(n) << edl; // 37889062373143906
+        // cout << fib_4(n) << edl; // 37889062373143906
         cout << fib_5(n) << edl; // 37889062373143906
-        // cout << fib_6(n) << edl; // 37889062373143896
+        cout << fib_6(n) << edl; // 37889062373143896
     }
 };
 
