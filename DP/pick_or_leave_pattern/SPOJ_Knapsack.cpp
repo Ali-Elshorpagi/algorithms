@@ -38,7 +38,7 @@ public:
         int pick(0);
         if (remains >= arr[idx].first)
             pick = arr[idx].second + dp(idx + 1, remains - arr[idx].first);
-        int leave = dp(idx + 1, remains);
+        int leave(dp(idx + 1, remains));
         return ref = max(pick, leave);
     }
     void TEST()
