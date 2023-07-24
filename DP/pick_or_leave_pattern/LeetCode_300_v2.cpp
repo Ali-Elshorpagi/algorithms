@@ -15,7 +15,7 @@ typedef vector<vi> vvi;
 // link : https://leetcode.com/problems/longest-increasing-subsequence/
 // name : LeetCode 300
 
-class Solution // o(N) time & space
+class Solution // O(N^2) time, O(N) space
 {
     vi memory; // for Memoization
 
