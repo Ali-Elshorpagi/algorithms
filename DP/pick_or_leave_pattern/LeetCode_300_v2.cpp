@@ -13,7 +13,7 @@ typedef vector<vi> vvi;
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 
 // link : https://leetcode.com/problems/longest-increasing-subsequence/
-// name : LeetCode 300
+// name : Longest Increasing Subsequence - LeetCode 300
 
 class Solution // O(N^2) time, O(N) space
 {

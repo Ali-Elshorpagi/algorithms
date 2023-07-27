@@ -48,16 +48,21 @@ class Solution
 {
 public:
     Solution() { Mesh_Ali; }
-    void TEST() {}
+    void TEST()
+    {
+        int x(2);
+        x <<= 1;
+        cout << x << edl;
+    }
 };
 
 int main()
 {
     Solution sol;
-    freopen("test/input.txt", "r", stdin);
+    // freopen("test/input.txt", "r", stdin);
     freopen("test/output.txt", "w", stdout);
     int tc(1);
-    cin >> tc;
+    // cin >> tc;
     while (tc--)
         cout << "Case #" << tc + 1 << edl, sol.TEST();
     cout << edl << "DONE" << edl;
