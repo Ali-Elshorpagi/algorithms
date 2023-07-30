@@ -24,18 +24,19 @@ public:
     {
         if (current_idx == sz(nums))
             return 0;
-        auto &ref(memory[current_idx][prev_idx]);
+        // +1 cuz its start with -1, so it will access to garbage or RTE
+        auto &ref(memory[current_idx][prev_idx + 1]);
         if (ref != -1)
             return ref;
         int pick(0);
-        if (prev_idx >= sz(nums) || nums[current_idx] > nums[prev_idx])
+        if (prev_idx == -1 || nums[current_idx] > nums[prev_idx])
             pick = 1 + dp(nums, current_idx + 1, current_idx);
         int leave(dp(nums, current_idx + 1, prev_idx));
         return ref = max(pick, leave);
     }
     int lengthOfLIS(vi &nums)
     {
-        return dp(nums, 0, sz(nums));
+        return dp(nums, 0, -1);
     }
     void TEST()
     {
