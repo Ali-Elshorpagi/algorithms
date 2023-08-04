@@ -53,3 +53,5 @@
    - Kahn's Algorithm
    - DFS Algorithm 
 
+> **Dynamic Programming DP**
+   - Pick or Leave Pattern
