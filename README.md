@@ -6,7 +6,7 @@
    - [Math Algorithms](https://github.com/Ali-Elshorpagi/math_algorithms)
    - [Data Structures](https://github.com/Ali-Elshorpagi/Data_Structures)
 
-> **Recursive Functions**
+> **[Recursive Functions](https://github.com/Ali-Elshorpagi/algorithms/tree/main/recursive_functions)**
    - Length 3n + 1
    - My Power
    - Array Max
@@ -16,7 +16,7 @@
    - Accumulate Array
    - Left Max 
 
-> **Sorting Algorithms**
+> **[Sorting Algorithms](https://github.com/Ali-Elshorpagi/algorithms/tree/main/sorting_algorithms)**
    - Bubble Sort ( Iterative / Recursive )
    - Bucket Sort
    - Count Sort
@@ -25,23 +25,23 @@
    - Radix Sort
    - Selection Sort ( Iterative / Recursive )
    
-> **Binary Search**
+> **[Binary Search](https://github.com/Ali-Elshorpagi/algorithms/tree/main/binary_search)**
    - Iterative / Recursive
    - Integer Numbers
    - Real Numbers
 
-> **Graph Representation**
+> **[Graph Representation](https://github.com/Ali-Elshorpagi/algorithms/tree/main/graph_representation)**
    - Edge List
    - Adjacency Hashset
    - Adjacency Matrix With Multiple Edges
 
-> **Depth First Search (DFS)**
+> **[Depth First Search (DFS)](https://github.com/Ali-Elshorpagi/algorithms/tree/main/DFS)**
    - DFS Concept
    - DFS on Matrix
    - Reductions on Graphs
    - Detect Cycles in Directed Graph
 
-> **Breadth First Search (BFS)**
+> **[Breadth First Search (BFS)](https://github.com/Ali-Elshorpagi/algorithms/tree/main/BFS)**
    - BFS Concept
    - BFS on Matrix
    - Detect Cycles in Undirected Graph
@@ -49,9 +49,9 @@
    - Multi-Source BFS (1 - M BFS)
    - State Graph Problems
 
-> **Topological Ordering**
+> **[Topological Ordering](https://github.com/Ali-Elshorpagi/algorithms/tree/main/topological_ordering)**
    - Kahn's Algorithm
    - DFS Algorithm 
 
-> **Dynamic Programming DP**
+> **[Dynamic Programming (DP)](https://github.com/Ali-Elshorpagi/algorithms/tree/main/DP)**
    - Pick or Leave Pattern
