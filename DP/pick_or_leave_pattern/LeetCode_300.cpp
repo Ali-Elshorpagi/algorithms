@@ -12,9 +12,6 @@ typedef vector<vi> vvi;
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 
-// link : https://leetcode.com/problems/longest-increasing-subsequence/
-// name : Longest Increasing Subsequence - LeetCode 300
-
 class Solution
 {
     // for Memoization

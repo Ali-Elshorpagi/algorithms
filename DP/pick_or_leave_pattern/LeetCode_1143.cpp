@@ -12,10 +12,7 @@ typedef vector<vi> vvi;
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
-// link : https://leetcode.com/problems/longest-common-subsequence/
-// name : Longest Common Subsequence - LeetCode 1143
-
-class Solution // O(N * M) time & space
+class Solution
 {
     vvi memory; // for memoization
 public:

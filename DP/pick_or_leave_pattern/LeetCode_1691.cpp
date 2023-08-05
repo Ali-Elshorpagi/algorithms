@@ -14,10 +14,7 @@ typedef vector<vi> vvi;
 #define edl '\n'
 #define fc(it, v) for (auto &(it) : (v))
 
-// link : https://leetcode.com/problems/maximum-height-by-stacking-cuboids/
-// name : Maximum Height by Stacking Cuboids - LeetCode 1691
-
-class Solution // O(N^2) time & space
+class Solution
 {
     vvi memory; // for Memoization
 public:

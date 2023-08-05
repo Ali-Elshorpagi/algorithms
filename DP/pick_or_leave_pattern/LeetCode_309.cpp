@@ -12,13 +12,10 @@ typedef vector<vi> vvi;
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
-// link : https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
-// name : Best Time to Buy and Sell Stock with Cooldown - LeetCode 309
-
 class Solution
-{
-    vvi memory;          // for memoization - dp
-    vector<vvi> memory_; // for memoization - dp_
+{                        // for memoization
+    vvi memory;          //  dp
+    vector<vvi> memory_; // dp_
     enum
     {
         COOLDOWN,

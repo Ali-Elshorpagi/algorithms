@@ -13,11 +13,7 @@ typedef vector<pair<int, int>> vpii;
 #define edl '\n'
 #define fc(it, v) for (auto &(it) : (v))
 
-// link : https://www.spoj.com/problems/KNAPSACK/
-// name : KNAPSACK - The Knapsack Problem
-
-class Solution // O(N * W) time & space, where N is the index and W is the maximum weight
-
+class Solution
 {
     vpii arr;
     vvi memory; // for Memoization

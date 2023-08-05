@@ -14,9 +14,6 @@ typedef vector<vi> vvi;
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
 
-// link : https://leetcode.com/problems/partition-equal-subset-sum/
-// name : Partition Equal Subset Sum - LeetCode 416
-
 class Solution
 {
     vvi memory; // for memoization

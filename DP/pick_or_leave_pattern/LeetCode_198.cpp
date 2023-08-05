@@ -10,9 +10,6 @@ typedef vector<int> vi;
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
-// link : https://leetcode.com/problems/house-robber/
-// name :  House Robber - LeetCode 198
-
 class Solution
 {
     vi memory; // for memoization
