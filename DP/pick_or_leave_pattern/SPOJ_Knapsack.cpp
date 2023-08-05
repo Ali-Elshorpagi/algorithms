@@ -16,7 +16,7 @@ typedef vector<pair<int, int>> vpii;
 // link : https://www.spoj.com/problems/KNAPSACK/
 // name : KNAPSACK - The Knapsack Problem
 
-class Solution // (N * W) time & space, where N is the index and W is the maximum weight
+class Solution // O(N * W) time & space, where N is the index and W is the maximum weight
 
 {
     vpii arr;

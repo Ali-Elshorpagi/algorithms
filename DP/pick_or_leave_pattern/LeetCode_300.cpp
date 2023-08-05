@@ -15,48 +15,69 @@ typedef vector<vi> vvi;
 // link : https://leetcode.com/problems/longest-increasing-subsequence/
 // name : Longest Increasing Subsequence - LeetCode 300
 
-class Solution // O(N^2) time, O(N) space
+class Solution
 {
-    vi memory; // for Memoization
+    // for Memoization
+    vvi memory;
+    vi memory_;
 
 public:
-    Solution() { Mesh_Ali, memory.resize(2505, -1); }
-    int dp(vi &nums, int idx) // using forward approach
+    Solution() { Mesh_Ali, memory_.resize(2505, -1), memory.resize(2505, vi(2505, -1)); }
+    int dp(vi &nums, int current_idx, int prev_idx) // O(N^2) time & space
     {
+        if (current_idx == sz(nums))
+            return 0;
+        // +1 cuz its start with -1, so it will access to garbage or RTE
+        auto &ref(memory[current_idx][prev_idx + 1]);
+        if (ref != -1)
+            return ref;
+        int pick(0);
+        if (prev_idx == -1 || nums[current_idx] > nums[prev_idx])
+            pick = 1 + dp(nums, current_idx + 1, current_idx);
+        int leave(dp(nums, current_idx + 1, prev_idx));
+        return ref = max(pick, leave);
+    }
+    int dp_(vi &nums, int idx) // O(N^2) time, O(N) space
+    {
+        // using forward approach
         if (idx == sz(nums))
             return 0;
-        auto &ref(memory[idx]);
+        auto &ref(memory_[idx]);
         if (ref != -1)
             return ref;
         ref = 0;
         fr(j, idx + 1, sz(nums)) // Maximize among all valid positions after idx
         {
             if (nums[j] > nums[idx])
-                ref = max(ref, dp(nums, j));
+                ref = max(ref, dp_(nums, j));
         }
         return ++ref; // ++ to add it's position
     }
-    int lengthOfLIS_(vi &nums)
+    int lengthOfLIS_0(vi &nums)
     {
         int mx(0);
-        fr(i, 0, sz(nums)) { mx = max(mx, dp(nums, i)); }
+        fr(i, 0, sz(nums)) { mx = max(mx, dp_(nums, i)); }
         return mx;
     }
-    int lengthOfLIS(vi &nums)
+    int lengthOfLIS_1(vi &nums)
     {
         nums.insert(nums.begin(), INT_MIN);
-        return dp(nums, 0) - 1; // -1 for the extra element
+        return dp_(nums, 0) - 1; // -1 for the extra element
         // u can use backward approach by return dp(nums,sz(nums)-1) - 1;
         // and reverse the loop in dp func -> for (int j(idx - 1); j > -1; --j)
     }
+    int lengthOfLIS(vi &nums)
+    {
+        return dp(nums, 0, -1);
+    }
     void TEST()
     {
-        // vi nums{10, 9, 2, 5, 3, 7, 101, 18};
-        // cout << lengthOfLIS(nums) << edl; // 4
+        vi nums{10, 9, 2, 5, 3, 7, 101, 18};
+        cout << lengthOfLIS(nums) << edl; // 4
         // vi nums{0, 1, 0, 3, 2, 3};
         // cout << lengthOfLIS(nums) << edl; // 4
-        vi nums{7, 7, 7, 7, 7, 7, 7};
-        cout << lengthOfLIS(nums) << edl; // 1
+        // vi nums{7, 7, 7, 7, 7, 7, 7};
+        // cout << lengthOfLIS(nums) << edl; // 1
     }
 };
 
