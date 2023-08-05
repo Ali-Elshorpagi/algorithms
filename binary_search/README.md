@@ -8,7 +8,7 @@
 |003|441|[Arranging Coins](https://leetcode.com/problems/arranging-coins/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/binary_search/problem_solving/LeetCode_441.cpp)|`O(log(N))`|`O(1)`||
 |004|1283|[Find the Smallest Divisor Given a Threshold](https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/binary_search/problem_solving/LeetCode_1283.cpp)|`O(N * log(N))`|`O(1)`||
 |005|1482|[Minimum Number of Days to Make m Bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/binary_search/problem_solving/LeetCode_1482.cpp)|`O(N * log(N))`|`O(1)`||
-|006|475|[Heaters](https://leetcode.com/problems/heaters/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/binary_search/problem_solving/LeetCode_475.cpp)|`O(N * log(N)) + + N * log(M))`|`O(1)`||
+|006|475|[Heaters](https://leetcode.com/problems/heaters/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/binary_search/problem_solving/LeetCode_475.cpp)|`O(N * log(N)) + N * log(M))`|`O(1)`||
 |006|69|[Sqrt(x)](https://leetcode.com/problems/sqrtx/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/binary_search/problem_solving/LeetCode_69.cpp)|`O(log(N))`|`O(1)`||
 
 
