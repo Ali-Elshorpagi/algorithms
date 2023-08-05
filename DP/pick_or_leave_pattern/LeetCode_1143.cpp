@@ -13,7 +13,7 @@ typedef vector<vi> vvi;
 #define edl '\n'
 
 // link : https://leetcode.com/problems/longest-common-subsequence/
-// name :  Longest Common Subsequence - LeetCode 1143
+// name : Longest Common Subsequence - LeetCode 1143
 
 class Solution // O(N * M) time & space
 {
