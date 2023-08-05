@@ -1,6 +1,6 @@
 
 
-# Definitions :
+### **Definitions :**
 
 
 > Stable Algorithm :
@@ -26,7 +26,7 @@
   - any comparison-based sorting algorithm must make at least (N * log2(N)) comparisons on average to sort the input array
 
 
-### Problems
+### **Problems :**
 
   |ID|  Code  | Problem Name    |  Solution       |  Time           | Space           | Note          | 
 |---|----|---------------- | --------------- | --------------- | --------------- | ------------- |
