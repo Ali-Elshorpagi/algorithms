@@ -14,8 +14,8 @@ typedef vector<int> vi;
  * # Complexities
  *
  * Best-Case Time     O(1)
- * Worst-Case Time    O(log N)
- * Worst-Case Space   O(1), but in recursive implementation will be O(log N)
+ * Worst-Case Time    O(log(N))
+ * Worst-Case Space   O(1), but in recursive implementation will be O(log(N))
  */
 
 class Algorithm
