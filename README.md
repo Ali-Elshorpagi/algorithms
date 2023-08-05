@@ -8,7 +8,7 @@
 
 > **[Recursive Functions](https://github.com/Ali-Elshorpagi/algorithms/tree/main/recursive_functions)**
    - [All Fibonacci Methods](https://github.com/Ali-Elshorpagi/algorithms/blob/main/recursive_functions/fibonacci.cpp) 
-   - And some small problems to practice on recursion
+   - Some small problems to practice on recursion
 
 > **[Sorting Algorithms](https://github.com/Ali-Elshorpagi/algorithms/tree/main/sorting_algorithms)**
    - Bubble Sort ( Iterative / Recursive )
