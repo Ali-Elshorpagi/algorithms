@@ -7,14 +7,8 @@
    - [Data Structures](https://github.com/Ali-Elshorpagi/Data_Structures)
 
 > **[Recursive Functions](https://github.com/Ali-Elshorpagi/algorithms/tree/main/recursive_functions)**
-   - Length 3n + 1
-   - My Power
-   - Array Max
-   - Array Sum
-   - Array Average
-   - Array Increment
-   - Accumulate Array
-   - Left Max 
+   - [All Fibonacci Methods](https://github.com/Ali-Elshorpagi/algorithms/blob/main/recursive_functions/fibonacci.cpp) 
+   - And some small problems to practice on recursion
 
 > **[Sorting Algorithms](https://github.com/Ali-Elshorpagi/algorithms/tree/main/sorting_algorithms)**
    - Bubble Sort ( Iterative / Recursive )
