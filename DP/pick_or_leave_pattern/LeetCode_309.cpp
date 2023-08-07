@@ -13,7 +13,8 @@ typedef vector<vi> vvi;
 #define edl '\n'
 
 class Solution
-{                        // for memoization
+{   
+    // for memoization
     vvi memory;          //  dp
     vector<vvi> memory_; // dp_
     enum
