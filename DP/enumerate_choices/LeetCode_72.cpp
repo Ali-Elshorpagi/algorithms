@@ -22,20 +22,22 @@ public:
         if (idx1 >= sz(s1))
             return sz(s2) - idx2; // insert or delete remaining of s2
         if (idx2 >= sz(s2))
-            return sz(s1) - idx1; // insert or delete remaining of s2
+            return sz(s1) - idx1; // insert or delete remaining of s1
 
         auto &ref(memeory[idx1][idx2]);
         if (ref != -1)
             return ref;
 
         if (s1[idx1] == s2[idx2])
-            return ref = dp_forward(s1, s2, idx1 + 1, idx2 + 1);
-
-        int replace_(1 + dp_forward(s1, s2, idx1 + 1, idx2 + 1)),
-            delete_(1 + dp_forward(s1, s2, idx1 + 1, idx2)),
-            insert_(1 + dp_forward(s1, s2, idx1, idx2 + 1));
-
-        return ref = min({replace_, delete_, insert_});
+            ref = dp_forward(s1, s2, idx1 + 1, idx2 + 1);
+        else
+        {
+            int replace_(1 + dp_forward(s1, s2, idx1 + 1, idx2 + 1)),
+                delete_(1 + dp_forward(s1, s2, idx1 + 1, idx2)),
+                insert_(1 + dp_forward(s1, s2, idx1, idx2 + 1));
+            ref = min({replace_, delete_, insert_});
+        }
+        return ref;
     }
     int dp_backward(string &s1, string &s2, int idx1, int idx2)
     {
@@ -47,13 +49,15 @@ public:
             return ref;
 
         if (s1[idx1] == s2[idx2])
-            return ref = dp_backward(s1, s2, idx1 - 1, idx2 - 1);
-
-        int replace_(1 + dp_forward(s1, s2, idx1 - 1, idx2 - 1)),
-            delete_(1 + dp_forward(s1, s2, idx1 - 1, idx2)),
-            insert_(1 + dp_forward(s1, s2, idx1, idx2 - 1));
-
-        return ref = min({replace_, delete_, insert_});
+            ref = dp_backward(s1, s2, idx1 - 1, idx2 - 1);
+        else
+        {
+            int replace_(1 + dp_backward(s1, s2, idx1 - 1, idx2 - 1)),
+                delete_(1 + dp_backward(s1, s2, idx1 - 1, idx2)),
+                insert_(1 + dp_backward(s1, s2, idx1, idx2 - 1));
+            ref = min({replace_, delete_, insert_});
+        }
+        return ref;
     }
     int minDistance(string word1, string word2)
     {
@@ -63,9 +67,9 @@ public:
     void TEST()
     {
         string word1("horse"), word2("ros");
-        // cout << minDistance(word1, word2) << edl; // 3
+        cout << minDistance(word1, word2) << edl; // 3
         word1 = "intention", word2 = "execution";
-        cout << minDistance(word1, word2) << edl; // 5
+        // cout << minDistance(word1, word2) << edl; // 5
     }
 };
 
