@@ -10,4 +10,4 @@
 |06|309|[Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_309.cpp)|`O(N)`|`O(N)`|Pick or Leave Pattern|
 |07|72|[Edit Distance](https://leetcode.com/problems/edit-distance/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/enumerate_choices/LeetCode_72.cpp)|`O(N * M)`|`O(N * M)`|Enumerate Choices|
 |08|343|[Integer Break](https://leetcode.com/problems/integer-break/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/enumerate_choices/LeetCode_343.cpp)|`O(N^2)`|`O(N)`|Enumerate Choices|
-|09|746|[Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/enumerate_choices/LeetCode_746.cpp)|`O(N^2)`|`O(N)`|Enumerate Choices|
+|09|746|[Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/enumerate_choices/LeetCode_746.cpp)|`O(N)`|`O(N)`|Enumerate Choices|
