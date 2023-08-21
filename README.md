@@ -49,3 +49,4 @@
 
 > **[Dynamic Programming (DP)](https://github.com/Ali-Elshorpagi/algorithms/tree/main/DP)**
    - Pick or Leave Pattern
+   - Enumerate Choices
