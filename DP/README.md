@@ -11,3 +11,4 @@
 |07|72|[Edit Distance](https://leetcode.com/problems/edit-distance/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/enumerate_choices/LeetCode_72.cpp)|`O(N * M)`|`O(N * M)`|Enumerate Choices|
 |08|343|[Integer Break](https://leetcode.com/problems/integer-break/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/enumerate_choices/LeetCode_343.cpp)|`O(N^2)`|`O(N)`|Enumerate Choices|
 |09|746|[Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/enumerate_choices/LeetCode_746.cpp)|`O(N)`|`O(N)`|Enumerate Choices|
+|10|279|[Perfect Squares](https://leetcode.com/problems/perfect-squares/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/enumerate_choices/LeetCode_279.cpp)|`O(N * Sqrt(N))`|`O(N)`|Enumerate Choices|
