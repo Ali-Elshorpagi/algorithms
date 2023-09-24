@@ -48,7 +48,7 @@ public:
             if (nums[j] > nums[idx])
                 ref = max(ref, dp_(nums, j));
         }
-        return ++ref; // ++ to add it's position
+        return ++ref; // ++ to add idxth position
     }
     int lengthOfLIS_0(vi &nums)
     {
