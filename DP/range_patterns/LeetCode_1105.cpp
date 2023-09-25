@@ -10,16 +10,18 @@ typedef vector<vi> vvi;
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
+#define fr(i, x, n) for (int i(x); i < n; ++i)
 
 class Solution
 {
     vvi memory;
+    vi memory_;
 
 public:
-    Solution() { Mesh_Ali, memory.resize(1005, vi(1005, -1)); }
+    Solution() { Mesh_Ali, memory_.resize(1005, -1), memory.resize(1005, vi(1005, -1)); }
     // Case 1 : I keep the book in current shelf
     // Case 2 : I keep the book in next shelf
-    int dp(vvi &books, int idx, int shelfwidth, int remaing_width, int max_height)
+    int dp(vvi &books, int idx, int shelfwidth, int remaing_width, int max_height) // O(N^2) time, O(N^2) space
     {
         if (idx >= sz(books))
             return max_height;
@@ -35,7 +37,33 @@ public:
 
         return ref = min(curr_shelf, next_shelf);
     }
+    int dp_(vvi &books, int idx, int shelfwidth) // O(N^2) time, O(N) space
+    {
+        if (idx >= sz(books))
+            return 0;
+
+        auto &ref(memory_[idx]);
+        if (ref != -1)
+            return ref;
+
+        ref = INT_MAX;
+        int total_width(0), mx_height(0);
+        fr(k, idx, sz(books))
+        {
+            total_width += books[k][0];
+            mx_height = max(mx_height, books[k][1]);
+
+            if (total_width > shelfwidth)
+                break;
+            ref = min(ref, mx_height + dp_(books, k + 1, shelfwidth));
+        }
+        return ref;
+    }
     int minHeightShelves(vvi &books, int shelfWidth)
+    {
+        return dp_(books, 0, shelfWidth);
+    }
+    int minHeightShelves_(vvi &books, int shelfWidth)
     {
         return dp(books, 0, shelfWidth, shelfWidth, 0);
     }
@@ -43,7 +71,7 @@ public:
     {
         // vvi books{{1, 1}, {2, 3}, {2, 3}, {1, 1}, {1, 1}, {1, 1}, {1, 2}};
         // int shelfWidth(4);
-        // cout << minHeightShelves(books, shelfWidth) << edl; // 6
+        // cout << minHeightShelves_(books, shelfWidth) << edl; // 6
         vvi books{{1, 3}, {2, 4}, {3, 2}};
         int shelfWidth(6);
         cout << minHeightShelves(books, shelfWidth) << edl; // 4
