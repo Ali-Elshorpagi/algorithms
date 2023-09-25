@@ -23,7 +23,7 @@ public:
     {
         if (start >= end)
             return 1;
-        auto &ref = memory[start][end];
+        auto &ref(memory[start][end]);
         if (ref != -1)
             return ref;
         if (str[start] != str[end])
