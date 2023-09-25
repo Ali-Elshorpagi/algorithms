@@ -9,7 +9,6 @@ typedef vector<int> vi;
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
-#define fr(i, x, n) for (int i(x); i < n; ++i)
 
 class Solution
 {
@@ -27,13 +26,11 @@ public:
 
         ref = INT_MIN;
         int max_(INT_MIN);
-        fr(block_end, start_idx, start_idx + k)
+        for (int i(start_idx); i < start_idx + k && i < sz(arr); ++i) // i == block_end
         {
-            if (block_end >= sz(arr))
-                break;
-            max_ = max(max_, arr[block_end]);
-            int length(block_end - start_idx + 1);
-            ref = max(ref, length * max_ + dp(arr, block_end + 1, k));
+            max_ = max(max_, arr[i]);
+            int length(i - start_idx + 1);
+            ref = max(ref, length * max_ + dp(arr, i + 1, k));
         }
         return ref;
     }
