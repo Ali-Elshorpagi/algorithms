@@ -1,9 +1,12 @@
 #include <iostream>
 #include <vector>
+#include <cstring>
 
 using namespace std;
 
-typedef vector<int> vi;
+typedef long long ll;
+typedef vector<ll> vll;
+typedef vector<vll> vvll;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
@@ -12,43 +15,54 @@ typedef vector<int> vi;
 
 class Solution
 {
-    vi memory; // for Memoization
+    vvll memory; // for Memoization
+    string str;
+
 public:
-    Solution() { Mesh_Ali, memory.resize(105, -1); }
-    int dp(string str, int idx)
+    Solution() { Mesh_Ali; }
+    ll dp(int left, int right)
     {
-        if (idx >= sz(str))
-            return 1;
-        if (str[idx] == '0')
-            return 0;
-        if (idx == sz(str) - 1)
-            return 1;
-        auto &ref(memory[idx]);
+        auto &ref(memory[left][right]);
         if (ref != -1)
             return ref;
-        int tmp(stoi(str.substr(idx, 2)));
-        ref = dp(str, idx + 1);
-        if (tmp >= 1 && tmp <= 26)
-            ref += dp(str, idx + 2);
+
+        if (left == right)
+            return ref = 1;
+        else if (left == right - 1)
+            return ref = 2 + (str[left] == str[right]);
+
+        ref = 0;
+        if (str[left] == str[right])
+            ref = 1 + dp(left + 1, right - 1);
+
+        ll remove_left(dp(left + 1, right)),
+            remove_right(dp(left, right - 1)),
+            duplicates(dp(left + 1, right - 1));
+        ref += (remove_left + remove_right - duplicates);
+
         return ref;
     }
-    int numDecodings(string s) { return dp(s, 0); }
     void TEST()
     {
-        string str("226");
-        cout << numDecodings(str) << edl; // 3
+        cin >> str;
+        memory.assign(65, vll(65, -1));
+        cout << dp(0, sz(str) - 1) << edl;
     }
 };
 
 int main()
 {
     Solution sol;
-    // freopen("../../test/input.txt", "r", stdin);
+    freopen("../../test/input.txt", "r", stdin);
     freopen("../../test/output.txt", "w", stdout);
     int tc(1);
-    // cin >> tc;
+    cin >> tc;
     while (tc--)
-        cout << "Case #" << tc + 1 << edl, sol.TEST();
-    cout << edl << "DONE" << edl;
+        sol.TEST();
     return (0);
+    // intput:
+    // 3
+    // BAOBAB
+    // AAAA
+    // ABA
 }
