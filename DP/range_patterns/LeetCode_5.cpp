@@ -38,7 +38,7 @@ public:
         {
             fr(j, 0, len)
             {
-                int tmp_len(j - i + 1); // calc the length of the current substring
+                int tmp_len(j - i + 1); // the length of the current substring
                 if (tmp_len > max_len && is_palindrome(i, j))
                     max_len = tmp_len, start_idx = i;
             }
