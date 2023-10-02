@@ -1,7 +1,7 @@
 #### Problem Solving
 |ID|  Code  | Problem Name    |  Solution       |  Time           | Space           | Note          | 
 |---|----|---------------- | --------------- | --------------- | --------------- | ------------- |
-|00||[The Knapsack Problem](https://www.spoj.com/problems/KNAPSACK/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/SPOJ_Knapsack.cpp)|`O(N * W)`|`O(N * W)`|Pick or Leave Pattern|
+|00|-|[The Knapsack Problem](https://www.spoj.com/problems/KNAPSACK/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/SPOJ_Knapsack.cpp)|`O(N * W)`|`O(N * W)`|Pick or Leave Pattern|
 |01|300|[Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_300.cpp)|`O(N^2`|`O(N)`|Pick or Leave Pattern|
 |02|1143|[Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_1143.cpp)|`O(N * M)`|`O(N * M)`|Pick or Leave Pattern|
 |03|416|[Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_416.cpp)|`O(N * Sum)`|`O(N * Sum)`|Pick or Leave Pattern|
@@ -21,3 +21,4 @@
 |17|518|[Coin Change II](https://leetcode.com/problems/coin-change-2/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_counting/LeetCode_518.cpp)|`O(N^2)`|`O(N^2)`|DP Counting|
 |18|377|[Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_counting/LeetCode_377.cpp)|`O(N^2)`|`O(N)`|DP Counting|
 |19|1155|[Number of Dice Rolls With Target Sum](https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_counting/LeetCode_1155.cpp)|`O(N^2)`|`O(N^2)`|DP Counting|
+|20|823|[Binary Trees With Factors](https://leetcode.com/problems/binary-trees-with-factors/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_counting/LeetCode_823.cpp)|`O(N^2)`|`O(N)`|DP Counting|
