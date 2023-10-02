@@ -26,9 +26,9 @@ public:
         auto &ref(memory[idx]);
         if (ref != -1)
             return ref;
-        int tmp(stoi(str.substr(idx, 2)));
+        int num(stoi(str.substr(idx, 2)));
         ref = dp(str, idx + 1);
-        if (tmp >= 1 && tmp <= 26)
+        if (num >= 1 && num <= 26)
             ref += dp(str, idx + 2);
         return ref;
     }
