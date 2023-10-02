@@ -3,7 +3,6 @@
 
 using namespace std;
 
-typedef long long ll;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
 
@@ -16,16 +15,16 @@ typedef vector<vi> vvi;
 class Solution
 {
     vvi memory; // for Memoization
-    const ll mod = 1e9 + 7;
+    const int mod = 1e9 + 7;
 
 public:
     Solution() { Mesh_Ali, memory.resize(35, vi(1005, -1)); }
     int min_(int &a, int &b) { return a < b ? a : b; }
-    ll dp(int n, int k, int target)
+    int dp(int n, int k, int target)
     {
         if (!n)
             return !target ? 1 : 0;
-        if (target <= 0)
+        if (target < 0)
             return 0;
         auto &ref(memory[n][target]);
         if (ref != -1)
