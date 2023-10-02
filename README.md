@@ -51,3 +51,4 @@
    - Pick or Leave Pattern
    - Enumerate Choices
    - Range Patterns
+   - DP Counting
