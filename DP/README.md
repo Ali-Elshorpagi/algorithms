@@ -24,3 +24,4 @@
 |20|823|[Binary Trees With Factors](https://leetcode.com/problems/binary-trees-with-factors/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_counting/LeetCode_823.cpp)|`O(N^2)`|`O(N)`|DP Counting|
 |21|63|[Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_on_grid/LeetCode_63.cpp)|`O(N^2)`|`O(N^2)`|DP On Grid|
 |22|931|[Minimum Falling Path Sum](https://leetcode.com/problems/minimum-falling-path-sum/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_on_grid/LeetCode_931.cpp)|`O(N^2)`|`O(N^2)`|DP On Grid|
+|23|576|[Out of Boundary Paths](https://leetcode.com/problems/out-of-boundary-paths/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_on_grid/LeetCode_576.cpp)|`O(N^3)`|`O(N^3)`|DP On Grid|
