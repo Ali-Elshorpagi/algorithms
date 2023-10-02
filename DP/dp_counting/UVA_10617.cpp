@@ -65,4 +65,8 @@ int main()
     // BAOBAB
     // AAAA
     // ABA
+    // output:
+    // 22
+    // 15
+    // 5
 }
