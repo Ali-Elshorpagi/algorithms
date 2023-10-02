@@ -12,7 +12,7 @@ typedef vector<vll> vvll;
 typedef vector<pii> vpii;
 typedef vector<char> vc;
 
-#define _CRT_SECURE_NO_DEPRECATE
+#define _CRT_SECURE_NO_DEPRECATE 
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))

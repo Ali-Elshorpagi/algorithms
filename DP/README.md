@@ -1,7 +1,7 @@
 #### Problem Solving
 |ID|  Code  | Problem Name    |  Solution       |  Time           | Space           | Note          | 
 |---|----|---------------- | --------------- | --------------- | --------------- | ------------- |
-|00|-|[The Knapsack Problem](https://www.spoj.com/problems/KNAPSACK/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/SPOJ_Knapsack.cpp)|`O(N * W)`|`O(N * W)`|Pick or Leave Pattern|
+|00||[The Knapsack Problem](https://www.spoj.com/problems/KNAPSACK/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/SPOJ_Knapsack.cpp)|`O(N * W)`|`O(N * W)`|Pick or Leave Pattern|
 |01|300|[Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_300.cpp)|`O(N^2`|`O(N)`|Pick or Leave Pattern|
 |02|1143|[Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_1143.cpp)|`O(N * M)`|`O(N * M)`|Pick or Leave Pattern|
 |03|416|[Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_416.cpp)|`O(N * Sum)`|`O(N * Sum)`|Pick or Leave Pattern|
@@ -23,3 +23,4 @@
 |19|1155|[Number of Dice Rolls With Target Sum](https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_counting/LeetCode_1155.cpp)|`O(N^2)`|`O(N^2)`|DP Counting|
 |20|823|[Binary Trees With Factors](https://leetcode.com/problems/binary-trees-with-factors/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_counting/LeetCode_823.cpp)|`O(N^2)`|`O(N)`|DP Counting|
 |21|63|[Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_on_grid/LeetCode_63.cpp)|`O(N^2)`|`O(N^2)`|DP On Grid|
+|22|931|[Minimum Falling Path Sum](https://leetcode.com/problems/minimum-falling-path-sum/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_on_grid/LeetCode_931.cpp)|`O(N^2)`|`O(N^2)`|DP On Grid|
