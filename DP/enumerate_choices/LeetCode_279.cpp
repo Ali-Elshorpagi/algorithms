@@ -6,7 +6,7 @@ using namespace std;
 typedef vector<int> vi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define edl '\n'
 #define sq(x) (x) * (x)
 
@@ -15,7 +15,7 @@ class Solution
     vi memeory; // for memoization
 
 public:
-    Solution() { Mesh_Ali, memeory.resize(1e4 + 1, -1); }
+    Solution() { Sukuna, memeory.resize(1e4 + 1, -1); }
     int dp(int n)
     {
         if (!n)

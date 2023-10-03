@@ -8,7 +8,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
@@ -18,7 +18,7 @@ class Solution
 {
     vvi memory; // for Memoization
 public:
-    Solution() { Mesh_Ali, memory.resize(105, vi(105, -1)); }
+    Solution() { Sukuna, memory.resize(105, vi(105, -1)); }
     bool is_valid(vvi &cuboids, int cur_idx, int prev_idx)
     {
         // you don't need to compare on [0] as sorting does

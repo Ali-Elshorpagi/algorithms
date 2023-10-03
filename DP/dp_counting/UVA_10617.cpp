@@ -9,7 +9,7 @@ typedef vector<ll> vll;
 typedef vector<vll> vvll;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
@@ -19,7 +19,7 @@ class Solution
     string str;
 
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { Sukuna; }
     ll dp(int left, int right)
     {
         auto &ref(memory[left][right]);

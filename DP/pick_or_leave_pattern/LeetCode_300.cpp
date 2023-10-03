@@ -7,7 +7,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
@@ -19,7 +19,7 @@ class Solution
     vi memory_;
 
 public:
-    Solution() { Mesh_Ali, memory_.resize(2505, -1), memory.resize(2505, vi(2505, -1)); }
+    Solution() { Sukuna, memory_.resize(2505, -1), memory.resize(2505, vi(2505, -1)); }
     int dp(vi &nums, int current_idx, int prev_idx) // O(N^2) time & space
     {
         if (current_idx == sz(nums))

@@ -7,7 +7,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
@@ -18,7 +18,7 @@ class Solution
     const int mod = 1e9 + 7;
 
 public:
-    Solution() { Mesh_Ali, memory.resize(35, vi(1005, -1)); }
+    Solution() { Sukuna, memory.resize(35, vi(1005, -1)); }
     int min_(int &a, int &b) { return a < b ? a : b; }
     int dp(int n, int k, int target)
     {

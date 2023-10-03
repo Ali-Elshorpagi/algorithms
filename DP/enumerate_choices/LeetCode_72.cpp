@@ -8,7 +8,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
@@ -16,7 +16,7 @@ class Solution
 {
     vvi memeory; // for memoization
 public:
-    Solution() { Mesh_Ali, memeory.resize(505, vi(505, -1)); }
+    Solution() { Sukuna, memeory.resize(505, vi(505, -1)); }
     int dp_forward(string &s1, string &s2, int idx1, int idx2)
     {
         if (idx1 >= sz(s1))

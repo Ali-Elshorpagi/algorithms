@@ -8,12 +8,12 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
 class Solution
-{   
+{
     // for memoization
     vvi memory;          //  dp
     vector<vvi> memory_; // dp_
@@ -25,7 +25,7 @@ class Solution
     };
 
 public:
-    Solution() { Mesh_Ali, memory_.resize(5005, vvi(2, vi(3, -1))); /*memory.resize(5005, vi(2, -1));*/ }
+    Solution() { Sukuna, memory_.resize(5005, vvi(2, vi(3, -1))); /*memory.resize(5005, vi(2, -1));*/ }
     // option = 0 -> buy
     // option = 1 -> sell
     int dp(vi &prices, bool option, int idx)

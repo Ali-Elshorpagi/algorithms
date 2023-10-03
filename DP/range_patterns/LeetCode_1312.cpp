@@ -7,7 +7,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
@@ -16,7 +16,7 @@ class Solution
     vvi memory;
 
 public:
-    Solution() { Mesh_Ali, memory.resize(505, vi(505, -1)); }
+    Solution() { Sukuna, memory.resize(505, vi(505, -1)); }
     int dp(string &str, int start_idx, int end_idx)
     {
         if (start_idx >= end_idx)

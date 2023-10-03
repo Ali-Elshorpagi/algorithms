@@ -8,7 +8,7 @@ typedef vector<vi> vvi;
 typedef vector<vvi> vvvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 
@@ -21,7 +21,7 @@ class Solution
     int rows, cols;
 
 public:
-    Solution() { Mesh_Ali, memory.resize(55, vvi(55, vi(55, -1))); }
+    Solution() { Sukuna, memory.resize(55, vvi(55, vi(55, -1))); }
     bool is_valid(int row, int col)
     {
         if (row >= rows || row < 0 || col < 0 || col >= cols)
