@@ -6,61 +6,66 @@ using namespace std;
 
 typedef vector<int> vi;
 typedef vector<vi> vvi;
-typedef vector<vvi> vvvi;
+typedef vector<vector<char>> vvc;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
+#define sq(x) (x) * (x)
 
 class Solution
 {
-    vi dr{-1, 0, 1, 0}; // Delta for: up, right, down, left
-    vi dc{0, 1, 0, -1};
-    vvvi memory; // for Memoization
-    const int mod = 1e9 + 7;
-    int rows, cols;
+    vvi memory; // for Memoization
 
 public:
-    Solution() { Mesh_Ali, memory.resize(55, vvi(55, vi(55, -1))); }
-    bool is_valid(int row, int col)
+    Solution() { Mesh_Ali, memory.resize(305, vi(305, -1)); }
+    bool is_valid(vvc &matrix, int row, int col)
     {
-        if (row >= rows || row < 0 || col < 0 || col >= cols)
+        if (row >= sz(matrix) || col >= sz(matrix[0]) || matrix[row][col] == '0')
             return false;
         return true;
     }
-    int dp(int row, int col, int max_moves)
+    int dp(vvc &matrix, int row, int col)
     {
-        if (!is_valid(row, col))
-            return 1;
-
-        if (!max_moves)
+        if (!is_valid(matrix, row, col))
             return 0;
 
-        auto &ref(memory[row][col][max_moves]);
+        auto &ref(memory[row][col]);
         if (ref != -1)
             return ref;
 
-        ref = 0;
-        fr(d, 0, 4)
-        {
-            ref += dp(row + dr[d], col + dc[d], max_moves - 1);
-            ref %= mod;
-        }
+        int go_right(dp(matrix, row, col + 1)),
+            go_down(dp(matrix, row + 1, col)),
+            go_diagonal(dp(matrix, row + 1, col + 1));
+        // current cell + min(my children)
+        ref = 1 + min({go_right, go_down, go_diagonal});
         return ref;
     }
-    int findPaths(int m, int n, int maxMove, int startRow, int startColumn)
+    int maximalSquare(vvc &matrix)
     {
-        rows = m, cols = n;
-        return dp(startRow, startColumn, maxMove);
+        int max_side(0);
+        fr(i, 0, sz(matrix))
+        {
+            fr(j, 0, sz(matrix[0]))
+            {
+                if (matrix[i][j] == '1')
+                    max_side = max(max_side, dp(matrix, i, j));
+            }
+        }
+        return sq(max_side);
     }
     void TEST()
     {
-        // int m(1), n(3), maxMove(3), startRow(0), startColumn(1);
-        // cout << findPaths(m, n, maxMove, startRow, startColumn) << edl; // 12
-        int m(2), n(2), maxMove(2), startRow(0), startColumn(0);
-        cout << findPaths(m, n, maxMove, startRow, startColumn) << edl; // 6
+        vvc matrix{{'1', '0', '1', '0', '0'},
+                   {'1', '0', '1', '1', '1'},
+                   {'1', '1', '1', '1', '1'},
+                   {'1', '0', '0', '1', '0'}};
+        cout << maximalSquare(matrix) << edl; // 4
+        // vvc matrix{{'0', '1'},
+        //            {'1', '0'}};
+        // cout << maximalSquare(matrix) << edl; // 1
     }
 };
 
