@@ -1,5 +1,5 @@
 #### Problem Solving
-|ID|  Code  | Problem Name    |  Solution       |  Time           | Space           | Note          | 
+|ID|  Code  | Problem Name    |  Solution       |  Time           | Space           | Type          | 
 |--|----|---------------- | --------------- | --------------- | --------------- | ------------- |
 |00||[The Knapsack Problem](https://www.spoj.com/problems/KNAPSACK/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/SPOJ_Knapsack.cpp)|`O(N * W)`|`O(N * W)`|Pick or Leave Pattern|
 |01|300|[Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_300.cpp)|`O(N^2`|`O(N)`|Pick or Leave Pattern|
