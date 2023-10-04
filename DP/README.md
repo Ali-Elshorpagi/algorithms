@@ -26,3 +26,4 @@
 |22|931|[Minimum Falling Path Sum](https://leetcode.com/problems/minimum-falling-path-sum/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_on_grid/LeetCode_931.cpp)|`O(N^2)`|`O(N^2)`|DP On Grid|
 |23|576|[Out of Boundary Paths](https://leetcode.com/problems/out-of-boundary-paths/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_on_grid/LeetCode_576.cpp)|`O(N^3)`|`O(N^3)`|DP On Grid|
 |24|221|[Maximal Square](https://leetcode.com/problems/maximal-square/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_on_grid/LeetCode_221.cpp)|`O(N^2)`|`O(N^2)`|DP On Grid|
+|25|174|[Dungeon Game](https://leetcode.com/problems/dungeon-game/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/dp_on_grid/LeetCode_174.cpp)|`O(N^2)`|`O(N^2)`|DP On Grid|
