@@ -45,12 +45,12 @@ public:
     {
         if (idx1 >= sz(s1) && idx2 >= sz(s2))
             return;
-        if (idx1 == sz(s1))
+        if (idx1 >= sz(s1))
         {
             cout << "In " << s1 << " insert at the end " << s2.substr(idx2) << edl;
             return;
         }
-        if (idx2 == sz(s2))
+        if (idx2 >= sz(s2))
         {
             cout << "In " << s2 << " insert at the end " << s1.substr(idx1) << edl;
             return;
@@ -93,16 +93,16 @@ public:
     }
     void TEST()
     {
-        cout << edit_distance("xy", "axy") << " steps in total" << edl << edl;
-        cout << edit_distance("axy", "xy") << " steps in total" << edl << edl;
-        cout << edit_distance("axy", "bxy") << " steps in total" << edl << edl;
-        cout << edit_distance("axy", "a") << " steps in total" << edl << edl;
-        cout << edit_distance("a", "axy") << " steps in total" << edl << edl;
-        cout << edit_distance("axy", "axy") << " steps in total" << edl << edl;
-        cout << edit_distance("horse", "ros") << " steps in total" << edl << edl;
-        cout << edit_distance("park", "spake") << " steps in total" << edl << edl;
-        cout << edit_distance("spake", "park") << " steps in total" << edl << edl;
-        cout << edit_distance("spakehz", "park") << " steps in total" << edl << edl;
+        cout << edit_distance("xy", "axy") << " steps in total" << edl << edl
+             << edit_distance("axy", "xy") << " steps in total" << edl << edl
+             << edit_distance("axy", "bxy") << " steps in total" << edl << edl
+             << edit_distance("axy", "a") << " steps in total" << edl << edl
+             << edit_distance("a", "axy") << " steps in total" << edl << edl
+             << edit_distance("axy", "axy") << " steps in total" << edl << edl
+             << edit_distance("horse", "ros") << " steps in total" << edl << edl
+             << edit_distance("park", "spake") << " steps in total" << edl << edl
+             << edit_distance("spake", "park") << " steps in total" << edl << edl
+             << edit_distance("spakehz", "park") << " steps in total" << edl << edl;
     }
 };
 

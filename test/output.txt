@@ -1,51 +1,18 @@
 Case #1
-Steps for: xy to axy
-In xy insert at original idx 0 letter a
-1 steps in total
+A
+1
 
-Steps for: axy to xy
-In axy delete original idx 0 letter a
-1 steps in total
+(AB)
+24
 
-Steps for: axy to bxy
-In axy replace letter at original idx 0 letter a to letter b
-1 steps in total
+(A(BC))
+32
 
-Steps for: axy to a
-In a insert at the end xy
-2 steps in total
+((A(BC))D)
+207
 
-Steps for: a to axy
-In a insert at the end xy
-2 steps in total
-
-Steps for: axy to axy
-0 steps in total
-
-Steps for: horse to ros
-In horse replace letter at original idx 0 letter h to letter r
-In horse delete original idx 2 letter r
-In ros insert at the end e
-3 steps in total
-
-Steps for: park to spake
-In park insert at original idx 0 letter s
-In park replace letter at original idx 2 letter r to letter k
-In park replace letter at original idx 3 letter k to letter e
-3 steps in total
-
-Steps for: spake to park
-In spake delete original idx 0 letter s
-In spake replace letter at original idx 3 letter k to letter r
-In spake replace letter at original idx 4 letter e to letter k
-3 steps in total
-
-Steps for: spakehz to park
-In spakehz delete original idx 0 letter s
-In spakehz replace letter at original idx 3 letter k to letter r
-In spakehz replace letter at original idx 4 letter e to letter k
-In park insert at the end hz
-5 steps in total
+((A(BC))D)
+207
 
 
 DONE
