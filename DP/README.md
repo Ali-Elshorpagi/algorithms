@@ -27,4 +27,5 @@
 |23|576|[Out of Boundary Paths](https://leetcode.com/problems/out-of-boundary-paths/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/on_grid/LeetCode_576.cpp)|`O(N^3)`|`O(N^3)`|On Grid|
 |24|221|[Maximal Square](https://leetcode.com/problems/maximal-square/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/on_grid/LeetCode_221.cpp)|`O(N^2)`|`O(N^2)`|On Grid|
 |25|174|[Dungeon Game](https://leetcode.com/problems/dungeon-game/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/on_grid/LeetCode_174.cpp)|`O(N^2)`|`O(N^2)`|On Grid|
-|26||[LIS]()|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/build_output/LIS.cpp)|||Build Output|
+|26||[LIS](https://leetcode.com/problems/longest-increasing-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/build_output/LIS.cpp)|||Build Output|
+|27||[Edit Distance](https://leetcode.com/problems/edit-distance)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/build_output/edit_distance.cpp)|||Build Output|
