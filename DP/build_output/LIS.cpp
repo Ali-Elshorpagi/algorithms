@@ -59,7 +59,7 @@ public:
 
         int optimal(dp_lis_(nums, idx));
 
-        // finding next choice;
+        // finding next choice
         fr(i, idx + 1, sz(nums))
         {
             if (nums[idx] < nums[i])

@@ -14,9 +14,9 @@ typedef vector<vi> vvi;
 
 class Solution
 {
-    vvi memeory; // for memoization
+    vvi memory; // for memoization
 public:
-    Solution() { Sukuna, memeory.resize(505, vi(505, -1)); }
+    Solution() { Sukuna, memory.resize(505, vi(505, -1)); }
     int dp_forward(string &s1, string &s2, int idx1, int idx2)
     {
         if (idx1 >= sz(s1))
@@ -24,7 +24,7 @@ public:
         if (idx2 >= sz(s2))
             return sz(s1) - idx1; // insert or delete remaining of s1
 
-        auto &ref(memeory[idx1][idx2]);
+        auto &ref(memory[idx1][idx2]);
         if (ref != -1)
             return ref;
 
@@ -44,7 +44,7 @@ public:
         if (idx1 < 0 || idx2 < 0)
             return max(idx1, idx2) + 1;
 
-        auto &ref(memeory[idx1][idx2]);
+        auto &ref(memory[idx1][idx2]);
         if (ref != -1)
             return ref;
 
