@@ -56,7 +56,7 @@ public:
 
         return ref = flag ? 1 : 0;
     }
-    int binary_search(vvi &dungeon)
+    int binary_search(vvi &dungeon) // it has an error, didn't fix yet
     {
         int left(1), right(2 * 1e5), ans(-1);
         while (left < right)
