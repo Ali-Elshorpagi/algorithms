@@ -2,8 +2,8 @@
 |ID|  Code  | Problem Name    |  Solution       |  Time           | Space           | Type          | 
 |--|----|---------------- | --------------- | --------------- | --------------- | ------------- |
 |00||[The Knapsack Problem](https://www.spoj.com/problems/KNAPSACK/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/SPOJ_Knapsack.cpp)|`O(N * W)`|`O(N * W)`|Pick or Leave Pattern|
-|01|300|[Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_300.cpp)|`O(N^2`|`O(N)`|Pick or Leave Pattern|
-|02|1143|[Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_1143.cpp)|`O(N * M)`|`O(N * M)`|Pick or Leave Pattern|
+|01|300|[Longest Increasing Subsequence(LIS)](https://leetcode.com/problems/longest-increasing-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_300.cpp)|`O(N^2`|`O(N)`|Pick or Leave Pattern|
+|02|1143|[Longest Common Subsequence(LCS)](https://leetcode.com/problems/longest-common-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_1143.cpp)|`O(N * M)`|`O(N * M)`|Pick or Leave Pattern|
 |03|416|[Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_416.cpp)|`O(N * Sum)`|`O(N * Sum)`|Pick or Leave Pattern|
 |04|1691|[Maximum Height by Stacking Cuboids](https://leetcode.com/problems/maximum-height-by-stacking-cuboids/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_1691.cpp)|`O(N^2)`|`O(N^2)`|Pick or Leave Pattern|
 |05|198|[House Robber](https://leetcode.com/problems/house-robber/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_198.cpp)|`O(N)`|`O(N)`|Pick or Leave Pattern|
