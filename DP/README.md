@@ -29,4 +29,5 @@
 |25|174|[Dungeon Game](https://leetcode.com/problems/dungeon-game/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/on_grid/LeetCode_174.cpp)|`O(N^2)`|`O(N^2)`|On Grid|
 |26||[LIS](https://leetcode.com/problems/longest-increasing-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/build_output/LIS.cpp)|||Build Output|
 |27||[Edit Distance](https://leetcode.com/problems/edit-distance)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/build_output/edit_distance.cpp)|||Build Output|
-|28||[Brackets for MCM]()|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/build_output/mcm.cpp)|||Build Output|
+|28||[Brackets for MCM]|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/build_output/mcm.cpp)|||Build Output|
+|29||[Longest Increasing Subsequence(LIS)](https://leetcode.com/problems/longest-increasing-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/LIS.cpp)|'O(N*log(N))'|'N'|Build Output|
