@@ -31,3 +31,4 @@
 |27||Edit Distance|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/build_output/edit_distance.cpp)|||Build Output|
 |28||Brackets for MCM|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/build_output/mcm.cpp)|||Build Output|
 |29|300|[Longest Increasing Subsequence(LIS)](https://leetcode.com/problems/longest-increasing-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/LIS.cpp)|`O(N * log(N))`|`O(N)`|Tabulation|
+|30|518|[Coin Change II](https://leetcode.com/problems/coin-change-ii/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/coin_change_II.cpp)|`O(N^2)`|`O(N^2)`|Tabulation|
