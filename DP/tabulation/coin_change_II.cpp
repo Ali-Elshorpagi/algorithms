@@ -12,10 +12,13 @@ typedef vector<vi> vvi;
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
+#define fl(i, x, n) for (int i(x); i > n; --i)
+#define fc(it, v) for (auto &(it) : (v))
 
 class Solution
 {
     vvi memory; // for Memoization
+    vi _memory;
 
 public:
     Solution() { Sukuna; }
@@ -30,10 +33,11 @@ public:
         assert(memory[remaining][idx] != -1);
         return memory[remaining][idx];
     }
-    int change(int amount, vi &coins)
+    int change_(int amount, vi &coins)
     {
         memory.assign(5005, vi(305, -1));
-        fr(idx, 0, sz(coins))
+        int _len(sz(coins));
+        fr(idx, 0, _len)
         {
             fr(remaining, 0, amount + 1)
             {
@@ -42,7 +46,18 @@ public:
                 memory[remaining][idx] = pick + leave;
             }
         }
-        return memory[amount][sz(coins) - 1];
+        return memory[amount][_len - 1];
+    }
+    int change(int amount, vi &coins)
+    {
+        _memory.assign(5005, 0), _memory[0] = 1;
+        fc(coin, coins)
+        {
+            fr(remaining, coin, amount + 1)
+                _memory[remaining] += _memory[remaining - coin];
+        }
+
+        return _memory[amount];
     }
     void TEST()
     {

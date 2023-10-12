@@ -14,6 +14,7 @@ typedef vector<vi> vvi;
 class Solution
 {
     vvi memory; // for Memoization
+
 public:
     Solution() { Sukuna, memory.resize(5005, vi(305, -1)); }
     int dp(vi &coins, int remaining, int idx)
