@@ -1,6 +1,6 @@
 #### Problem Solving
 |ID|  Code  | Problem Name    |  Solution       |  Time           | Space           | Type          | 
-|--|----|---------------------- | --------------- | --------------------- | --------------- | ------------- |
+|--|----|---------------------- | --------------- | -------------------------- | --------------- | ------------- |
 |00||[The Knapsack Problem](https://www.spoj.com/problems/KNAPSACK/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/SPOJ_Knapsack.cpp)|`O(N * W)`|`O(N * W)`|Pick or Leave Pattern|
 |01|300|[Longest Increasing Subsequence(LIS)](https://leetcode.com/problems/longest-increasing-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_300.cpp)|`O(N^2`|`O(N)`|Pick or Leave Pattern|
 |02|1143|[Longest Common Subsequence(LCS)](https://leetcode.com/problems/longest-common-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/pick_or_leave_pattern/LeetCode_1143.cpp)|`O(N * M)`|`O(N * M)`|Pick or Leave Pattern|
