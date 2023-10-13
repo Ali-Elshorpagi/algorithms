@@ -16,14 +16,14 @@ class Solution
     vvi memory; // for Memoization
 
 public:
-    Solution() { Sukuna, memory.resize(5005, vi(305, -1)); }
+    Solution() { Sukuna, memory.resize(305, vi(5005, -1)); }
     int dp(vi &coins, int remaining, int idx)
     {
         if (idx >= sz(coins))
             return 0;
         if (!remaining)
             return 1;
-        auto &ref(memory[remaining][idx]);
+        auto &ref(memory[idx][remaining]);
         if (ref != -1)
             return ref;
         int pick(0);

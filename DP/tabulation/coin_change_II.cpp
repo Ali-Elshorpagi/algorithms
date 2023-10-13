@@ -48,6 +48,10 @@ public:
         }
         return memory[amount][_len - 1];
     }
+    // tip: we can reduce the memory to memory[2][M]
+    //      cuz we only need the last 2 indices
+
+    // but this solution is just memory[M] :)
     int change(int amount, vi &coins)
     {
         _memory.assign(5005, 0), _memory[0] = 1;

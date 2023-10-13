@@ -53,3 +53,5 @@
    - Range Patterns
    - DP Counting
    - DP On Grid
+   - DP Build Output
+   - DP Tabulation
