@@ -20,7 +20,7 @@
 |16|10617|[Again Palindrome](https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1558)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/counting/UVA_10617.cpp)|`O(N^2)`|`O(N^2)`|Counting|
 |17|518|[Coin Change II](https://leetcode.com/problems/coin-change-2/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/counting/LeetCode_518.cpp)|`O(N^2)`|`O(N^2)`|Counting|
 |18|377|[Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/counting/LeetCode_377.cpp)|`O(N^2)`|`O(N)`|Counting|
-|19|1155|[Number of Dice Rolls With Target Sum](https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/counting/LeetCode_1155.cpp)|`O(N^2)`|`O(N * M)`|Counting|
+|19|1155|[Number of Dice Rolls With Target Sum](https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/counting/LeetCode_1155.cpp)|`O((N^2) * M)`|`O(N * M)`|Counting|
 |20|823|[Binary Trees With Factors](https://leetcode.com/problems/binary-trees-with-factors/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/counting/LeetCode_823.cpp)|`O(N^2)`|`O(N)`|Counting|
 |21|63|[Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/on_grid/LeetCode_63.cpp)|`O(N^2)`|`O(N^2)`|On Grid|
 |22|931|[Minimum Falling Path Sum](https://leetcode.com/problems/minimum-falling-path-sum/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/on_grid/LeetCode_931.cpp)|`O(N^2)`|`O(N^2)`|On Grid|
@@ -34,3 +34,4 @@
 |30|518|[Coin Change II](https://leetcode.com/problems/coin-change-ii/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/coin_change_II.cpp)|`O(N * M`|`O(M)`|Tabulation|
 |31|72|[Edit Distance](https://leetcode.com/problems/edit-distance/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/edit_distance.cpp)|`O(N * M`|`O(N * M)`|Tabulation|
 |32|1105|[Filling Bookcase Shelves](https://leetcode.com/problems/filling-bookcase-shelves/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/filling_bookcase_shelves.cpp)|`O(N^2`|`O(N)`|Tabulation|
+|33|1155|[Number of Dice Rolls With Target Sum](https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/number_of_dice_rolls_with_target_sum.cpp)|`O((N^2) * M)`|`O(N * M)`|Tabulation|
