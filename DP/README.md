@@ -35,3 +35,4 @@
 |31|72|[Edit Distance](https://leetcode.com/problems/edit-distance/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/edit_distance.cpp)|`O(N * M`|`O(N * M)`|Tabulation|
 |32|1105|[Filling Bookcase Shelves](https://leetcode.com/problems/filling-bookcase-shelves/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/filling_bookcase_shelves.cpp)|`O(N^2`|`O(N)`|Tabulation|
 |33|1155|[Number of Dice Rolls With Target Sum](https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/number_of_dice_rolls_with_target_sum.cpp)|`O((N^2) * M)`|`O(N * M)`|Tabulation|
+|34|576|[Out of Boundary Paths](https://leetcode.com/problems/out-of-boundary-paths/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/out_of_boundary_paths.cpp)|`O(N^3)`|`O(N^3)`|Tabulation|
