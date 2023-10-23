@@ -30,9 +30,9 @@
 |26||Longest Increasing Subsequence(LIS)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/build_output/LIS.cpp)|||Build Output|
 |27||Edit Distance|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/build_output/edit_distance.cpp)|||Build Output|
 |28||Brackets for MCM|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/build_output/mcm.cpp)|||Build Output|
-|29|300|[Longest Increasing Subsequence(LIS)](https://leetcode.com/problems/longest-increasing-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/LIS.cpp)|`O(N * log(N))`|`O(N)`|Tabulation|
+<!-- |29|300|[Longest Increasing Subsequence(LIS)](https://leetcode.com/problems/longest-increasing-subsequence/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/LIS.cpp)|`O(N * log(N))`|`O(N)`|Tabulation|
 |30|518|[Coin Change II](https://leetcode.com/problems/coin-change-ii/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/coin_change_II.cpp)|`O(N * M`|`O(M)`|Tabulation|
 |31|72|[Edit Distance](https://leetcode.com/problems/edit-distance/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/edit_distance.cpp)|`O(N * M`|`O(N * M)`|Tabulation|
 |32|1105|[Filling Bookcase Shelves](https://leetcode.com/problems/filling-bookcase-shelves/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/filling_bookcase_shelves.cpp)|`O(N^2`|`O(N)`|Tabulation|
 |33|1155|[Number of Dice Rolls With Target Sum](https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/number_of_dice_rolls_with_target_sum.cpp)|`O((N^2) * M)`|`O(N * M)`|Tabulation|
-|34|576|[Out of Boundary Paths](https://leetcode.com/problems/out-of-boundary-paths/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/out_of_boundary_paths.cpp)|`O(N^3)`|`O(N^3)`|Tabulation|
+|34|576|[Out of Boundary Paths](https://leetcode.com/problems/out-of-boundary-paths/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/DP/tabulation/out_of_boundary_paths.cpp)|`O(N^3)`|`O(N^3)`|Tabulation| -->
