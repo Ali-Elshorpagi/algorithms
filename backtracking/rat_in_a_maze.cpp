@@ -15,7 +15,7 @@ class Solution
 {
     vi dr{-1, 0, 1, 0}; // Delta for: up, right, down, left
     vi dc{0, 1, 0, -1};
-    int rows, cols, total_paths = 0;
+    int rows, cols, total_paths = 0, current_steps = 0, best_path_so_far = INT_MAX;
     vvc grid;
 
 public:
@@ -32,7 +32,12 @@ public:
     {
         if (row == rows - 1 && col == cols - 1)
         {
-            ++total_paths;
+            // Only keep the total paths of minimum steps
+            if (best_path_so_far > current_steps)
+                best_path_so_far = current_steps, total_paths = 1; // new benchmark
+            else if (best_path_so_far == current_steps)
+                ++total_paths; // found one way equal to min path
+            // third case is the current_steps > best_path_so_far, so we'll ignore it
             return;
         }
         fr(d, 0, 4) // loop upon 4 directions
@@ -40,10 +45,15 @@ public:
             int new_row(dr[d] + row), new_col(dc[d] + col);
             if (!is_valid(new_row, new_col))
                 continue;
+            // update the state
+            ++current_steps;
+            grid[new_row][new_col] = 'v';
 
-            grid[new_row][new_col] = 'v'; // update the grid
             backtracking(new_row, new_col);
-            grid[new_row][new_col] = '.'; // undo the grid
+
+            // undo the state
+            --current_steps;
+            grid[new_row][new_col] = '.';
         }
     }
     void TEST()
@@ -57,7 +67,8 @@ public:
 
         grid[0][0] = 'v'; // make it as visited
         backtracking(0, 0);
-        cout << total_paths << edl; // 4
+        // total_paths = the number of the paths that have the lowest steps
+        cout << total_paths << edl; // 1
     }
 };
 
