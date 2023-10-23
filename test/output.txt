@@ -1,4 +1,15 @@
 Case #1
-1
+YES
+Partition Number 1
+4 1 
+Partition Number 2
+3 2 
+Partition Number 3
+3 2 
+Partition Number 4
+5 
+NO
+
+There are no partitions ..
 
 DONE
