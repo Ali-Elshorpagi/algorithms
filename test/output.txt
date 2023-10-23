@@ -1,5 +1,4 @@
 Case #1
-12
-6
+4
 
-DNE
+DONE
