@@ -20,9 +20,15 @@ public:
     {
         current_path.push_back(node); // update the state
         if (node == sz(graph) - 1)
+        {
             ans.push_back(current_path);
-        fc(it, graph[node]) { backtracking(graph, current_path, ans, it); }
-        current_path.pop_back(); // undo the state
+            return;
+        }
+        fc(it, graph[node])
+        {
+            backtracking(graph, current_path, ans, it);
+            current_path.pop_back(); // undo the state
+        }
     }
     vvi allPathsSourceTarget(vvi &graph)
     {
