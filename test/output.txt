@@ -1,5 +1,4 @@
 Case #1
-2
-1
+YES
 
 DONE
