@@ -4,18 +4,16 @@
 using namespace std;
 
 typedef vector<string> vs;
-typedef vector<vs> vvs;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
-#define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
-#define fc(it, v) for (auto &(it) : (v))
 
 class Solution
 {
     vs chess_board;
+    int ans;
 
 public:
     Solution() { Sukuna; }
@@ -41,10 +39,10 @@ public:
         }
         return true;
     }
-    void backtracking(vvs &ans, int col, int n)
+    void backtracking(int col, int n)
     {
         if (col == n)
-            ans.push_back(chess_board);
+            ++ans;
         else
         {
             fr(row, 0, n)
@@ -52,7 +50,7 @@ public:
                 if (is_valid(row, col, n))
                 {
                     chess_board[row][col] = 'Q'; // update the state
-                    backtracking(ans, col + 1, n);
+                    backtracking(col + 1, n);
                     chess_board[row][col] = '.'; // undo the state
                 }
             }
@@ -60,11 +58,9 @@ public:
     }
     int totalNQueens(int n)
     {
-
-        chess_board = vs(n, string(n, '.'));
-        vvs ans;
-        backtracking(ans, 0, n);
-        return sz(ans);
+        chess_board = vs(n, string(n, '.')), ans = 0;
+        backtracking(0, n);
+        return ans;
     }
     void TEST()
     {
