@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <unordered_set>
 
 using namespace std;
 
@@ -8,18 +9,66 @@ typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
+#define cl(v) ((v).clear())
 #define edl '\n'
-#define fr(i, x, n) for (int i(x); i < n; ++i)
 #define fc(it, v) for (auto &(it) : (v))
-#define yes cout << "YES\n"
-#define no cout << "NO\n"
+#define fr(i, x, n) for (int i(x); i < n; ++i)
 
 class Solution
 {
+    vvi ans;
+    vi prefix;
+
 public:
     Solution() { Sukuna; }
-    vvi permute(vi &nums) {}
+    void backtracking_(vi &nums, int idx)
+    {
+        if (idx == sz(nums))
+        {
+            ans.push_back(nums);
+            return;
+        }
+        fr(i, idx, sz(nums))
+        {
+            swap(nums[i], nums[idx]); // update the state
+            backtracking_(nums, idx + 1);
+            swap(nums[i], nums[idx]); // undo the state
+        }
+    }
+    vvi permute_(vi &nums)
+    {
+        cl(ans);
+        backtracking_(nums, 0);
+        return ans;
+    }
+    void backtracking(unordered_set<int> &nums, vi &prefix)
+    {
+        if (!sz(nums))
+        {
+            ans.push_back(prefix);
+            return;
+        }
+        unordered_set<int> remaining(all(nums));
+        fc(it, nums)
+        {
+            // update the state
+            remaining.erase(it);
+            prefix.push_back(it);
+            backtracking(remaining, prefix);
+            // undo the state
+            remaining.insert(it);
+            prefix.pop_back();
+        }
+    }
+    vvi permute(vi &nums)
+    {
+        cl(ans), cl(prefix);
+        unordered_set<int> arr(all(nums));
+        backtracking(arr, prefix);
+        return ans;
+    }
     void TEST()
     {
         vi nums{1, 2, 3};
