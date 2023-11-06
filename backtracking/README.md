@@ -7,3 +7,4 @@
 |03|51|[N-Queens](https://leetcode.com/problems/n-queens/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/backtracking/LeetCode_51.cpp)|`O(N!)`|`O(N^2)`|Update and Undo|
 |04|52|[N-Queens II](https://leetcode.com/problems/n-queens-ii)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/backtracking/LeetCode_52.cpp)|`O(N!)`|`O(N^2)`|Update and Undo|
 |05|37|[Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/backtracking/LeetCode_37.cpp)|`O(9^(N^2))`|`O(1)`|Update and Undo|
+|06|46|[Permutations](https://leetcode.com/problems/permutations/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/backtracking/LeetCode_46.cpp)|`O(N!)`|`O(N!)`|Update and Undo|
