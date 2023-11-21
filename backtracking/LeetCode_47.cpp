@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <unordered_set>
+#include <set>
 
 using namespace std;
 
@@ -18,13 +18,30 @@ typedef vector<vi> vvi;
 
 class Solution
 {
-    vvi ans;
-    vi prefix;
+    set<vi> ans;
 
 public:
     Solution() { Sukuna; }
-    void backtracking() {}
-    vvi permuteUnique(vi &nums) { return ans; }
+    void backtracking_(vi &nums, int idx)
+    {
+        if (idx == sz(nums))
+        {
+            ans.insert(nums);
+            return;
+        }
+        fr(i, idx, sz(nums))
+        {
+            swap(nums[i], nums[idx]); // update the state
+            backtracking_(nums, idx + 1);
+            swap(nums[i], nums[idx]); // undo the state
+        }
+    }
+    vvi permuteUnique(vi &nums)
+    {
+        cl(ans);
+        backtracking_(nums, 0);
+        return vvi(all(ans));
+    }
     void TEST()
     {
         vi nums{1, 1, 2};
