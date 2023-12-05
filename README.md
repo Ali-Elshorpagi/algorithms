@@ -56,5 +56,8 @@
    - DP Build Output
    <!-- - DP Tabulation -->
 
-   > **[Backtracking](https://github.com/Ali-Elshorpagi/algorithms/tree/main/backtracking)**
+> **[Backtracking](https://github.com/Ali-Elshorpagi/algorithms/tree/main/backtracking)**
    - Update And Undo
+
+> **[Divde and Conquer](https://github.com/Ali-Elshorpagi/algorithms/tree/main/divde_and_conquer)**
+   
