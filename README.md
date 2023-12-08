@@ -16,6 +16,8 @@
    - Count Sort
    - Heap Sort
    - Insertion Sort ( Iterative / Recursive )
+   - Quick Sort (Random Optimization)
+   - Merge Sort
    - Radix Sort
    - Selection Sort ( Iterative / Recursive )
    
