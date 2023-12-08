@@ -26,12 +26,14 @@ typedef vector<int> vi;
  *
  */
 
-class Solution
+class Algorithm
 {
     vi tmp;
 
 public:
-    Solution() { Sukuna; }
+    Algorithm() { Sukuna; }
+    ~Algorithm() { cout << edl << "DONE" << edl; }
+    
     void merge(vi &arr, int left, int mid, int right)
     {
         int len_left(mid - left + 1), len_right(right - mid);
@@ -90,13 +92,12 @@ public:
 
 int main()
 {
-    Solution sol;
+    Algorithm algo;
     // freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)
-        cout << "Case #" << tc + 1 << edl, sol.TEST();
-    cout << edl << "DONE" << edl;
+        cout << "Case #" << tc + 1 << edl, algo.TEST();
     return (0);
 }

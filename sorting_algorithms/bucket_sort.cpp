@@ -8,12 +8,10 @@ typedef vector<double> vd;
 typedef vector<vd> vvd;
 
 #define _CRT_SECURE_NO_DEPRECATE
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
-#define fr(i, x, n) for (int i(x); i < n; ++i)
-#define fl(i, x, n) for (int i(x); i > n; --i)
-#define fc(it, v) for (auto &(it) : (v))
 
 /*
  * # Complexities
@@ -22,18 +20,21 @@ typedef vector<vd> vvd;
  * Worst-Case Time    O(N^2)
  * Worst-Case Space   O(N * K)
  *
- * Properties :
+ * # Properties :
  *              1- Stable
  *              2- Not In-Place (Out-Place)
  *              3- Not Adaptive
  *              4- Not Online (Offline)
  *              5- Non-Comparison Based, but it can implemented to become Comparison Based
- *  Note : it's work on real numbers
+ * # Note : it's work on real numbers
  */
 
 class Algorithm
 {
 public:
+    Algorithm() { Sukuna; }
+    ~Algorithm() { cout << edl << "DONE" << edl; }
+
     void Bucket_Sort(vd &arr, int no_buckets)
     {
         int len(sz(arr));
@@ -67,12 +68,8 @@ public:
     }
     void TEST()
     {
-        int n;
-        cin >> n;
-        vd arr(n);
-        for (auto &it : arr)
-            cin >> it;
-        Bucket_Sort(arr, n);
+        vd arr{1.3, 2, -66, -4, 10.2, 4.6, 5, 45, -35, -8.7, 26, 9, 28, 2.8, 7};
+        Bucket_Sort(arr, sz(arr));
         for (auto &it : arr)
             cout << it << ' ';
     }
@@ -81,12 +78,11 @@ public:
 int main()
 {
     Algorithm algo;
-    freopen("../test/input.txt", "r", stdin);
+    // freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)
         cout << "Case #" << tc + 1 << edl, algo.TEST();
-    cout << edl << "DONE" << edl;
     return (0);
 }

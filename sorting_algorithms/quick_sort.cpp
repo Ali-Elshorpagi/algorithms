@@ -26,10 +26,12 @@ typedef vector<int> vi;
  *              5- Comparison Based
  */
 
-class Solution
+class Algorithm
 {
 public:
-    Solution() { Sukuna; }
+    Algorithm() { Sukuna; }
+    ~Algorithm() { cout << edl << "DONE" << edl; }
+
     void quick_sort(vi &arr, int low, int high)
     {
         if (low >= high)
@@ -100,13 +102,12 @@ public:
 
 int main()
 {
-    Solution sol;
+    Algorithm algo;
     // freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)
-        cout << "Case #" << tc + 1 << edl, sol.TEST();
-    cout << edl << "DONE" << edl;
+        cout << "Case #" << tc + 1 << edl, algo.TEST();
     return (0);
 }

@@ -7,6 +7,7 @@ using namespace std;
 typedef vector<int> vi;
 
 #define _CRT_SECURE_NO_DEPRECATE
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
@@ -29,6 +30,9 @@ typedef vector<int> vi;
 class Algorithm
 {
 public:
+    Algorithm() { Sukuna; }
+    ~Algorithm() { cout << edl << "DONE" << edl; }
+
     vi Count_Sort(vi &arr, int place, int max_val)
     {
         int len(sz(arr));
@@ -59,11 +63,7 @@ public:
     }
     void TEST()
     {
-        int n;
-        cin >> n;
-        vi arr(n);
-        for (auto &it : arr)
-            cin >> it;
+        vi arr{12, 2, 66, 4, 102, 5, 5, 45, 35, 87, 26, 9, 28, 28, 7};
         radix_sort(arr);
         for (auto &it : arr)
             cout << it << ' ';
@@ -73,12 +73,11 @@ public:
 int main()
 {
     Algorithm algo;
-    freopen("../test/input.txt", "r", stdin);
+    // freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)
         cout << "Case #" << tc + 1 << edl, algo.TEST();
-    cout << edl << "DONE" << edl;
     return (0);
 }
