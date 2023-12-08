@@ -4,6 +4,7 @@
 using namespace std;
 
 typedef vector<int> vi;
+
 #define _CRT_SECURE_NO_DEPRECATE
 #define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
@@ -79,7 +80,7 @@ public:
     }
     void TEST()
     {
-        vi arr{12, 2, -66, -4, 102, 5, 45, -35, -87, 26, 9, 28, 7};
+        vi arr{12, 2, -66, -4, 102, 5, 5, 45, -35, -87, 26, 9, 28, 28, 7};
         tmp = arr;
         Merge_Sort(arr, 0, sz(arr) - 1);
         for (auto &it : arr)
