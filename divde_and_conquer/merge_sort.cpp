@@ -27,9 +27,11 @@ typedef vector<int> vi;
 
 class Solution
 {
+    vi tmp;
+
 public:
     Solution() { Sukuna; }
-    void Merge(vi &arr, int left, int mid, int right)
+    void merge(vi &arr, int left, int mid, int right)
     {
         int len_left(mid - left + 1), len_right(right - mid);
         vi left_arr(len_left), right_arr(len_right);
@@ -50,6 +52,22 @@ public:
             ++k;
         }
     }
+    void merge_(vi &arr, int start, int md, int end)
+    {
+        for (int i(start), j(md + 1), k(start); k <= end; ++k)
+        {
+            if (i > md) // start is done
+                tmp[k] = arr[j++];
+            else if (j > end) // end is done
+                tmp[k] = arr[i++];
+            else if (arr[i] < arr[j]) // start is smaller
+                tmp[k] = arr[i++];
+            else
+                tmp[k] = arr[j++];
+        }
+        for (int i(start); i <= end; ++i)
+            arr[i] = tmp[i];
+    }
     void Merge_Sort(vi &arr, int begin, int end)
     {
         if (begin >= end)
@@ -57,11 +75,12 @@ public:
         int mid(begin + ((end - begin) >> 1));
         Merge_Sort(arr, begin, mid);
         Merge_Sort(arr, mid + 1, end);
-        Merge(arr, begin, mid, end);
+        merge_(arr, begin, mid, end);
     }
     void TEST()
     {
-        vi arr{12, 35, 87, 26, 9, 28, 7};
+        vi arr{12, 2, -66, -4, 102, 5, 45, -35, -87, 26, 9, 28, 7};
+        tmp = arr;
         Merge_Sort(arr, 0, sz(arr) - 1);
         for (auto &it : arr)
             cout << it << ' ';
