@@ -13,6 +13,18 @@ class Solution
 
 public:
     Solution() { Sukuna; }
+    double fast_power_(double x, ll n)
+    {
+        double ans(1);
+        while (n)
+        {
+            if (n & 1)
+                ans *= x;
+            x *= x;
+            n >>= 1;
+        }
+        return ans;
+    }
     double fast_power(double x, ll n)
     {
         if (!n)
@@ -28,7 +40,7 @@ public:
         ll N = n;
         if (n < 0)
             x = 1 / x, N = -N;
-        return fast_power(x, N);
+        return fast_power_(x, N);
     }
     void TEST()
     {
