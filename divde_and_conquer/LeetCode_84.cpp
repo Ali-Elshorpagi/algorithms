@@ -48,7 +48,7 @@ public:
         // max area from left half
         int area(max_area(heights, start, mid));
         // max area from right half
-        area = max_area(heights, mid + 1, end);
+        area = max(area, max_area(heights, mid + 1, end));
         // max area across the middle
         area = max(area, max_mid_area(heights, start, end, mid));
         return area;
@@ -65,6 +65,10 @@ public:
         cout << largestRectangleArea(heights) << edl; // 10
         heights = {2, 4};
         cout << largestRectangleArea(heights) << edl; // 4
+        heights = {9, 0};
+        cout << largestRectangleArea(heights) << edl; // 9
+        heights = {6, 6};
+        cout << largestRectangleArea(heights) << edl; // 12
     }
 };
 
