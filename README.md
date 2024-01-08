@@ -1,7 +1,5 @@
 # Algorithms in C++
 
-### These algorithms are what I learned and I hope it helps you :)
-
 * You can also see :
    - [Math Algorithms](https://github.com/Ali-Elshorpagi/math_algorithms)
    - [Data Structures](https://github.com/Ali-Elshorpagi/Data_Structures)

@@ -40,20 +40,33 @@ public:
         }
         cout << "********************************" << edl;
     }
-    void floyd_warshall(vvi &adjacent_matrix)
+    void print_path(vvi &path, int start, int end)
+    {
+        int k(path[start][end]);
+        if (k == -1) // there's no intermediate node
+        {
+            cout << '\t' << start << ' ' << end << endl;
+            return;
+        }
+
+        print_path(path, start, k);
+        print_path(path, k, end);
+    }
+    void floyd_warshall(vvi &adjacent_matrix, vvi &path)
     {
         int _size(sz(adjacent_matrix));
         for (int k(0); k < _size; ++k)
         {
-            for (int i(0); i < _size; ++i)
+            for (int from(0); from < _size; ++from)
             {
-                for (int j(0); j < _size; ++j)
+                for (int to(0); to < _size; ++to)
                 {
-                    int relax(adjacent_matrix[i][k] + adjacent_matrix[k][j]);
-                    adjacent_matrix[i][j] = min(adjacent_matrix[i][j], relax);
+                    int relax(adjacent_matrix[from][k] + adjacent_matrix[k][to]);
+                    if (relax < adjacent_matrix[from][to])
+                        adjacent_matrix[from][to] = relax, path[from][to] = k; // from => k => to
                 }
             }
-            cout << "After relaxing with node no." << k << ':' << edl;
+            cout << "After relaxing with node No." << k << ':' << edl;
             print(adjacent_matrix);
         }
     }
@@ -63,11 +76,12 @@ public:
         int v, e;
         cin >> v >> e;
         vvi adjacent_matrix(v, vi(v, OO)); // Initialize all matrix to OO
+        vvi path(v, vi(v, -1));
 
         for (int i(0); i < v; ++i)     // loop on the diagonal
             adjacent_matrix[i][i] = 0; // set self loop = 0
 
-        for (int i(0); i < e; ++i)
+        for (int edge(0); edge < e; ++edge)
         {
             int from, to, weight; // 0-based
             cin >> from >> to >> weight;
@@ -77,15 +91,19 @@ public:
 
         cout << edl << "Input Matrix:" << edl;
         print(adjacent_matrix);
-        floyd_warshall(adjacent_matrix);
+        floyd_warshall(adjacent_matrix, path);
+
+        int start(0), end(4); // case #2
+        cout << edl << "Path from " << start << " to " << end << ':' << edl;
+        print_path(path, start, end);
     }
 };
 
 int main()
 {
     Algorithm algo;
-    freopen("../test/input.txt", "r", stdin);
-    freopen("../test/output.txt", "w", stdout);
+    freopen("../../test/input.txt", "r", stdin);
+    freopen("../../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)
@@ -95,17 +113,26 @@ int main()
 
 /*
     input:
-            5 12
-            0 1 5
-            0 1 9
-            0 3 2
-            1 2 2
-            1 1 7
-            2 0 3
-            2 4 7
-            3 2 4
-            3 4 1
-            4 0 1
-            4 1 8
-            4 1 3
+        case #1:
+                5 12
+                0 1 5
+                0 1 9
+                0 3 2
+                1 2 2
+                1 1 7
+                2 0 3
+                2 4 7
+                3 2 4
+                3 4 1
+                4 0 1
+                4 1 8
+                4 1 3
+
+        case #2:
+                5 5
+                0 1 1
+                1 2 2
+                2 3 3
+                3 4 4
+                0 4 15
 */
