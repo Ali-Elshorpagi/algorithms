@@ -19,7 +19,7 @@ typedef vector<vi> vvi;
 
 class Algorithm
 {
-    const int OO = (int)1e6;
+    const int OO = 1e9;
 
 public:
     ~Algorithm() { cout << edl << "DONE" << edl; }
@@ -31,7 +31,7 @@ public:
             cout << '\t';
             for (int j(0); j < _size; ++j)
             {
-                if (adjacent_matrix[i][j] >= OO)
+                if (adjacent_matrix[i][j] == OO)
                     cout << "OO" << ' ';
                 else
                     cout << adjacent_matrix[i][j] << ' ';
@@ -71,9 +71,8 @@ public:
         {
             int from, to, weight; // 0-based
             cin >> from >> to >> weight;
-            if (from == to) // self loop
-                continue;
-            adjacent_matrix[from][to] = min(adjacent_matrix[from][to], weight);
+            if (from != to) // ignore self loop
+                adjacent_matrix[from][to] = min(adjacent_matrix[from][to], weight);
         }
 
         cout << edl << "Input Matrix:" << edl;
