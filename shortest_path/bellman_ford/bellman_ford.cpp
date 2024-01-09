@@ -34,15 +34,20 @@ public:
         vi dist(n, OO);
         dist[src] = 0;
 
-        for (int i(0); i < n - 1; ++i)
+        for (int e(0); e < n - 1; ++e)
         {
-            // 2 inner loops just iterate on edges relax all to nodes
-            for (int j(0); j < sz(edge_list); ++j)
+            bool any_updates(false);
+            for (auto &edge : edge_list)
             {
-                Edge &ne(edge_list[j]); // neighbour
-                if (dist[ne.to] > dist[ne.from] + ne.weight)
-                    dist[ne.to] = dist[ne.from] + ne.weight;
+                if (dist[edge.to] > dist[edge.from] + edge.weight)
+                {
+                    dist[edge.to] = dist[edge.from] + edge.weight;
+                    any_updates = true;
+                }
             }
+            //? all nodes are expanded and also have their min dist
+            if (!any_updates)
+                break;
         }
         return dist;
     }
