@@ -52,7 +52,7 @@ public:
         print_path(path, start, k);
         print_path(path, k, end);
     }
-    void floyd_warshall(vvi &graph, vvi &path)
+    void Floyd_Warshall(vvi &graph, vvi &path)
     {
         int _size(sz(graph));
         for (int k(0); k < _size; ++k)
@@ -78,8 +78,8 @@ public:
         vvi graph(v, vi(v, OO)); // Initialize all matrix to OO
         vvi path(v, vi(v, -1));
 
-        for (int i(0); i < v; ++i)     // loop on the diagonal
-            graph[i][i] = 0; // set self loop = 0
+        for (int i(0); i < v; ++i) // loop on the diagonal
+            graph[i][i] = 0;       // set self loop = 0
 
         for (int edge(0); edge < e; ++edge)
         {
@@ -91,7 +91,7 @@ public:
 
         cout << edl << "Input Matrix:" << edl;
         print(graph);
-        floyd_warshall(graph, path);
+        Floyd_Warshall(graph, path);
 
         int start(0), end(4); // case #2
         cout << edl << "Path from " << start << " to " << end << ':' << edl;
