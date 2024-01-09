@@ -23,18 +23,18 @@ class Algorithm
 
 public:
     ~Algorithm() { cout << edl << "DONE" << edl; }
-    void print(vvi &adjacent_matrix)
+    void print(vvi &graph)
     {
-        int _size(sz(adjacent_matrix));
+        int _size(sz(graph));
         for (int i(0); i < _size; ++i)
         {
             cout << '\t';
             for (int j(0); j < _size; ++j)
             {
-                if (adjacent_matrix[i][j] == OO)
+                if (graph[i][j] == OO)
                     cout << "OO" << ' ';
                 else
-                    cout << adjacent_matrix[i][j] << ' ';
+                    cout << graph[i][j] << ' ';
             }
             cout << edl;
         }
@@ -52,22 +52,22 @@ public:
         print_path(path, start, k);
         print_path(path, k, end);
     }
-    void floyd_warshall(vvi &adjacent_matrix, vvi &path)
+    void floyd_warshall(vvi &graph, vvi &path)
     {
-        int _size(sz(adjacent_matrix));
+        int _size(sz(graph));
         for (int k(0); k < _size; ++k)
         {
             for (int from(0); from < _size; ++from)
             {
                 for (int to(0); to < _size; ++to)
                 {
-                    int relax(adjacent_matrix[from][k] + adjacent_matrix[k][to]);
-                    if (relax < adjacent_matrix[from][to])
-                        adjacent_matrix[from][to] = relax, path[from][to] = k; // from => k => to
+                    int relax(graph[from][k] + graph[k][to]);
+                    if (relax < graph[from][to])
+                        graph[from][to] = relax, path[from][to] = k; // from => k => to
                 }
             }
             cout << "After relaxing with node No." << k << ':' << edl;
-            print(adjacent_matrix);
+            print(graph);
         }
     }
     void TEST()
@@ -75,23 +75,23 @@ public:
         // vertices and edges
         int v, e;
         cin >> v >> e;
-        vvi adjacent_matrix(v, vi(v, OO)); // Initialize all matrix to OO
+        vvi graph(v, vi(v, OO)); // Initialize all matrix to OO
         vvi path(v, vi(v, -1));
 
         for (int i(0); i < v; ++i)     // loop on the diagonal
-            adjacent_matrix[i][i] = 0; // set self loop = 0
+            graph[i][i] = 0; // set self loop = 0
 
         for (int edge(0); edge < e; ++edge)
         {
             int from, to, weight; // 0-based
             cin >> from >> to >> weight;
             if (from != to) // ignore self loop
-                adjacent_matrix[from][to] = min(adjacent_matrix[from][to], weight);
+                graph[from][to] = min(graph[from][to], weight);
         }
 
         cout << edl << "Input Matrix:" << edl;
-        print(adjacent_matrix);
-        floyd_warshall(adjacent_matrix, path);
+        print(graph);
+        floyd_warshall(graph, path);
 
         int start(0), end(4); // case #2
         cout << edl << "Path from " << start << " to " << end << ':' << edl;

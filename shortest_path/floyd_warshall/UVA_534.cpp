@@ -33,7 +33,7 @@ public:
             }
         }
     }
-    int TEST(int tc)
+    int Solve(int tc)
     {
         int n;
         cin >> n;
@@ -71,7 +71,7 @@ int main()
     int tc(0);
     // cin >> tc;
     while (true)
-        if (!sol.TEST(++tc))
+        if (!sol.Solve(++tc))
             break;
     return (0);
 }
