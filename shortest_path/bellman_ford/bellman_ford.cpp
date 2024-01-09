@@ -87,12 +87,12 @@ public:
         //     {4, 5, 6},
         //     {5, 3, 7},
         //     {3, 1, -1000}};
-        int src(0), dist(6);
+        int src(0), n(6);
         vi prev, sp;
 
-        bool negative_cycle(Bellman_Ford(edge_list, dist, src, sp, prev));
+        bool has_negative_cycle(Bellman_Ford(edge_list, n, src, sp, prev));
 
-        if (negative_cycle)
+        if (has_negative_cycle)
         {
             cout << "There\'s a Negative Cycle";
             return;
