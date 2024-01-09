@@ -29,27 +29,43 @@ class Algorithm
 
 public:
     ~Algorithm() { cout << edl << "DONE" << edl; }
-    vi Bellman_Ford(vector<Edge> &edge_list, int n, int src)
+    void build_path(vi &prev, vi &path, int target)
     {
-        vi dist(n, OO);
-        dist[src] = 0;
+        int prv(prev[target]);
+        if (prv == -1)
+        {
+            path.push_back(target);
+            return;
+        }
+        build_path(prev, path, prv);
+        path.push_back(target);
+    }
+    bool Bellman_Ford(vector<Edge> &edge_list, int n, int src, vi &sp, vi &prev)
+    {
+        sp = vi(n, OO);
+        prev = vi(n, -1);
+        sp[src] = 0;
 
-        for (int e(0); e < n - 1; ++e)
+        for (int it(0); it < n; ++it)
         {
             bool any_updates(false);
             for (auto &edge : edge_list)
             {
-                if (dist[edge.to] > dist[edge.from] + edge.weight)
+                if (sp[edge.to] > sp[edge.from] + edge.weight)
                 {
-                    dist[edge.to] = dist[edge.from] + edge.weight;
+                    sp[edge.to] = sp[edge.from] + edge.weight;
+                    prev[edge.to] = edge.from;
                     any_updates = true;
                 }
             }
-            //? all nodes are expanded and also have their min dist
+            //? all nodes are expanded and also have their min sp
             if (!any_updates)
                 break;
+
+            if (it == n - 1) //! cycle
+                return true;
         }
-        return dist;
+        return false;
     }
     void TEST()
     {
@@ -61,11 +77,36 @@ public:
             {4, 2, 3},
             {4, 5, 6},
             {5, 3, 7}};
+        //! has a cycle
+        // vector<Edge> edge_list{
+        //     {0, 1, 1},
+        //     {1, 2, 99},
+        //     {2, 3, 5},
+        //     {1, 4, 1},
+        //     {4, 2, 3},
+        //     {4, 5, 6},
+        //     {5, 3, 7},
+        //     {3, 1, -1000}};
         int src(0), dist(6);
-        vector<int> shortest_path = Bellman_Ford(edge_list, dist, src);
+        vi prev, sp;
 
-        for (int i(0); i < sz(shortest_path); ++i)
-            cout << i << ' ' << shortest_path[i] << edl;
+        bool negative_cycle(Bellman_Ford(edge_list, dist, src, sp, prev));
+
+        if (negative_cycle)
+        {
+            cout << "There\'s a Negative Cycle";
+            return;
+        }
+        for (int i(0); i < sz(sp); ++i)
+            cout << i << ' ' << sp[i] << edl;
+
+        vi path;
+        int target(3);
+        build_path(prev, path, target);
+        cout << edl << "Path from 0 to " << target << ':' << edl;
+        for (auto &it : path)
+            cout << it << ' ';
+        cout << edl;
     }
 };
 

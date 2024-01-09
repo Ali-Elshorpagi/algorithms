@@ -29,24 +29,24 @@ public:
     Solution() { Sukuna; }
     vi bellman_ford(vector<Edge> &edge_list, int n, int src)
     {
-        vi dist(n, OO);
-        dist[src] = 0;
+        vi sp(n, OO);
+        sp[src] = 0;
 
         fr(e, 0, n - 1)
         {
             bool any_updates(false);
             for (auto &edge : edge_list)
             {
-                if (dist[edge.to] > dist[edge.from] + edge.weight)
+                if (sp[edge.to] > sp[edge.from] + edge.weight)
                 {
-                    dist[edge.to] = dist[edge.from] + edge.weight;
+                    sp[edge.to] = sp[edge.from] + edge.weight;
                     any_updates = true;
                 }
             }
             if (!any_updates)
                 break;
         }
-        return dist;
+        return sp;
     }
     int networkDelayTime(vvi &times, int n, int k)
     {
