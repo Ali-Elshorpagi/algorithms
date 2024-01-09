@@ -112,8 +112,8 @@ int main()
 }
 
 /*
-    input:
-        case #1:
+    !input:
+        ?case #1:
                 5 12
                 0 1 5
                 0 1 9
@@ -128,7 +128,7 @@ int main()
                 4 1 8
                 4 1 3
 
-        case #2:
+        ?case #2:
                 5 5
                 0 1 1
                 1 2 2
