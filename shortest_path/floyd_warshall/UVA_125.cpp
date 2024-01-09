@@ -36,7 +36,7 @@ public:
         //! detect cycles
         fr(k, 0, _size)
         {
-            if (graph[k][k] > 0) //! cycle
+            if (graph[k][k]) //! cycle
             {
                 fr(from, 0, _size)
                 {
@@ -45,7 +45,7 @@ public:
                         //? if the node K is in a cycle
                         //? and this path is exist : from -> K -> to
                         //? so this path can relax in a cycle
-                        if (graph[from][k] > 0 and graph[k][to] > 0)
+                        if (graph[from][k] && graph[k][to])
                             graph[from][to] = -1;
                     }
                 }
@@ -77,7 +77,10 @@ public:
 
             fr(i, 0, n)
             {
-                fr(j, 0, n) { graph[i][j] = cnt[i][j]; }
+                fr(j, 0, n)
+                {
+                    graph[i][j] = cnt[i][j];
+                }
             }
 
             count_paths(graph);
