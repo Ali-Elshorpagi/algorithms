@@ -68,7 +68,7 @@ public:
         }
         return distance;
     }
-    vi build_path(const vi &prev, int target)
+    vi buildPath(const vi &prev, int target)
     {
         vi path;
         // start from last node and move toward the source
@@ -105,7 +105,7 @@ public:
         times = {{1, 2, 1}}, n = 2, k = 2;
         cout << networkDelayTime(times, n, k) << edl; // -1
     }
-    int read_graph(vector<vector<Edge>> &adjList)
+    int ReadGraph(vector<vector<Edge>> &adjList)
     {
         int v, e; // nodes and edges;
         cin >> v >> e;
@@ -122,7 +122,7 @@ public:
     void TestGraph()
     {
         vector<vector<Edge>> adjList;
-        int n(read_graph(adjList)), src(1);
+        int n(ReadGraph(adjList)), src(1);
 
         vi prev;
         vi sp = Dijkstra(adjList, n, src, prev);
@@ -131,7 +131,7 @@ public:
         fr(i, 0, sz(sp)) { cout << i << ' ' << sp[i] << edl; }
 
         int target(5);
-        vi path = build_path(prev, target);
+        vi path = buildPath(prev, target);
         cout << edl << edl << "Path from " << src << " to " << target << edl;
         fc(v, path) { cout << v << ' '; } // 1 3 6 5
 
