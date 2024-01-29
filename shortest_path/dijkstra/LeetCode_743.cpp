@@ -22,8 +22,8 @@ class Solution
 
     struct Edge
     {
-        int to, weight;
-        Edge(int to, int weight) : to(to), weight(weight) {}
+        int from, to, weight;
+        Edge(int from, int to, int weight) : from(from), to(to), weight(weight) {}
 
         //* to make the priority queue sort from small to large
         bool operator<(const Edge &edge) const
@@ -34,13 +34,13 @@ class Solution
 
 public:
     Solution() { Sukuna; }
-    vi Dijkstra(const vector<vector<Edge>> &adjList, int n, int src) // O(E * log(V))
+    vi Dijkstra(const vector<vector<Edge>> &adjList, int n, int src, vi &prev) // O(E * log(V))
     {
-        vi distance(n, OO), visitied(n, 0);
+        vi distance(n, OO);
         distance[src] = 0;
-
+        prev = vi(n, -1);
         priority_queue<Edge> Pqueue; // small to large
-        Pqueue.push(Edge(src, 0));
+        Pqueue.push(Edge(-1, src, 0));
 
         while (!Pqueue.empty())
         {
@@ -49,24 +49,34 @@ public:
             int minIdx(minEdge.to);
             Pqueue.pop();
 
-            // The same node might come several times
-            if (visitied[minIdx])
+            // This edge can't make more relaxations
+            if (minEdge.weight > distance[minIdx])
                 continue;
 
+            prev[minEdge.to] = minEdge.from;
             // Relax with the outgoing edges of the min node
             fc(edge, adjList[minIdx])
             {
-                int to(edge.to), weight(edge.weight);
+                int from(edge.from), to(edge.to), weight(edge.weight);
 
                 if (distance[to] > distance[minIdx] + weight)
                 {
                     distance[to] = distance[minIdx] + weight;
-                    Pqueue.push({to, distance[to]}); // Add new edges
+                    Pqueue.push({from, to, distance[to]}); // Add new edges
                 }
             }
-            visitied[minIdx] = 1;
         }
         return distance;
+    }
+    vi build_path(const vi &prev, int target)
+    {
+        vi path;
+        // start from last node and move toward the source
+        for (int i(target); i > -1 && sz(path) <= sz(prev); i = prev[i])
+            path.push_back(i);
+
+        reverse(all(path)); // now path is reversed [target to src]. reverse it
+        return path;
     }
     int networkDelayTime(vvi &times, int n, int k)
     {
@@ -75,10 +85,11 @@ public:
         fr(i, 0, sz(times))
         {
             int from(times[i][0] - 1), to(times[i][1] - 1), cost(times[i][2]);
-            adjList[from].push_back({to, cost});
+            adjList[from].push_back({from, to, cost});
         }
 
-        vi sp = Dijkstra(adjList, n, k - 1);
+        vi prev;
+        vi sp = Dijkstra(adjList, n, k - 1, prev);
         int mx(*max_element(all(sp)));
 
         return mx >= OO ? -1 : mx;
@@ -88,23 +99,70 @@ public:
     {
         vvi times{{2, 1, 1}, {2, 3, 1}, {3, 4, 1}};
         int n(4), k(2);
-        cout << networkDelayTime(times, n, k) << edl; // 2
+        cout << edl << edl << "Network Delay Time Testing:" << edl << networkDelayTime(times, n, k) << edl; // 2
         times = {{1, 2, 1}}, n = 2, k = 1;
         cout << networkDelayTime(times, n, k) << edl; // 1
         times = {{1, 2, 1}}, n = 2, k = 2;
         cout << networkDelayTime(times, n, k) << edl; // -1
+    }
+    int read_graph(vector<vector<Edge>> &adjList)
+    {
+        int v, e; // nodes and edges;
+        cin >> v >> e;
+        adjList = vector<vector<Edge>>(v);
+
+        fr(i, 0, e)
+        {
+            int from, to, weight;
+            cin >> from >> to >> weight;
+            adjList[from].push_back({from, to, weight});
+        }
+        return v;
+    }
+    void TestGraph()
+    {
+        vector<vector<Edge>> adjList;
+        int n(read_graph(adjList)), src(1);
+
+        vi prev;
+        vi sp = Dijkstra(adjList, n, src, prev);
+
+        cout << edl << edl << "Shortest Path from - to " << edl;
+        fr(i, 0, sz(sp)) { cout << i << ' ' << sp[i] << edl; }
+
+        int target(5);
+        vi path = build_path(prev, target);
+        cout << edl << edl << "Path from " << src << " to " << target << edl;
+        fc(v, path) { cout << v << ' '; } // 1 3 6 5
+
+        /*
+            !input
+            7 12
+            0 1 2
+            0 3 1
+            1 4 10
+            1 3 3
+            2 0 4
+            2 5 5
+            3 4 2
+            3 6 4
+            3 2 2
+            3 5 8
+            4 6 6
+            6 5 1
+         */
     }
 };
 
 int main()
 {
     Solution sol;
-    // freopen("../../test/input.txt", "r", stdin);
+    freopen("../../test/input.txt", "r", stdin);
     freopen("../../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)
-        cout << "Case #" << tc + 1 << edl, sol.TEST();
+        cout << "Case #" << tc + 1 << edl, sol.TestGraph(), sol.TEST();
     cout << edl << "DONE" << edl;
 
     return (0);
