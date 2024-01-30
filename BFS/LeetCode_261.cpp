@@ -8,16 +8,13 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 #define fc(it, v) for (auto &(it) : (v))
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
-
-// link : https://leetcode.com/problems/graph-valid-tree/
-// code : leetcode 261
 
 /*
  * Tree:
@@ -30,7 +27,7 @@ const int oo = 1e7; // A big value expressing infinity
 class Solution
 {
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { Sukuna; }
     void add_undirected_edge(vvi &graph, int from, int to)
     {
         graph[from].emplace_back(to);

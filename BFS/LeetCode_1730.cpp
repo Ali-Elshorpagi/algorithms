@@ -10,14 +10,11 @@ typedef vector<vi> vvi;
 typedef vector<vector<char>> vvc;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 #define fc(it, v) for (auto &(it) : (v))
-
-// link : https://leetcode.com/problems/shortest-path-to-get-food/
-// code : leetcode 1730
 
 class Solution
 {
@@ -33,7 +30,7 @@ class Solution
     vi dc{0, 1, 0, -1};
 
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { Sukuna; }
     bool is_valid(int r, int c, vvc &matrix)
     {
         if (matrix[r][c] == 'X' || r < 0 || r >= sz(matrix) || c < 0 || c >= sz(matrix[0]))

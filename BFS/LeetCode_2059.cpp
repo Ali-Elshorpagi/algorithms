@@ -7,18 +7,15 @@ using namespace std;
 typedef vector<int> vi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fc(it, v) for (auto &(it) : (v))
 
-// link : https://leetcode.com/problems/minimum-operations-to-convert-number/
-// code : leetcode 2059
-
 class Solution
 {
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { Sukuna; }
     int BFS(vi &arr, vi &visited, int start, int goal)
     {
         queue<int> nodes;

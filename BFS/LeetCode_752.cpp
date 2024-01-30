@@ -9,19 +9,16 @@ using namespace std;
 typedef vector<string> vs;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 
-// link : https://leetcode.com/problems/open-the-lock/
-// code : leetcode 752
-
 class Solution
 {
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { Sukuna; }
     // we can code as equation too:
     //                - for next : (ch - '0' + 1) % 10 + '0'
     //                - for prev : (ch - '0' - 1 + 10) % 10 + '0'
