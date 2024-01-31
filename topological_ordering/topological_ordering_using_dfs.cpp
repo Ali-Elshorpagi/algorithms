@@ -15,9 +15,6 @@ typedef vector<vi> vvi;
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 #define fc(it, v) for (auto &(it) : (v))
 
-// link : https://leetcode.com/problems/course-schedule-ii/
-// code : leetcode 210
-
 /*
  * # Complexities
  *

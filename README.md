@@ -64,7 +64,12 @@
 <br>
 
 > **[Shortest Path Algorithms](https://github.com/Ali-Elshorpagi/algorithms/tree/main/shortest_path)**
-   - [Floyd Warshall](https://github.com/Ali-Elshorpagi/algorithms/tree/main/shortest_path/floyd_warshall)
-   - [Bellman Ford](https://github.com/Ali-Elshorpagi/algorithms/tree/main/shortest_path/bellman_ford)
-   -[Dijkstra](https://github.com/Ali-Elshorpagi/algorithms/tree/main/shortest_path/dijkstra)
-   - [MST Prim](https://github.com/Ali-Elshorpagi/algorithms/tree/main/shortest_path/mst_prim)
+   - Floyd Warshall
+   - Bellman Ford
+   - Dijkstra
+
+<br>
+
+> **[Minimum Spanning Tree (MST)](https://github.com/Ali-Elshorpagi/algorithms/tree/main/MST)**
+   - MST Prim
+   - MST Kruskal

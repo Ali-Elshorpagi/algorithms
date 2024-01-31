@@ -13,9 +13,8 @@ typedef vector<vi> vvi;
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 #define fc(it, v) for (auto &(it) : (v))
-
-// link : https://leetcode.com/problems/course-schedule-ii/
-// code : leetcode 210
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
 
 class Solution
 {
@@ -25,7 +24,7 @@ public:
     {
         graph[from].emplace_back(to);
     }
-    vi topological_ordering(vvi &graph)
+    int topological_ordering(vvi &graph)
     {
         int len(sz(graph));
         vi indegree(len);
@@ -39,12 +38,12 @@ public:
             if (!indegree[i])
                 ready_nodes.push(i);
         }
-        vi ordering;
+        int cnt(0);
         while (!ready_nodes.empty())
         {
             int cur(ready_nodes.front());
             ready_nodes.pop();
-            ordering.emplace_back(cur);
+            ++cnt;
             fc(neighbour, graph[cur])
             {
                 if (!(--indegree[neighbour]))
@@ -52,20 +51,21 @@ public:
             }
         }
 
-        return (sz(ordering) == len ? ordering : vi());
+        return cnt;
     }
-    vi findOrder(int numCourses, vvi &prerequisites)
+    bool canFinish(int numCourses, vvi &prerequisites)
     {
         vvi graph(numCourses);
         fc(edge, prerequisites) { add_directed_edge(graph, edge[1], edge[0]); }
-        return topological_ordering(graph);
+        return topological_ordering(graph) == numCourses;
     }
     void TEST()
     {
-        int numCourses(4);
-        vvi prerequisites{{1, 0}, {2, 0}, {3, 1}, {3, 2}};
-        vi ans = findOrder(numCourses, prerequisites);
-        fc(it, ans) { cout << it << ' '; } // [ 0, 1, 2, 3 ]
+        int numCourses(2);
+        vvi prerequisites{{1, 0}};
+        canFinish(numCourses, prerequisites) ? yes : no; // YES
+        prerequisites = {{1, 0}, {0, 1}};
+        canFinish(numCourses, prerequisites) ? yes : no; // NO
     }
 };
 
