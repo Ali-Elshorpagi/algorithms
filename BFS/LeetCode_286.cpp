@@ -10,14 +10,11 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 #define fc(it, v) for (auto &(it) : (v))
-
-// link : https://leetcode.com/problems/walls-and-gates/
-// code : leetcode 286
 
 class Solution
 {
@@ -27,7 +24,7 @@ class Solution
     vi dc{0, 1, 0, -1};
 
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { __elshorpagi__; }
     bool is_valid(vvi &visited, vvi &rooms, int row, int col)
     {
         if (row < 0 || row >= sz(rooms) || col < 0 || col >= sz(rooms[0]))

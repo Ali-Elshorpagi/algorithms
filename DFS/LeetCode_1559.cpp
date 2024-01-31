@@ -9,24 +9,21 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
 
-// link : https://leetcode.com/problems/detect-cycles-in-2d-grid/
-// code : leetcode 1559
-
-class Solution // O(N * M) time, O(N * M) space
+class Solution
 {
     vi dr{-1, 0, 1, 0}; // Delta for: up, right, down, left
     vi dc{0, 1, 0, -1};
     bool is_cycle = false;
 
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { __elshorpagi__; }
     bool is_valid(int r, int c, vvc &grid)
     {
         if (r < 0 || r >= sz(grid) || c < 0 || c >= sz(grid[0]))

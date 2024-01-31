@@ -7,7 +7,7 @@ using namespace std;
 typedef vector<int> vi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define yes cout << "YES\n"
@@ -16,7 +16,7 @@ typedef vector<int> vi;
 class Solution
 {
 public:
-    Solution() { Sukuna; }
+    Solution() { __elshorpagi__; }
     bool is_valid(vi &arr, int idx)
     {
         if (idx >= sz(arr) || idx < 0)

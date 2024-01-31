@@ -7,22 +7,19 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 
-// link : https://leetcode.com/problems/count-sub-islands/
-// code : leetcode 1905
-
-class Solution // O(N * M) time, O(N * M) space
+class Solution
 {
     vi dr{-1, 0, 1, 0}; // Delta for: up, right, down, left
     vi dc{0, 1, 0, -1};
     bool is_sub;
 
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { __elshorpagi__; }
     bool is_valid(int new_row, int new_col, vvi &g2)
     {
         if (new_row < 0 || new_row >= sz(g2) || new_col < 0 || new_col >= sz(g2[0]))

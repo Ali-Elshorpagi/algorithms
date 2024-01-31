@@ -6,7 +6,7 @@
 using namespace std;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
@@ -46,13 +46,10 @@ vi reachability(GRAPH &graph, int node)
     return vi(all(visited));
 }
 
-// link : https://leetcode.com/problems/kill-process/
-// code : leetcode 582
-
-class Solution // O(N) time, O(N) space
+class Solution
 {
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { __elshorpagi__; }
     vi killProcess(vi &pid, vi &ppid, int kill)
     {
         GRAPH graph;

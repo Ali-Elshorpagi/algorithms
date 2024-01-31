@@ -4,7 +4,7 @@
 using namespace std;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
@@ -12,13 +12,10 @@ using namespace std;
 
 typedef vector<vector<int>> GRAPH;
 
-// link : https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
-// code : leetcode 323
-
-class Solution // // O(V + E) time, O(V + E) space
+class Solution
 {
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { __elshorpagi__; }
     void dfs(GRAPH &graph, int root, vector<bool> &visited)
     {
         if (visited[root])

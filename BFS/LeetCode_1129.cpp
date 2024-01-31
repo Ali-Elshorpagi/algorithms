@@ -10,19 +10,16 @@ typedef vector<vi> vvi;
 typedef vector<vector<pair<int, int>>> GRAPH;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fc(it, v) for (auto &(it) : (v))
-
-// link : https://leetcode.com/problems/shortest-path-with-alternating-colors/
-// code : leetcode 1129
 
 class Solution // State Graph Problem
 {
 
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { __elshorpagi__; }
     void add_directed_edges(GRAPH &graph, vvi &edges, int color)
     {
         // pair<int, int> = pair<to, color>;

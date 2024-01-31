@@ -8,50 +8,47 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 #define fc(it, v) for (auto &(it) : (v))
 
-// link : https://leetcode.com/problems/smallest-string-with-swaps/
-// code : leetcode 1202
-
 class Solution // O(N *log(N) + M) time, O(N + M) space, where N is sz(s), M is no.Pairs
 {
 public:
-    Solution() { Mesh_Ali; }
-    void dfs(vvi&graph, vi&visited, int node, vi&indices)
+    Solution() { __elshorpagi__; }
+    void dfs(vvi &graph, vi &visited, int node, vi &indices)
     {
         visited[node] = 1;
         indices.emplace_back(node);
         fc(it, graph[node])
         {
             if (!visited[it]) // instead of base case
-                dfs(graph,visited,it,indices);
+                dfs(graph, visited, it, indices);
         }
     }
-    string smallestStringWithSwaps(string s, vvi& pairs)
+    string smallestStringWithSwaps(string s, vvi &pairs)
     {
         vvi graph(sz(s));
-        fc(it,pairs)
+        fc(it, pairs)
         {
             graph[it[1]].emplace_back(it[0]);
             graph[it[0]].emplace_back(it[1]);
         }
         int len(sz(graph));
         vi visited(len);
-        fr(i,0,len)
+        fr(i, 0, len)
         {
-            if(!visited[i])
+            if (!visited[i])
             {
                 vi indices;
-                dfs(graph,visited,i,indices);
+                dfs(graph, visited, i, indices);
                 string str(""); // connected letters;
-                fc(it,indices) str += s[it];
-                sort(all(str)),sort(all(indices));
-                fr(i,0,sz(indices)) s[indices[i]] = str[i];
+                fc(it, indices) str += s[it];
+                sort(all(str)), sort(all(indices));
+                fr(i, 0, sz(indices)) s[indices[i]] = str[i];
             }
         }
         return s;
@@ -59,8 +56,8 @@ public:
     void TEST()
     {
         string str("dcab");
-        vvi pairs{{0,3},{1,2},{0,2}};
-        cout << smallestStringWithSwaps(str,pairs) << edl;
+        vvi pairs{{0, 3}, {1, 2}, {0, 2}};
+        cout << smallestStringWithSwaps(str, pairs) << edl;
         // output : abcd
     }
 };

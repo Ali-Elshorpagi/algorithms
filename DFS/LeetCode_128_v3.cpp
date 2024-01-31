@@ -9,56 +9,52 @@ typedef vector<int> vi;
 typedef map<int, vi> GRAPH; // u can use unordered_map, but there's a bug in this problem in LeetCode
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fc(it, v) for (auto &(it) : (v))
 
-// link : https://leetcode.com/problems/longest-consecutive-sequence/
-// code : leetcode 128
-
 class Solution // O(N) time, O(N) space
 {
 public:
-    Solution() { Mesh_Ali; }
-    int dfs_recursive(GRAPH& graph, int node)
+    Solution() { __elshorpagi__; }
+    int dfs_recursive(GRAPH &graph, int node)
     {
-        fc(it,graph[node])
-        return 1 + dfs_recursive(graph,it);
+        fc(it, graph[node]) { return 1 + dfs_recursive(graph, it); }
         return 1;
     }
-    int dfs_iterative(GRAPH& graph, int node)
+    int dfs_iterative(GRAPH &graph, int node)
     {
         int len(1);
-        while(sz(graph[node]))
+        while (sz(graph[node]))
             node = graph[node][0], ++len;
         return len;
     }
     int longestConsecutive(vi &nums)
     {
-        unordered_set<int>uniq_nums(all(nums));
-        if(!sz(uniq_nums))
+        unordered_set<int> uniq_nums(all(nums));
+        if (!sz(uniq_nums))
             return 0;
         GRAPH graph;
-        fc(it,uniq_nums)
+        fc(it, uniq_nums)
         {
-            if(uniq_nums.count(it + 1))
+            if (uniq_nums.count(it + 1))
                 graph[it].emplace_back(it + 1);
         }
         int ans(1);
-        fc(it,graph)
+        fc(it, graph)
         {
-            if(!uniq_nums.count(it.first - 1))
-                ans = max(ans, dfs_iterative(graph,it.first));
+            if (!uniq_nums.count(it.first - 1))
+                ans = max(ans, dfs_iterative(graph, it.first));
         }
         return ans;
     }
     void TEST()
     {
-        vi nums{100,4,200,1,3,2};
+        vi nums{100, 4, 200, 1, 3, 2};
         cout << longestConsecutive(nums) << ' ';
-        nums = {0,3,7,2,5,8,4,6,0,1};
+        nums = {0, 3, 7, 2, 5, 8, 4, 6, 0, 1};
         cout << longestConsecutive(nums) << edl;
         // output : 4 9
     }

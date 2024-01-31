@@ -5,7 +5,7 @@
 using namespace std;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define edl '\n'
 #define fc(it, v) for (auto &(it) : (v))
 
@@ -18,15 +18,12 @@ struct Employee
     Employee(int d, int imp, vi sub) : id(d), importance(imp), subordinates(sub) {}
 };
 
-// link : https://leetcode.com/problems/employee-importance/
-// code : leetcode 690
-
-class Solution // O(N) time, O(N) space
+class Solution
 {
     unordered_map<int, Employee *> emps;
 
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { __elshorpagi__; }
     void dfs(unordered_map<int, Employee *> &emps, int id, int &sum)
     {
         sum += emps[id]->importance;

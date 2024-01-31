@@ -9,21 +9,18 @@ typedef long long ll;
 typedef vector<int> vi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (ll i(x); i < n; ++i)
 #define fc(it, v) for (auto &(it) : (v))
 
-// link : https://leetcode.com/problems/stepping-numbers/
-// code : leetcode 1215
-
 class Solution
 {
 
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { __elshorpagi__; }
     // Brute Force O(N * D) time,
     // N -> no.Numbers between Low and High
     // D -> no.digits of the max number between Low and High
