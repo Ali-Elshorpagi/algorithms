@@ -7,7 +7,7 @@ typedef vector<char> vc;
 typedef vector<vc> vvc;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
@@ -18,7 +18,7 @@ typedef vector<vc> vvc;
 class Solution
 {
 public:
-    Solution() { Sukuna; }
+    Solution() { __elshorpagi__; }
     bool is_valid(vvc &board, int row, int col, char ch)
     {
         fr(i, 0, 9)

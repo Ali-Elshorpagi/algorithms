@@ -9,7 +9,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
@@ -27,7 +27,7 @@ class Solution
     vvi partition_values;
 
 public:
-    Solution() { Sukuna; }
+    Solution() { __elshorpagi__; }
     void print_partitions(vvi &partitions)
     {
         int cnt(1);

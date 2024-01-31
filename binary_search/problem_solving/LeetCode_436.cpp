@@ -10,7 +10,7 @@ typedef vector<vi> vvi;
 typedef vector<pii> vpii;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
@@ -20,7 +20,7 @@ typedef vector<pii> vpii;
 class Solution
 {
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { __elshorpagi__; }
     int BS(vpii &startings, int target)
     {
         int left(0), right(sz(startings) - 1), pos(-1);

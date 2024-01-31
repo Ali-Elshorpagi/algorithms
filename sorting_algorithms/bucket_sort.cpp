@@ -8,7 +8,7 @@ typedef vector<double> vd;
 typedef vector<vd> vvd;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
@@ -32,7 +32,7 @@ typedef vector<vd> vvd;
 class Algorithm
 {
 public:
-    Algorithm() { Sukuna; }
+    Algorithm() { __elshorpagi__; }
     ~Algorithm() { cout << edl << "DONE" << edl; }
 
     void Bucket_Sort(vd &arr, int no_buckets)

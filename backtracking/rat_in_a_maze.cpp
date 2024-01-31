@@ -7,7 +7,7 @@ typedef vector<int> vi;
 typedef vector<vector<char>> vvc;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 
@@ -19,7 +19,7 @@ class Solution
     vvc grid;
 
 public:
-    Solution() { Sukuna; }
+    Solution() { __elshorpagi__; }
     bool is_valid(int row, int col)
     {
         if (row >= rows || row < 0 || col < 0 || col >= cols)

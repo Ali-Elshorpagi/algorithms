@@ -8,7 +8,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
@@ -17,7 +17,7 @@ class Solution
 {
     vvi memory; // for Memoization
 public:
-    Solution() { Sukuna, memory.resize(105, vi(105, -1e5)); }
+    Solution() { __elshorpagi__, memory.resize(105, vi(105, -1e5)); }
     bool is_valid(vvi &matrix, int row, int col)
     {
         if (row >= sz(matrix) || col < 0 || col >= sz(matrix[0]))

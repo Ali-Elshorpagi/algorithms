@@ -8,7 +8,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
@@ -18,7 +18,7 @@ class Solution
     vvi memory;
 
 public:
-    Solution() { Sukuna; }
+    Solution() { __elshorpagi__; }
     int dp_forward(string &s1, string &s2, int idx1, int idx2)
     {
         if (idx1 >= sz(s1))

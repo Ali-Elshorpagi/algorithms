@@ -6,4 +6,4 @@
 |03||Bellman Ford Implementation|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/shortest_path/bellman_ford/bellman_ford.cpp)|`O(V * E)`|`O(V)`|Bellman Ford|
 |04|743|[Network Delay Time](https://leetcode.com/problems/network-delay-time/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/shortest_path/bellman_ford/LeetCode_743.cpp)|`O(V * E)`|`O(V)`|Bellman Ford|
 |05|743|[Network Delay Time](https://leetcode.com/problems/network-delay-time/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/shortest_path/dijkstra/LeetCode_743.cpp)|` O(E * log(V))`|`O(V)`|Dijkstra|
-|06|1584|[Min Cost To Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/shortest_path/mst_prim/LeetCode_1584.cpp)|` O(E * log(V))`|`O(V)`|MST Prim|
+|06|1584|[Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/)|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/shortest_path/mst_prim/LeetCode_1584.cpp)|` O(E * log(V))`|`O(V)`|MST Prim|

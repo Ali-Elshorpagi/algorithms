@@ -7,7 +7,7 @@ typedef vector<int> vi;
 typedef long long ll;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
@@ -19,7 +19,7 @@ class Solution
     vi tmp;
 
 public:
-    Solution() { Sukuna; }
+    Solution() { __elshorpagi__; }
     ll merge_(vi &arr, int start, int md, int end)
     {
         ll global_inversions(0);

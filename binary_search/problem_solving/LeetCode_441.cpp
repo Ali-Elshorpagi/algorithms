@@ -7,13 +7,13 @@ using namespace std;
 typedef long long ll;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define edl '\n'
 
 class Solution
 {
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { __elshorpagi__; }
     int arrangeCoins_(int n)
     {
         // 1 + 2 + 3 + 4 + ... + X = N;

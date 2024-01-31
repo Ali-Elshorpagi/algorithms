@@ -13,7 +13,7 @@ typedef vector<pii> vpii;
 typedef vector<char> vc;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define cl(v) ((v).clear())
@@ -47,7 +47,7 @@ struct ListNode
 class Solution
 {
 public:
-    Solution() { Sukuna; }
+    Solution() { __elshorpagi__; }
     void TEST() {}
 };
 

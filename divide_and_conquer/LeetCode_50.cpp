@@ -5,14 +5,14 @@ using namespace std;
 typedef long long ll;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define edl '\n'
 
 class Solution
 {
 
 public:
-    Solution() { Sukuna; }
+    Solution() { __elshorpagi__; }
     double fast_power_(double x, ll n)
     {
         double ans(1);

@@ -7,7 +7,7 @@ using namespace std;
 typedef vector<int> vi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
@@ -16,7 +16,7 @@ typedef vector<int> vi;
 class Solution
 {
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { __elshorpagi__; }
     void count_sort(vi &arr)
     {
         int min_(*min_element(all(arr))), limit(1e4);

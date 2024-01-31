@@ -8,7 +8,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
@@ -20,7 +20,7 @@ typedef vector<vi> vvi;
 class Solution
 {
 public:
-    Solution() { Sukuna; }
+    Solution() { __elshorpagi__; }
     void add_directed_edge(vvi &graph, int from, int to)
     {
         graph[from].emplace_back(to);

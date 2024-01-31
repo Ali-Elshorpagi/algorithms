@@ -7,7 +7,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 
@@ -18,7 +18,7 @@ class Solution
     vvi memeory;
 
 public:
-    Solution() { Sukuna, memeory_.resize(60, -1), memeory.resize(60, vi(60, -1)); }
+    Solution() { __elshorpagi__, memeory_.resize(60, -1), memeory.resize(60, vi(60, -1)); }
     int dp_(int n)
     {
         if (!n)

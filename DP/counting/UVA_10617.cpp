@@ -9,7 +9,7 @@ typedef vector<ll> vll;
 typedef vector<vll> vvll;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
@@ -19,7 +19,7 @@ class Solution
     string str;
 
 public:
-    Solution() { Sukuna; }
+    Solution() { __elshorpagi__; }
     ll dp(int left, int right)
     {
         auto &ref(memory[left][right]);

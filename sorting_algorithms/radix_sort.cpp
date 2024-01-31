@@ -7,7 +7,7 @@ using namespace std;
 typedef vector<int> vi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
@@ -30,7 +30,7 @@ typedef vector<int> vi;
 class Algorithm
 {
 public:
-    Algorithm() { Sukuna; }
+    Algorithm() { __elshorpagi__; }
     ~Algorithm() { cout << edl << "DONE" << edl; }
 
     vi Count_Sort(vi &arr, int place, int max_val)

@@ -6,7 +6,7 @@ using namespace std;
 typedef vector<int> vi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
@@ -31,7 +31,7 @@ class Algorithm
     vi tmp;
 
 public:
-    Algorithm() { Sukuna; }
+    Algorithm() { __elshorpagi__; }
     ~Algorithm() { cout << edl << "DONE" << edl; }
     
     void merge(vi &arr, int left, int mid, int right)

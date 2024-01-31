@@ -21,7 +21,7 @@ typedef vector<vi> vvi;
 class Solution
 {
 public:
-    Solution() { Sukuna; }
+    Solution() { __elshorpagi__; }
     void add_undirected_edge(vvi &graph, int from, int to)
     {
         graph[from].emplace_back(to);

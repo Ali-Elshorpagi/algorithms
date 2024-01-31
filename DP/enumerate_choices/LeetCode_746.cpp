@@ -8,7 +8,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
@@ -16,7 +16,7 @@ class Solution
 {
     vi memeory; // for memoization
 public:
-    Solution() { Sukuna, memeory.resize(1001, -1); }
+    Solution() { __elshorpagi__, memeory.resize(1001, -1); }
     int dp(vi &arr, int idx)
     {
         if (idx >= sz(arr))

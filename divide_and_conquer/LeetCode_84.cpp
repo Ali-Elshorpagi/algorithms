@@ -7,7 +7,7 @@ using namespace std;
 typedef vector<int> vi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
@@ -15,7 +15,7 @@ class Solution
 {
 
 public:
-    Solution() { Sukuna; }
+    Solution() { __elshorpagi__; }
     int max_mid_area(vi &heights, int start, int end, int mid)
     {
         int i(mid), j(mid + 1);

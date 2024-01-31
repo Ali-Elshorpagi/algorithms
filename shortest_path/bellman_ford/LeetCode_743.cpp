@@ -8,7 +8,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
@@ -26,7 +26,7 @@ class Solution
     };
 
 public:
-    Solution() { Sukuna; }
+    Solution() { __elshorpagi__; }
     vi bellman_ford(vector<Edge> &edge_list, int n, int src)
     {
         vi sp(n, OO);

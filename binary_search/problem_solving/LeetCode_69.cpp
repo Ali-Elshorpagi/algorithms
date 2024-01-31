@@ -6,14 +6,14 @@ typedef long long ll;
 using namespace std;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define edl '\n'
 #define sq(x) (x) * (x)
 
 class Solution
 {
 public:
-    Solution() { Mesh_Ali; }
+    Solution() { __elshorpagi__; }
     int mySqrt_(int x)
     {
         if (!x || x == 1)

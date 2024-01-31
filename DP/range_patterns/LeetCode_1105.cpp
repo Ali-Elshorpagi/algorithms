@@ -7,7 +7,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
@@ -18,7 +18,7 @@ class Solution
     vi memory_;
 
 public:
-    Solution() { Sukuna, memory_.resize(1005, -1), memory.resize(1005, vi(1005, -1)); }
+    Solution() { __elshorpagi__, memory_.resize(1005, -1), memory.resize(1005, vi(1005, -1)); }
     // Case 1 : I keep the book in current shelf
     // Case 2 : I keep the book in next shelf
     int dp(vvi &books, int idx, int shelfwidth, int remaing_width, int max_height) // O(N^2) time, O(N^2) space

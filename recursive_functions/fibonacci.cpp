@@ -9,7 +9,7 @@ typedef vector<ll> vll;
 typedef vector<vll> vvll;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define edl '\n'
 
 class Fibonacci
@@ -39,7 +39,7 @@ class Fibonacci
     }
 
 public:
-    Fibonacci() { Sukuna; }
+    Fibonacci() { __elshorpagi__; }
     ll fib_0(ll n) // O(2^N) time & space, Exponential Time & Space
     {
         if (n < 2)

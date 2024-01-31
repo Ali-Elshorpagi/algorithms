@@ -7,7 +7,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
@@ -20,7 +20,7 @@ class Solution
     vvi memory;
 
 public:
-    Solution() { Sukuna, memory_.resize(2505, -1), memory.resize(2505, vi(2505, -1)); }
+    Solution() { __elshorpagi__, memory_.resize(2505, -1), memory.resize(2505, vi(2505, -1)); }
     int dp_lis(vi &nums, int current_idx, int prev_idx)
     {
         if (current_idx == sz(nums))

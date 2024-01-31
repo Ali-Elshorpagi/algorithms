@@ -7,7 +7,7 @@ typedef vector<string> vs;
 typedef vector<vs> vvs;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define edl '\n'
 #define fr(i, x, n) for (int i(x); i < n; ++i)
 #define fc(it, v) for (auto &(it) : (v))
@@ -17,7 +17,7 @@ class Solution
     vs chess_board;
 
 public:
-    Solution() { Sukuna; }
+    Solution() { __elshorpagi__; }
     bool is_valid(int row, int col, int n)
     {
         // check this row on the left side

@@ -22,8 +22,8 @@ class Solution
 
     struct Edge
     {
-        int to, weight;
-        Edge(int to, int weight) : to(to), weight(weight) {}
+        int from, to, weight;
+        Edge(int from, int to, int weight) : from(from), to(to), weight(weight) {}
 
         //* to make the priority queue sort from small to large
         bool operator<(const Edge &edge) const
@@ -34,14 +34,14 @@ class Solution
 
 public:
     Solution() { __elshorpagi__; }
-    int MST(const vector<vector<Edge>> &adjList, int n, int src = 0) // O(E * log(V))
+    pair<int, bool> MST(const vector<vector<Edge>> &adjList, int n, vector<Edge> &edges, int src = 0) // O(E * log(V))
     {
         vi distance(n, OO), visited(n, 0);
         distance[src] = 0;
         int mstCost(0);
 
-        priority_queue<Edge> Pqueue; // small to large
-        Pqueue.push(Edge(src, 0));
+        priority_queue<Edge> Pqueue;   // small to large
+        Pqueue.push(Edge(-1, src, 0)); // dummy
 
         while (!Pqueue.empty())
         {
@@ -54,6 +54,8 @@ public:
                 continue;
 
             mstCost += minEdge.weight;
+            if (minEdge.from != -1)
+                edges.push_back(minEdge);
 
             fc(edge, adjList[minIdx]) // relax
             {
@@ -62,31 +64,17 @@ public:
                 if (distance[to] > weight)
                 {
                     distance[to] = weight;
-                    Pqueue.push({to, distance[to]});
+                    Pqueue.push({minIdx, to, distance[to]});
                 }
             }
             visited[minIdx] = 1;
         }
-        return mstCost;
-    }
-    int minCostConnectPoints(vvi &points)
-    {
-        int n(sz(points));
-        vector<vector<Edge>> adjList(n);
 
-        fr(i, 0, n)
-        {
-            fr(j, i, n)
-            {
-                int cost(abs(points[i][0] - points[j][0]) + abs(points[i][1] - points[j][1]));
-                adjList[i].push_back({j, cost});
-                adjList[j].push_back({i, cost});
-            }
-        }
-
-        int mstCost(MST(adjList, n));
-        return mstCost;
+        if (sz(edges) == n - 1) // tree
+            return {mstCost, true};
+        return {0, false};
     }
+
     int ReadGraph(vector<vector<Edge>> &adjList)
     {
         int V, E; // nodes and edges;
@@ -98,27 +86,26 @@ public:
         {
             int from, to, weight;
             cin >> from >> to >> weight;
-            adjList[from].push_back({to, weight});
-            adjList[to].push_back({from, weight});
+            adjList[from].push_back({from, to, weight});
+            adjList[to].push_back({to, from, weight});
         }
         return V;
     }
     void TEST()
     {
-        vvi points{{0, 0}, {2, 2}, {3, 10}, {5, 2}, {7, 0}};
-        cout << edl << edl << "Min Cost Connect Points Testing:" << edl << minCostConnectPoints(points) << edl; // 20
-        points = {{3, 12}, {-2, 5}, {-4, 1}};
-        cout << minCostConnectPoints(points) << edl; // 18
-    }
-    void TestGraph()
-    {
         vector<vector<Edge>> adjList;
         int n(ReadGraph(adjList));
 
-        int mstCost(MST(adjList, n));
+        vector<Edge> edges;
+        pair<int, bool> ans = MST(adjList, n, edges);
 
-        cout << mstCost << edl; // 14
-
+        if (ans.second)
+        {
+            cout << ans.first << edl;
+            fc(edge, edges) { cout << edge.from << ' ' << edge.to << ' ' << edge.weight << edl; }
+        }
+        else
+            cout << "No MST" << edl;
         /*
             !input
             6 7
@@ -129,7 +116,15 @@ public:
             2 5 3
             3 4 1
             5 4 4
-         */
+
+            !output
+            14
+            0 1 2
+            1 2 4
+            2 5 3
+            2 3 4
+            3 4 1
+        */
     }
 };
 
@@ -141,7 +136,7 @@ int main()
     int tc(1);
     // cin >> tc;
     while (tc--)
-        cout << "Case #" << tc + 1 << edl, sol.TestGraph(), sol.TEST();
+        cout << "Case #" << tc + 1 << edl, sol.TEST();
     cout << edl << "DONE" << edl;
 
     return (0);

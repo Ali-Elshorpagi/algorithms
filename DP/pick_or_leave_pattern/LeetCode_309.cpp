@@ -8,7 +8,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
 
@@ -25,7 +25,7 @@ class Solution
     };
 
 public:
-    Solution() { Sukuna, memory_.resize(5005, vvi(2, vi(3, -1))); /*memory.resize(5005, vi(2, -1));*/ }
+    Solution() { __elshorpagi__, memory_.resize(5005, vvi(2, vi(3, -1))); /*memory.resize(5005, vi(2, -1));*/ }
     // option = 0 -> buy
     // option = 1 -> sell
     int dp(vi &prices, bool option, int idx)
