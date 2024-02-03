@@ -5,46 +5,43 @@
 using namespace std;
 
 typedef vector<int> vi;
+typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
+#define sz(v) ((int)((v).size()))
 #define edl '\n'
 
 class UnionFind
 {
-    vi parent, rank;
+    vi parent, cc_size;
     int forests;
 
     void link(int x, int y)
     {
-        if (rank[x] > rank[y])
+        if (cc_size[x] > cc_size[y])
             swap(x, y);
 
         parent[x] = y;
-        if (rank[x] == rank[y]) // equal ranks case
-            ++rank[y];
+        cc_size[y] += cc_size[x]; // add child's size to its parent
     }
 
 public:
     UnionFind(int n)
     {
-        // each node is a connected component
-        parent = vi(n), rank = vi(n);
+        parent = vi(n), cc_size = vi(n);
 
         forests = n;
         for (int i(0); i < n; ++i)
-            // better than -1, for the find_set_recursive()
-            parent[i] = i, rank[i] = 1;
+            parent[i] = i, cc_size[i] = 1; // each node is a CC by itself
     }
-
     int find_set_recursive(int x)
     {
         if (x == parent[x]) // reached the top parent
             return x;
         return parent[x] = find_set_recursive(parent[x]);
     }
-
     int find_set_iterative(int x)
     {
         while (x != parent[x])
@@ -54,7 +51,6 @@ public:
         }
         return x;
     }
-
     bool union_sets(int x, int y)
     {
         x = find_set_iterative(x), y = find_set_iterative(y);
@@ -63,6 +59,25 @@ public:
             link(x, y), --forests;
 
         return x != y; // Are they in different CCs?
+    }
+
+    vvi connected_components()
+    {
+        int n(sz(parent) - 1);
+        vvi list(n);
+        for (int node(0); node <= n; ++node)
+        {
+            int parent_(find_set_iterative(node));
+            list[parent_].push_back(node);
+        }
+
+        // copy non-empty CCs
+        vvi actual_cc;
+        for (auto &cc : list)
+            if (sz(cc))
+                actual_cc.push_back(cc);
+
+        return actual_cc;
     }
 };
 
@@ -103,39 +118,28 @@ public:
     }
     void TEST()
     {
-        int V, E; // nodes and edges;
-        cin >> V >> E;
-        vector<Edge> edgeList;
-        for (int i(0); i < E; ++i)
+        UnionFind uf(6);
+        uf.union_sets(0, 1);
+        uf.union_sets(2, 3);
+        uf.union_sets(4, 5);
+        uf.union_sets(4, 3);
+        uf.union_sets(1, 2);
+
+        vvi ans = uf.connected_components();
+        cout << edl;
+        for (auto &cc : ans)
         {
-            int from, to, weight;
-            cin >> from >> to >> weight;
-            // one direction is enough for Kruskal, cuz we look at the connectivity
-            edgeList.push_back({from, to, weight});
+            for (auto &node : cc)
+                cout << node << ' '; // 0 1 2 3 4 5
+            cout << edl;
         }
-        cout << edl << MST_Kruskal(edgeList, V) << edl; // 14
-
-        /*
-            !input
-            6 7
-            0 5 6
-            0 1 2
-            1 2 4
-            2 3 4
-            2 5 3
-            3 4 1
-            5 4 4
-
-            !output
-            14
-        */
     }
 };
 
 int main()
 {
     Algorithm algo;
-    freopen("../../test/input.txt", "r", stdin);
+    // freopen("../../test/input.txt", "r", stdin);
     freopen("../../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;

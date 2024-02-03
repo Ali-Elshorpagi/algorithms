@@ -106,8 +106,8 @@ void Solve()
 int main()
 {
     Mesh_Ali;
-    freopen("../../test/input.txt", "r", stdin);
-    freopen("../../test/output.txt", "w", stdout);
+    freopen("../test/input.txt", "r", stdin);
+    freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)

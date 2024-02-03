@@ -59,8 +59,8 @@ public:
 int main()
 {
     Solution sol;
-    // freopen("../../test/input.txt", "r", stdin);
-    freopen("../../test/output.txt", "w", stdout);
+    // freopen("../test/input.txt", "r", stdin);
+    freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)

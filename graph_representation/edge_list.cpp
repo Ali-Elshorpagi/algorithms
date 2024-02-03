@@ -5,7 +5,7 @@
 using namespace std;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Mesh_Ali (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
@@ -40,7 +40,7 @@ void print_adjaceny_edge_list(GRAPH &graph)
         graph[e].print();
 }
 
-void Solve() // O(E) time, O(E) space
+void Solve()
 {
     // this representation in general is slower representation
     // and it's has very limited usege, but it's very simple
@@ -62,9 +62,9 @@ void Solve() // O(E) time, O(E) space
 
 int main()
 {
-    Mesh_Ali;
-    // freopen("../../test/input.txt", "r", stdin);
-    freopen("../../test/output.txt", "w", stdout);
+    __elshorpagi__;
+    freopen("../test/input.txt", "r", stdin);
+    freopen("../test/output.txt", "w", stdout);
     int tc(1);
     // cin >> tc;
     while (tc--)

@@ -7,7 +7,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
-#define Sukuna (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
@@ -139,7 +139,7 @@ void Solve()
 }
 int main()
 {
-    Sukuna;
+    __elshorpagi__;
     freopen("../test/input.txt", "r", stdin);
     freopen("../test/output.txt", "w", stdout);
     int tc(1);
