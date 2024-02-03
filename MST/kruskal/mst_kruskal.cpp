@@ -101,7 +101,7 @@ public:
         {
             int from, to, weight;
             cin >> from >> to >> weight;
-            // one direction is enough for Kruskal, cuz we look to the connectivity
+            // one direction is enough for Kruskal, cuz we look at the connectivity
             edgeList.push_back({from, to, weight});
         }
         return V;
