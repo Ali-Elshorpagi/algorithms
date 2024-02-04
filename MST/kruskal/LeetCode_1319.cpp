@@ -5,14 +5,13 @@
 using namespace std;
 
 typedef vector<int> vi;
-typedef vector<string> vs;
+typedef vector<vi> vvi;
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define __elshorpagi__ (ios_base::sync_with_stdio(false), cin.tie(NULL))
-#define all(v) ((v).begin()), ((v).end())
 #define sz(v) ((int)((v).size()))
 #define edl '\n'
-#define fr(i, x, n) for (int i(x); i < n; ++i)
+#define fc(it, v) for (auto &(it) : (v))
 
 class UnionFind
 {
@@ -83,41 +82,28 @@ class Solution
 
 public:
     Solution() { __elshorpagi__; }
-    bool is_similar(vs &strs, int i, int j)
+    int makeConnected(int n, vvi &connections)
     {
-        int cnt(0);
-        int len(sz(strs[i]));
-        fr(k, 0, len)
-        {
-            if (strs[i][k] != strs[j][k])
-                ++cnt;
-            if (cnt > 2)
-                return false;
-        }
-        return true;
-    }
-    int numSimilarGroups(vs &strs)
-    {
-        int n(unique(all(strs)) - strs.begin()); // ignore the identical words
+        if (sz(connections) < n - 1) // we must have n-1 edges for a tree
+            return -1;
+
+        vector<Edge> edgeList;
+        fc(c, connections) { edgeList.push_back({c[0], c[1]}); }
+
         UnionFind uf(n);
+        fc(edge, edgeList) { uf.union_sets(edge.from, edge.to); }
 
-        fr(i, 0, n)
-        {
-            fr(j, i + 1, n)
-            {
-                if (is_similar(strs, i, j))
-                    uf.union_sets(i, j); // from, to
-            }
-        }
-
-        return uf.forests;
+        return uf.forests - 1;
     }
     void TEST()
     {
-        vs strs{"tars", "rats", "arts", "star"};
-        cout << numSimilarGroups(strs) << edl; // 2
-        strs = {"omv", "ovm"};
-        cout << numSimilarGroups(strs) << edl; // 1
+        int n(4);
+        vvi connections{{0, 1}, {0, 2}, {1, 2}};
+        cout << makeConnected(n, connections) << edl; // 1
+        n = 6, connections = {{0, 1}, {0, 2}, {0, 3}, {1, 2}, {1, 3}};
+        cout << makeConnected(n, connections) << edl; // 2
+        connections = {{0, 1}, {0, 2}, {0, 3}, {1, 2}};
+        cout << makeConnected(n, connections) << edl; // -1
     }
 };
 
