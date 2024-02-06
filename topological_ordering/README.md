@@ -2,7 +2,7 @@
 
 ## Problems:
 
-|ID|Code| Problem Name |  Solution  |  Time | Space | Type | 
+|ID|Code| Problem Name |  Solution  |  Time | Space | Note | 
 |--|----|-------- | ---------- | -------| ------ | ---- |
 |00||Topological Ordering Using Kahn's Algorithm|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/topological_ordering/topological_ordering.cpp)|`O(V + E)`|`O(V)`||
 |01||Topological Ordering Using DFS Algorithm|[C++](https://github.com/Ali-Elshorpagi/algorithms/blob/main/topological_ordering/topological_ordering_using_dfs.cpp)|`O(V + E)`|`O(V + E)`||
