@@ -44,8 +44,8 @@
    - State Graph Problems
 
 > **[Topological Ordering](https://github.com/Ali-Elshorpagi/algorithms/tree/main/topological_ordering)**
-   - Kahn's Algorithm
-   - DFS Algorithm 
+   - By Kahn's Algorithm
+   - By DFS Algorithm 
 
 > **[Dynamic Programming (DP)](https://github.com/Ali-Elshorpagi/algorithms/tree/main/DP)**
    - Pick or Leave Pattern
@@ -60,7 +60,8 @@
    - Update And Undo
 
 > **[Divde and Conquer](https://github.com/Ali-Elshorpagi/algorithms/tree/main/divde_and_conquer)**
-
+   - Merge Sort
+   - Quick Sort
 <br>
 
 > **[Shortest Path Algorithms](https://github.com/Ali-Elshorpagi/algorithms/tree/main/shortest_path)**
